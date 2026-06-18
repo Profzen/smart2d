@@ -17,8 +17,10 @@ const requestTypes = [
   "Audit & sécurité",
   "Linux / Unix",
   "Supervision / MCO",
+  "Intelligence Artificielle & Automatisation",
   "Support / formation",
   "OSCAR",
+  "OSCAR Academy",
   "Smart Transfert",
   "Autre",
 ]
@@ -38,9 +40,25 @@ export function ContactContent() {
     e.preventDefault()
     setFormState("submitting")
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    setFormState("success")
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi")
+      }
+      
+      setFormState("success")
+      setFormData({ name: "", company: "", email: "", phone: "", requestType: "", message: "" })
+    } catch (error) {
+      console.error(error)
+      setFormState("error")
+      // Reset state after 3s so the user can try again
+      setTimeout(() => setFormState("idle"), 3000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -169,6 +187,12 @@ export function ContactContent() {
                     <p className="text-[#221E1F]/60">
                       Nous reviendrons vers vous rapidement pour échanger sur votre projet.
                     </p>
+                    <button
+                      onClick={() => setFormState("idle")}
+                      className="mt-8 px-6 py-2 border border-[#E5E0DC] rounded-lg text-sm font-medium hover:bg-[#F8F6F4] transition-colors"
+                    >
+                      Envoyer un autre message
+                    </button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -280,7 +304,12 @@ export function ContactContent() {
                         disabled={formState === "submitting"}
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 disabled:opacity-70 disabled:cursor-not-allowed"
                       >
-                        {formState === "submitting" ? (
+                        {formState === "error" ? (
+                          <>
+                            <AlertCircle className="w-4 h-4" />
+                            Erreur. Réessayez.
+                          </>
+                        ) : formState === "submitting" ? (
                           <>
                             <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                             Envoi en cours...
