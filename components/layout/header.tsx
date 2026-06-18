@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
@@ -24,6 +25,13 @@ const LOGO_DARK = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/smart
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Pages where the hero background is dark (#17233A)
+  const isDarkHero = pathname === "/" || pathname === "/oracle-infrastructure"
+  
+  // Use dark text (and dark logo/red button) if we scrolled OR if the hero background is light
+  const useDarkText = isScrolled || !isDarkHero
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +62,7 @@ export function Header() {
               height={54}
               className={cn(
                 "h-11 w-auto transition-opacity duration-300",
-                isScrolled ? "opacity-0" : "opacity-100"
+                useDarkText ? "opacity-0" : "opacity-100"
               )}
               priority
             />
@@ -66,7 +74,7 @@ export function Header() {
               height={54}
               className={cn(
                 "h-11 w-auto absolute top-0 left-0 transition-opacity duration-300",
-                isScrolled ? "opacity-100" : "opacity-0"
+                useDarkText ? "opacity-100" : "opacity-0"
               )}
               priority
             />
@@ -80,7 +88,7 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                  isScrolled
+                  useDarkText
                     ? "text-[#221E1F] hover:text-[#EE3329] hover:bg-[#221E1F]/5"
                     : "text-white/90 hover:text-white hover:bg-white/10"
                 )}
@@ -96,7 +104,7 @@ export function Header() {
               href="/contact"
               className={cn(
                 "inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-all",
-                isScrolled
+                useDarkText
                   ? "bg-[#EE3329] text-white hover:bg-[#d62d24] shadow-lg shadow-[#EE3329]/25"
                   : "bg-white text-[#221E1F] hover:bg-white/90 shadow-lg"
               )}
@@ -110,7 +118,7 @@ export function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={cn(
               "lg:hidden p-2 rounded-lg transition-colors",
-              isScrolled
+              useDarkText
                 ? "text-[#221E1F] hover:bg-[#221E1F]/5"
                 : "text-white hover:bg-white/10"
             )}
