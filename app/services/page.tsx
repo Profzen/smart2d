@@ -5,7 +5,7 @@ import { ServicesContent } from "./services-content"
 
 export const metadata: Metadata = {
   title: "Services IT, Oracle, bases de données, sécurité et supervision | SMART2D",
-  description: "SMART2D Services propose l'administration de bases de données, l'audit technique, la sécurité, Linux/Unix, Cloud OCI, supervision, MCO, support et formation.",
+  description: "SMART2D Services propose l'administration de bases de données, l'audit technique, la sécurité, Linux/Unix, Cloud OCI, supervision, MCO, Intelligence Artificielle & Automatisation, support et formation.",
 }
 
 export default function ServicesPage() {

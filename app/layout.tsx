@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'SMART2D Services | Expertise Oracle, OCI et infrastructures critiques',
-  description: 'SMART2D Services accompagne les entreprises dans l\'administration, la sécurisation, la supervision et la modernisation de leurs environnements Oracle, OCI, bases de données et infrastructures critiques.',
+  title: 'SMART2D Services | Oracle Partner, OCI et infrastructures critiques',
+  description: "SMART2D Services accompagne les banques, institutions financières, télécoms et organisations exigeantes dans la sécurisation, l'optimisation, la migration, la digitalisation, la supervision et la modernisation de leurs environnements Oracle, OCI, bases de données et infrastructures critiques.",
   keywords: 'Oracle, OCI, DBA, infrastructure critique, Linux, Unix, supervision, SMART2D, Togo',
   authors: [{ name: 'SMART2D Services' }],
   icons: {
