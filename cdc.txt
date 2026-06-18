@@ -1,0 +1,313 @@
+ 
+Cahier des charges
+Refonte du site web vitrine SMART2D Services
+Positionnement Oracle-first, infrastructures critiques, solutions SMART2D et expérience digitale bilingue FR/EN.
+Plus de 30 ans d'expertise Oracle pour sécuriser, maintenir et moderniser les infrastructures critiques.
+
+Version	1.2
+Date	Juin 2026
+Statut	Document de cadrage prêt pour validation direction
+Confidentialité	Document interne SMART2D Services
+Contact	contact@smart2dservices.com | +228 72 14 09 23 | +1 732 439 2272
+
+ 
+Sommaire exécutif
+	Décision de cadrage
+Le futur site doit être une vitrine commerciale complète, moderne et bilingue, centrée sur l'expertise Oracle/OCI de SMART2D, tout en valorisant les services infrastructure, la supervision, le support, la formation et les solutions OSCAR / Smart Transfert.
+
+Synthèse des choix validés
+Message principal	Plus de 30 ans d'expertise Oracle pour sécuriser, maintenir et moderniser vos infrastructures critiques.
+Priorité commerciale	Oracle, OCI, bases de données et infrastructures critiques.
+Offres secondaires	Linux/Unix, audit & sécurité, supervision/MCO, support, formation, IA & automatisation.
+Solutions SMART2D	OSCAR, OSCAR Academy et Smart Transfert, visibles mais non dominants dans le positionnement.
+Approche contenu	Accueil complet donnant une vision globale, pages internes longues pour approfondir.
+Approche design	Palette rouge/noir issue du logo, proche de l'univers Oracle, avec animations sobres et forte lisibilité.
+Approche technique	Next.js / React, déploiement cPanel avec hypothèse Node.js et plan de secours en export statique.
+Baseline officielle	SÉCURISER • OPTIMISER • MIGRER • DIGITALISER.
+Cibles prioritaires	Banques, institutions financières, télécoms et organisations exigeantes.
+
+Sommaire
+•	1. Présentation de SMART2D Services
+•	2. Contexte et diagnostic
+•	3. Objectifs du projet
+•	4. Périmètre du projet
+•	5. Publics cibles et parcours utilisateurs
+•	6. Arborescence et structure des pages
+•	7. Contenus à produire
+•	8. Direction UX/UI et design
+•	9. Fonctionnalités attendues
+•	10. Spécifications techniques
+•	11. SEO, bilingue et performance
+•	12. Planning et organisation
+•	13. Recette et critères d'acceptation
+•	14. Points de vigilance et décisions restantes
+•	15. Annexes
+ 
+1. Présentation de SMART2D Services
+SMART2D Services est un cabinet de conseil technologique basé à Lomé, spécialisé dans les environnements critiques, avec une expertise forte autour des technologies Oracle, des bases de données, des systèmes Linux/Unix, du Cloud OCI, de la sécurité, de la supervision et de l'automatisation.
+L'entreprise accompagne notamment les banques, institutions financières, télécoms et organisations exigeantes dans l'administration, l'audit, la sécurisation, l'optimisation, la migration, la digitalisation et le maintien en condition opérationnelle de leurs plateformes informatiques.
+Informations de référence
+Raison sociale	SMART2D Services
+Positionnement	Cabinet de conseil IT Oracle-first et infrastructures critiques
+Siège	Hedzranawoe, Boulevard du Haho, Lomé - Togo
+Email officiel	contact@smart2dservices.com
+Téléphones	+228 72 14 09 23 | +1 732 439 2272
+Langues du site	Français et anglais
+Cibles prioritaires	Banques, institutions financières, télécoms et organisations exigeantes
+
+Mission
+Aider les organisations à sécuriser, optimiser, migrer, digitaliser et moderniser leurs infrastructures critiques afin de garantir la continuité de service, la performance et la maîtrise de leurs systèmes d'information.
+Vision
+Passer d'une gestion réactive des incidents à une exploitation plus proactive, supervisée et intelligente des environnements IT.
+Valeurs
+•	Expertise
+•	Fiabilité
+•	Sécurité
+•	Proximité
+•	Transmission
+•	Innovation utile
+2. Contexte et diagnostic
+Le site actuel de SMART2D constitue une base de présence en ligne, mais il ne reflète plus suffisamment l'ambition, la maturité technique et la valeur commerciale de l'entreprise.
+Constat	Impact	Réponse attendue
+Design vieillissant	Image moins premium et moins rassurante	Nouvelle interface moderne, cohérente avec le logo et proche de l'univers Oracle
+Contenu peu hiérarchisé	Le visiteur comprend difficilement les priorités	Accueil complet et pages internes structurées
+Expertise Oracle insuffisamment mise en avant	Perte d'un différenciateur commercial majeur	Positionnement Oracle-first et focus OCI
+Manque de preuves et de méthode	Crédibilité moins forte	Chiffres, méthodes, cas d'usage anonymisés et critères de confiance
+Mobile et grands écrans à renforcer	Expérience utilisateur inégale	Conception responsive dès la maquette
+
+3. Objectifs du projet
+Objectifs principaux
+•	Moderniser l'image de SMART2D avec une vitrine professionnelle, crédible et attractive.
+•	Mettre en avant les 30 ans d'expérience Oracle et la capacité d'accompagnement sur infrastructures critiques.
+•	Présenter clairement les services Oracle, OCI, bases de données, Linux/Unix, sécurité, supervision, Intelligence Artificielle & Automatisation, support et formation.
+•	Préparer une expérience bilingue français/anglais.
+•	Créer une base technique maintenable pour les évolutions futures.
+Objectifs secondaires
+•	Valoriser OSCAR, OSCAR Academy et Smart Transfert comme solutions SMART2D sans diluer le coeur Oracle/infrastructure.
+•	Prévoir l'ajout futur d'une démo OSCAR, de ressources OSCAR Academy ou de contenus approfondis.
+•	Améliorer la génération de contacts via un parcours clair et des appels à l'action visibles.
+4. Périmètre du projet
+Inclus au lancement	Hors périmètre initial / phase ultérieure
+Refonte du site vitrine en FR	Blog éditorial régulier
+Accueil complet et pages internes détaillées	Espace client connecté
+Formulaire de contact professionnel	Paiement en ligne ou commande de services
+Pages Oracle, Services, Solutions, Support/Formation	Démo OSCAR complète en environnement productif
+SEO de base, performance, responsive	Publication de noms clients sans autorisation
+Déploiement cPanel	Autres badges ou certifications Oracle non confirmés
+Mention et logo ORACLE PARTNER confirmés	Version anglaise (EN) — à produire après validation FR
+	FAQ / page Ressources
+	Dark mode
+
+ 
+5. Publics cibles et parcours utilisateurs
+Public cible	Besoin principal	Réponse du site
+Direction générale	Comprendre la valeur et la crédibilité	Message clair, preuves, 30 ans d'expérience, CTA diagnostic
+DSI / responsable IT	Identifier les expertises et le niveau technique	Pages Oracle, Services, Support/MCO
+Responsable bases de données	Trouver un partenaire DBA/Oracle fiable	Focus Oracle Database, RAC, Data Guard, RMAN, tuning
+Responsable infrastructure	Sécuriser Linux/Unix, cloud, supervision	Sections Linux/Unix, OCI, audit, MCO
+Responsable métier	Comprendre les solutions concrètes	Pages OSCAR et Smart Transfert
+Banques, institutions financières et télécoms	Sécuriser, optimiser, migrer et digitaliser des environnements critiques	Positionnement Oracle Partner, expertise infrastructures critiques, supervision et continuité de service
+Organisations exigeantes	Trouver un partenaire fiable pour réduire les incidents et renforcer la performance	Méthode, support, formation, IA & automatisation, OSCAR Academy et CTA diagnostic
+
+6. Arborescence et structure des pages
+	Principe d'arborescence
+Le site doit rester simple à naviguer tout en donnant assez de profondeur aux pages stratégiques. L'accueil résume l'ensemble de l'offre ; les pages internes approfondissent.
+
+Page	Rôle	Sections clés
+Accueil	Vue d'ensemble complète	Hero (carrousel 7 slides avec baseline « SÉCURISER • OPTIMISER • MIGRER • DIGITALISER »), positionnement, expertises (6 domaines dont Intelligence Artificielle & Automatisation), Oracle, services (6 cards), solutions (OSCAR + Smart Transfert), pourquoi SMART2D (5 raisons), CTA
+À propos	Crédibilité et histoire	Mission, vision, valeurs, expérience, cibles prioritaires, OSCAR, Smart Transfert
+Oracle & Infrastructure	Page commerciale prioritaire	Oracle Database, RAC, Data Guard, RMAN, WebLogic, OCI, Linux/Unix
+Services	Liste détaillée des prestations	DBA, audit, sécurité, migration, supervision, IA & automatisation, support, formation
+Solutions	Présenter OSCAR et Smart Transfert	Défis, solution, bénéfices, fonctionnalités, OSCAR Academy, évolution démo
+Support & Formation	Montrer l'accompagnement long terme	Support, MCO, transfert de compétences, formation, OSCAR Academy, tutoriels et ressources
+Contact	Conversion	Coordonnées, formulaire, type de demande
+
+7. Contenus à produire
+Contenus de l'accueil
+•	Promesse principale : plus de 30 ans d'expertise Oracle pour sécuriser les infrastructures critiques, avec la baseline « SÉCURISER • OPTIMISER • MIGRER • DIGITALISER ».
+•	Synthèse des domaines d'expertise : Oracle, OCI, bases de données, Linux/Unix, audit & sécurité, Intelligence Artificielle & Automatisation, supervision, support et formation.
+•	Section solutions : OSCAR, OSCAR Academy et Smart Transfert en aperçu.
+•	Bloc de confiance : expérience, statut Oracle Partner confirmé, infrastructures critiques, banques/institutions financières/télécoms, accompagnement local et international.
+•	Appels à l'action : demander un diagnostic, contacter SMART2D, découvrir les services.
+ 
+Contenus des pages internes
+Page	Contenu attendu
+Oracle & Infrastructure	Texte technique clair, liste des technologies Oracle, OCI, haute disponibilité, sécurité, performance, MCO.
+Services	Descriptions détaillées des prestations avec bénéfices, cas d'usage et CTA, incluant Intelligence Artificielle & Automatisation comme domaine d'expertise visible.
+Solutions	Présentation longue d'OSCAR, OSCAR Academy et Smart Transfert : problème, solution, valeur, fonctionnalités, tutoriels/ressources, évolution future.
+Support & Formation	Offres d'assistance, transfert de compétences, formation Oracle/DB/Linux, accompagnement continu et OSCAR Academy.
+Contact	Texte de conversion, coordonnées, formulaire et types de demandes.
+
+8. Direction UX/UI et design
+La direction graphique doit s'appuyer sur l'identité SMART2D et sur une proximité assumée avec les codes visuels Oracle : rouge, noir, blanc cassé, gris chaud, sobriété et forte hiérarchie.
+Palette et identité
+Rouge principal	#EE3329 - couleur forte du logo, utilisée pour les accents et boutons
+Anthracite	#221E1F - texte fort, header, sections institutionnelles
+Fonds	Blanc cassé, gris chaud et sections sombres alternées
+Accents secondaires	Bleu nuit pour infrastructure/cloud, vert discret pour sécurité/disponibilité
+Crème	#F8F6F4 — background principal du site
+Gris chaud	#F0ECE8 — sections alternées
+Bleu nuit/Navy	#17233A — hero, sections Oracle et infrastructure
+Vert	#2F6B4F — sécurité, disponibilité, Smart Transfert
+Logo header	Logo complet SMART 2D SERVICES (blanc sur fond sombre avant scroll), puis logo compact SMART 2D (noir sur fond clair après scroll)
+Logo footer	Logo complet SMART 2D SERVICES
+Police principale	Inter (Google Fonts, sans-serif)
+Police secondaire	Geist Mono (monospace)
+
+Exigences visuelles
+•	Éviter un site trop blanc, vide ou figé.
+•	Créer une harmonie entre sections claires, sombres et légèrement teintées.
+•	Prévoir des animations sobres : apparition au scroll, transitions boutons, cartes au survol, compteurs animés. Technologie : Framer Motion (bibliothèque React).
+•	Garantir une excellente lisibilité : contraste fort, police moderne, tailles confortables, paragraphes courts.
+•	Concevoir d'abord pour mobile puis enrichir l'expérience desktop et grand écran.
+•	Respecter `prefers-reduced-motion` pour limiter les animations si l'utilisateur le demande.
+Breakpoints de référence
+Format	Largeur indicative	Exigence
+Mobile	< 768 px	Navigation compacte, textes lisibles sans zoom, boutons faciles à toucher
+Tablette	768 à 1279 px	Grilles adaptées, sections aérées, images bien recadrées
+Desktop	1280 à 1599 px	Composition riche, largeur de lecture contrôlée
+Grand écran	>= 1600 px	Mise en page valorisée, pas de grandes zones vides, contenu maîtrisé
+
+9. Fonctionnalités attendues
+Fonctionnalité	Priorité	Description
+Navigation responsive	Haute	Header desktop et menu mobile clair
+Carrousel hero	Haute	7 slides avec autoplay, contrôles manuels et compteur
+Header adaptatif	Haute	Changement de logo et couleur au scroll
+Menu mobile animé	Haute	Menu hamburger avec animation Framer Motion
+Bilingue FR/EN	Phase 2	Contenu disponible dans les deux langues sur les pages principales
+Formulaire de contact	Haute	Nom, entreprise, email, téléphone, type de demande, message. Backend d'envoi à implémenter (Node.js, PHP cPanel ou service externe).
+Pages solutions	Haute	OSCAR, OSCAR Academy et Smart Transfert avec contenu détaillé
+Animations UI	Moyenne	Sobres, performantes, utiles à la lecture
+Ressources/FAQ	Phase 2	Alternative légère au blog au lancement
+Démo OSCAR	Phase 2	Vidéo, captures, parcours guidé ou démo sécurisée
+Blog	Phase 2	À lancer seulement si une production régulière est assurée
+OSCAR Academy	Phase 2	Tutoriels et ressources pour utiliser OSCAR efficacement
+
+10. Spécifications techniques
+Architecture technique cible
+Stack	Next.js 16 / React 19 (App Router)
+Langage	TypeScript 5.7
+Style	Tailwind CSS v4 (via @tailwindcss/postcss)
+Animations	Framer Motion
+Composants UI	shadcn/ui (basé sur Radix UI)
+Icônes	lucide-react
+Analytics	Vercel Analytics
+Contenus	Intégrés dans les composants React (pas de fichier JSON centralisé)
+Hébergement	cPanel chez prestataire
+Hypothèse actuelle	cPanel supporte Node.js
+Plan de secours	Export statique Next.js si Node.js non disponible
+
+Pré-requis cPanel à vérifier avant mise en production
+•	Présence d'une option de type Setup Node.js App, Application Manager ou équivalent.
+•	Version Node.js disponible, idéalement Node.js 20 ou 22.
+•	Disponibilité de npm.
+•	Possibilité de définir des variables d'environnement.
+•	Configuration HTTPS/SSL et redirection HTTP vers HTTPS.
+•	Choix de gestion du formulaire : Node.js, PHP cPanel ou service externe.
+Hébergement des assets
+•	Les logos SMART2D sont hébergés sur Vercel Blob Storage (URLs externes). À migrer en local dans /public avant déploiement cPanel.
+•	Les images hero (7 fichiers, 1 à 1.5 Mo chacune) sont en /public/images/hero/. L'optimisation d'images Next.js est désactivée (images.unoptimized: true). Compresser manuellement avant mise en production.
+11. SEO, bilingue et performance
+SEO de base
+•	Définir un titre SEO et une meta description par page.
+•	Structurer les titres H1/H2/H3 proprement.
+•	Optimiser les images et renseigner les textes alternatifs.
+•	Prévoir les mots-clés Oracle, OCI, DBA, audit, sécurité, Linux/Unix, supervision, Intelligence Artificielle, automatisation, OSCAR Academy et support.
+•	Phase 2 — Version anglaise à produire après validation des textes FR.
+Page	Title	Description
+Accueil	SMART2D Services | Oracle Partner, OCI et infrastructures critiques	SMART2D Services accompagne les banques, institutions financières, télécoms et organisations exigeantes dans la sécurisation, l'optimisation, la migration, la digitalisation, la supervision et la modernisation de leurs environnements Oracle, OCI, bases de données et infrastructures critiques.
+À propos	À propos de SMART2D Services | Conseil Oracle et infrastructures critiques	Découvrez SMART2D Services, cabinet de conseil IT basé à Lomé, partenaire Oracle, spécialisé dans Oracle, les bases de données, Linux/Unix, OCI, la sécurité, la supervision et les infrastructures critiques pour les banques, institutions financières, télécoms et organisations exigeantes.
+Oracle & Infrastructure	Expertise Oracle, OCI et infrastructures critiques | SMART2D Services	Administration Oracle Database, Cloud OCI, Linux/Unix, haute disponibilité, sauvegarde, sécurité, performance et supervision des environnements critiques.
+Services	Services IT, Oracle, bases de données, sécurité et supervision | SMART2D	SMART2D Services propose l'administration de bases de données, l'audit technique, la sécurité, Linux/Unix, Cloud OCI, supervision, MCO, Intelligence Artificielle & Automatisation, support et formation.
+Solutions	Solutions SMART2D | OSCAR AIOps et Smart Transfert	Découvrez les solutions SMART2D : OSCAR pour l'observabilité, l'automatisation IT et OSCAR Academy, ainsi que Smart Transfert pour la centralisation des opérations d'agences de transfert d'argent.
+Support & Formation	Support Oracle, MCO et formation IT | SMART2D Services	SMART2D accompagne les équipes avec du support Oracle, Linux/Unix, bases de données, MCO, supervision, formation, transfert de compétences et OSCAR Academy.
+Contact	Contact SMART2D Services | Diagnostic Oracle, OCI et infrastructures	Contactez SMART2D Services pour un besoin Oracle, OCI, bases de données, Linux/Unix, audit, supervision, support, formation, OSCAR, OSCAR Academy, Smart Transfert, IA ou automatisation.
+Performance
+•	Images compressées et adaptées aux écrans.
+•	Animations légères.
+•	Chargement rapide sur mobile.
+•	Audit Lighthouse avant mise en ligne.
+•	L'optimisation d'images Next.js est désactivée pour compatibilité cPanel. Les images sont à compresser manuellement avant déploiement.
+12. Planning et organisation
+Phase	Statut	Avancement / commentaire
+Phase 1 — Validation cadrage	✅ Terminé	Positionnement, arborescence, périmètre et décisions validés
+Phase 2 — Contenus FR	✅ Terminé	ct.txt v3 validé
+Phase 3 — Maquette codée	✅ Terminé	Toutes les pages codées
+Phase 4 — Développement	🔄 En cours	Finalisation technique, formulaire, intégration et ajustements
+Phase 5 — Recette	❌ Non commencée	Tests fonctionnels, visuels, SEO, performance et validation direction
+Phase 6 — Mise en production	❌ Non commencée	Déploiement cPanel, SSL, redirections et vérification finale
+Organisation : Le travail est réparti entre Aziz (interface, UX, technique — branche feature/ui-refonte) et Marius (contenu, textes — branche feature/content-update). Voir Plan_Implementation_et_Taches_SMART2D.md.
+
+ 
+13. Recette et critères d'acceptation
+Domaine	Critères d'acceptation
+Contenu	Textes FR relus et conformes au ct.txt v3 enrichi par la plaquette officielle. Version EN en phase ultérieure, positionnement Oracle-first respecté, statut Oracle Partner confirmé, coordonnées correctes
+Design	Palette SMART2D appliquée, rendu attractif, lisibilité validée, pas de site trop blanc ou vide
+Responsive	Mobile, tablette, desktop et grand écran testés
+Navigation	Menu desktop/mobile fonctionnel, liens internes cohérents
+Formulaire	Champs corrects, envoi fonctionnel testé (backend implémenté), protection anti-spam prévue
+SEO	Titres, descriptions, H1/H2, alt images, sitemap si nécessaire
+Performance	Images optimisées, animations fluides, score Lighthouse acceptable
+Technique	Build sans erreur, déploiement cPanel validé ou export statique disponible
+
+ 
+14. Points de vigilance et décisions restantes
+Sujet	Statut	Action
+Statut Oracle Partner	Confirmé	La plaquette officielle indique « ORACLE PARTNER ». Le logo et la mention peuvent être utilisés.
+Références clients	Non publiables	Prévoir des cas d'usage anonymisés
+Captures OSCAR / Smart Transfert	À collecter	Préparer captures propres et cohérentes avec la charte
+Support Node.js cPanel	Hypothèse positive	Vérifier avant déploiement ; conserver plan export statique
+Mentions légales	À rédiger	Préparer les informations légales et politique de confidentialité
+Version anglaise	À produire	Traduction/adaptation après validation des textes FR
+Logos hébergés en externe	À traiter	Migrer de Vercel Blob Storage vers /public avant déploiement cPanel.
+Images hero non optimisées	À traiter	Compresser les 7 images (1-1.5 Mo chacune) avant mise en production.
+Formulaire de contact	À implémenter	L'envoi est simulé. Implémenter le backend avant mise en production.
+Contenus non centralisés	Choix fait	Textes dans les composants React. Anticiper la structure i18n pour la version EN.
+20 ans vs 30 ans	À confirmer	Le CDC et le ct.txt disent 30 ans. Le sprint initial demandait 20 ans. Confirmer avec la direction.
+Baseline officielle	Validée	Utiliser « SÉCURISER • OPTIMISER • MIGRER • DIGITALISER » dans le hero ou le positionnement.
+Cibles prioritaires	Validé	Mettre en avant banques, institutions financières, télécoms et organisations exigeantes dans l’accueil et la page À propos.
+IA & Automatisation	À renforcer	Faire apparaître cette dimension comme domaine d’expertise visible, pas seulement comme solution.
+OSCAR Academy	À intégrer	Ajouter les tutoriels et ressources OSCAR dans les pages Solutions et Support & Formation.
+
+15. Annexes
+Annexe A - Formulaire de contact recommandé
+•	Nom et prénom
+•	Entreprise
+•	Email
+•	Téléphone
+•	Type de demande : Oracle/DBA, Cloud OCI, Audit & sécurité, Linux/Unix, Supervision/MCO, Intelligence Artificielle & Automatisation, Support/formation, OSCAR, OSCAR Academy, Smart Transfert, Autre
+•	Message
+Annexe B - Services à présenter
+•	Oracle Database, RAC, Data Guard, ASM, RMAN, Grid Infrastructure
+•	WebLogic Server et Oracle Forms
+•	Cloud OCI : architecture, migration, sauvegarde, PRA/PCA, optimisation des coûts
+•	Bases de données : Oracle, MySQL, PostgreSQL, SQL Server
+•	Linux/Unix : Oracle Linux, Red Hat, AIX, Solaris
+•	Audit technique, sécurité et performance
+•	Supervision, MCO et automatisation
+•	Support et formation
+•	Intelligence artificielle & automatisation : supervision intelligente, détection proactive, diagnostics et tâches répétitives
+•	OSCAR Academy : tutoriels et ressources pour utiliser OSCAR efficacement
+Annexe C - Solutions SMART2D
+Solution	Positionnement	Bénéfices à mettre en avant
+OSCAR	Observabilité, supervision et automatisation IT augmentées par l'IA	Supervision centralisée, détection proactive, alertes, automatisation, assistance intelligente, réduction de complexité
+Smart Transfert	Plateforme de centralisation pour agences de transfert d'argent	Interface unique, rapports fiables, traçabilité, réduction des erreurs, maîtrise des données
+OSCAR Academy	Tutoriels et ressources pour utiliser OSCAR efficacement	Transfert de compétences, documentation, formation continue et autonomie des équipes
+Annexe D — Stack technique détaillée
+Dépendance	Version	Usage
+Next.js	16.2.6	Framework principal (App Router)
+React	19	Bibliothèque UI
+TypeScript	5.7.3	Langage
+Tailwind CSS	4.2	Styles
+Framer Motion	12.39+	Animations
+Radix UI	Multiple	Composants primitifs (shadcn/ui)
+Lucide React	0.564+	Icônes
+Vercel Analytics	1.6.1	Analytics (production)
+next-themes	0.4.6	Gestion thèmes (installé, non activé)
+Annexe E — Fichiers de référence du projet
+Fichier	Rôle
+cdc.txt	Cahier des charges (ce document)
+ct.txt	Contenus FR optimisés v3 — textes et SEO par page
+Plan_Implementation_et_Taches_SMART2D.md	Organisation du travail et checklist par page
+memoire.md	Contexte technique complet et journal de bord
+

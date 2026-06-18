@@ -1,0 +1,247 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { 
+  ArrowRight, 
+  Target, 
+  Eye, 
+  Lightbulb, 
+  Shield, 
+  Users, 
+  Zap,
+  Award
+} from "lucide-react"
+
+const values = [
+  {
+    icon: Award,
+    title: "Expertise",
+    description: "Une maîtrise technique des environnements Oracle, bases de données, Linux/Unix, cloud et supervision.",
+    color: "bg-[#EE3329]",
+  },
+  {
+    icon: Shield,
+    title: "Fiabilité",
+    description: "Des interventions orientées continuité de service, stabilité et maîtrise des risques.",
+    color: "bg-[#17233A]",
+  },
+  {
+    icon: Shield,
+    title: "Sécurité",
+    description: "Une attention constante aux accès, configurations, sauvegardes, durcissement et bonnes pratiques.",
+    color: "bg-[#2F6B4F]",
+  },
+  {
+    icon: Users,
+    title: "Transmission",
+    description: "Un accompagnement qui renforce l'autonomie des équipes internes.",
+    color: "bg-[#17233A]",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation utile",
+    description: "Des solutions modernes, mais toujours reliées à un besoin opérationnel réel.",
+    color: "bg-[#EE3329]",
+  },
+]
+
+export function AboutContent() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
+          >
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              À propos
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
+              Un partenaire IT pour les infrastructures critiques
+            </h1>
+            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
+              SMART2D Services est un cabinet de conseil technologique basé à Lomé, 
+              spécialisé dans l&apos;administration, l&apos;audit, la sécurisation, l&apos;optimisation 
+              et le maintien en condition opérationnelle des plateformes informatiques critiques.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section className="py-20 bg-[#221E1F]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-[#EE3329] text-7xl md:text-9xl font-bold">30+</div>
+              <p className="text-white text-2xl font-semibold mt-2">années d&apos;expérience Oracle</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <p className="text-white/70 text-lg leading-relaxed">
+                Fort de plus de 30 ans d&apos;expérience autour des environnements Oracle, 
+                SMART2D accompagne les organisations qui souhaitent renforcer la stabilité, 
+                la performance et la sécurité de leurs systèmes d&apos;information.
+              </p>
+              <p className="text-white/70 text-lg leading-relaxed mt-4">
+                Notre valeur repose sur une combinaison de conseil, d&apos;expertise terrain 
+                et de transfert de compétences. Nous ne nous limitons pas à intervenir 
+                après les incidents : nous aidons les équipes à mieux comprendre leurs 
+                environnements, à réduire les risques et à améliorer durablement leur exploitation.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-[#F8F6F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-[#E5E0DC]"
+            >
+              <div className="w-14 h-14 rounded-xl bg-[#EE3329] flex items-center justify-center mb-6">
+                <Target className="w-7 h-7 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#221E1F] mb-4">Notre Mission</h2>
+              <p className="text-[#221E1F]/70 leading-relaxed">
+                Aider les organisations à sécuriser, optimiser et moderniser leurs 
+                infrastructures critiques afin de garantir la continuité de service, 
+                la performance et la maîtrise des opérations.
+              </p>
+            </motion.div>
+
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-[#E5E0DC]"
+            >
+              <div className="w-14 h-14 rounded-xl bg-[#17233A] flex items-center justify-center mb-6">
+                <Eye className="w-7 h-7 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#221E1F] mb-4">Notre Vision</h2>
+              <p className="text-[#221E1F]/70 leading-relaxed">
+                Accompagner les entreprises vers une exploitation plus proactive, plus 
+                supervisée et plus intelligente de leurs environnements IT, en combinant 
+                expertise Oracle, bonnes pratiques d&apos;infrastructure, cloud, automatisation et support.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-[#F0ECE8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos valeurs
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
+              Ce qui guide notre action
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`bg-white rounded-xl p-6 shadow-sm border border-[#E5E0DC] ${index === values.length - 1 && values.length % 3 !== 0 ? 'lg:col-span-1 lg:col-start-2' : ''}`}
+              >
+                <div className={`w-12 h-12 rounded-lg ${value.color} flex items-center justify-center mb-4`}>
+                  <value.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-[#221E1F] mb-2">{value.title}</h3>
+                <p className="text-[#221E1F]/60 text-sm leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 bg-[#17233A]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="w-16 h-16 rounded-2xl bg-[#EE3329] flex items-center justify-center mx-auto mb-6">
+              <Users className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Une équipe orientée terrain
+            </h2>
+            <p className="text-white/70 text-lg leading-relaxed">
+              Capable d&apos;intervenir sur des environnements sensibles et d&apos;accompagner 
+              les équipes techniques dans la durée. Notre force réside dans notre 
+              capacité à comprendre les enjeux métiers et à proposer des solutions 
+              adaptées à chaque contexte.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#F8F6F4]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold text-[#221E1F] mb-4">
+              Vous souhaitez mieux comprendre notre approche ?
+            </h2>
+            <p className="text-[#221E1F]/70 text-lg mb-8">
+              Contactez SMART2D pour échanger sur vos enjeux Oracle, infrastructure ou supervision.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
+            >
+              Nous contacter
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  )
+}

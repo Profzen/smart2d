@@ -1,0 +1,402 @@
+Contenus FR optimisés
+Refonte du site web vitrine SMART2D Services
+
+	Objectif du document
+Proposer une version française enrichie, plus commerciale et plus complète des contenus du site, prête à relire puis à intégrer dans la maquette Next.js/React.
+
+Information	Détail
+Version	4 optimisée (alignée avec CDC v1.2)
+Date	Juin 2026
+Langue	Français uniquement - version anglaise à produire après validation
+Positionnement	Oracle Partner, infrastructures critiques, 30 ans d'expérience, solutions SMART2D
+Statut	Document de travail validé
+
+ 
+1. Orientation éditoriale retenue
+	Positionnement à conserver
+SMART2D Services doit être présenté comme un cabinet de conseil IT spécialisé Oracle et infrastructures critiques, fort de plus de 30 ans d'expérience, capable d'accompagner les entreprises (notamment banques, télécoms, institutions financières) sur l'administration, la sécurisation, la supervision, la modernisation et le support de leurs plateformes.
+
+Principes de rédaction
+• Mettre Oracle et OCI au centre du message commercial.
+• Présenter les autres services comme un écosystème de compétences autour des infrastructures critiques.
+• Rendre le contenu plus détaillé que la version précédente, sans tomber dans des paragraphes trop lourds.
+• Utiliser une logique claire : problème client, réponse SMART2D, bénéfice concret, appel à l'action.
+• Présenter OSCAR, OSCAR Academy et Smart Transfert comme des solutions visibles, mais secondaires par rapport au coeur Oracle/infrastructure.
+• Mettre en avant le statut "ORACLE PARTNER" officiel.
+• Cibles prioritaires : Banques, institutions financières, télécoms et organisations exigeantes.
+• Baseline officielle : SÉCURISER • OPTIMISER • MIGRER • DIGITALISER.
+
+Navigation recommandée
+Ordre	Page	Rôle
+1	Accueil	Vue d'ensemble complète de l'offre
+2	À propos	Crédibilité, mission, vision, expérience, cibles
+3	Oracle & Infrastructure	Page commerciale prioritaire
+4	Services	Détail des prestations techniques et IA
+5	Solutions	OSCAR, OSCAR Academy et Smart Transfert
+6	Support & Formation	Accompagnement dans la durée
+7	Contact	Conversion et demande de diagnostic
+
+ 
+2. Page Accueil
+Objectif : donner une vue globale et convaincante de SMART2D sans obliger le visiteur à changer de page pour comprendre l'offre.
+Élément	Contenu
+URL suggérée	/
+Title SEO	SMART2D Services | Oracle Partner, OCI et infrastructures critiques
+Meta description	SMART2D Services accompagne les banques, institutions financières, télécoms et organisations exigeantes dans la sécurisation, l'optimisation, la migration, la digitalisation, la supervision et la modernisation de leurs environnements Oracle, OCI, bases de données et infrastructures critiques.
+
+H1 principal
+	Texte prêt à intégrer
+Plus de 30 ans d'expertise Oracle pour sécuriser, maintenir et moderniser vos infrastructures critiques.
+SÉCURISER • OPTIMISER • MIGRER • DIGITALISER
+
+Sous-titre hero
+	Texte prêt à intégrer
+SMART2D Services accompagne notamment les banques, institutions financières, télécoms et organisations exigeantes dans l'administration, l'audit, la supervision, la sécurisation, la migration et l'optimisation de leurs environnements Oracle, bases de données, Linux/Unix, Cloud OCI et plateformes IT sensibles.
+
+Badges de confiance
+• 30+ ans d'expérience Oracle
+• Statut ORACLE PARTNER confirmé
+• Infrastructures critiques (Banques, Télécoms, Institutions financières)
+• Support, formation et transfert de compétences
+
+Boutons
+• Demander un diagnostic
+• Découvrir nos services
+• Voir Oracle & Infrastructure
+
+Section - Un partenaire IT pour environnements sensibles
+Les infrastructures critiques ne se gèrent pas seulement avec des outils. Elles exigent une méthode, une expertise éprouvée et une capacité à anticiper les incidents avant qu'ils ne deviennent des interruptions majeures.
+SMART2D intervient comme partenaire technique auprès des organisations exigeantes qui doivent maintenir leurs systèmes disponibles, performants et sécurisés. Notre approche couvre l'audit, le conseil, la mise en oeuvre, la supervision, le support et le transfert de compétences.
+
+Section - Nos domaines d'expertise
+Domaine	Texte court pour carte
+Oracle Database & Middleware	Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.
+Cloud OCI & architectures hybrides	Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.
+Bases de données critiques	Installation, tuning, monitoring, sauvegarde et restauration sur Oracle, MySQL, PostgreSQL, SQL Server et environnements associés.
+Linux / Unix	Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris et Unix/Linux.
+Audit, sécurité & performance	Analyse des risques, vérification des configurations, recommandations opérationnelles et plans de remédiation priorisés.
+Supervision & MCO	Suivi continu, alertes, rapports, prévention des incidents et maintien en condition opérationnelle des plateformes critiques.
+Intelligence Artificielle & Automatisation	Supervision intelligente, détection proactive, diagnostics assistés par l'IA et automatisation des tâches répétitives.
+
+Section - Oracle au coeur de notre expertise
+L'expertise Oracle constitue le socle principal de SMART2D. Nous accompagnons les équipes IT sur l'administration quotidienne, les opérations sensibles, la continuité de service, les migrations, les montées de version et les projets de modernisation.
+Notre objectif est simple : rendre les environnements Oracle plus fiables, plus lisibles, plus sécurisés et mieux maîtrisés par les équipes qui les exploitent.
+• Oracle Database, RAC, Data Guard, ASM, RMAN, Grid Infrastructure
+• WebLogic Server et Oracle Forms
+• Oracle Linux et socles systèmes associés
+• Cloud OCI, architectures hybrides, sauvegarde, PRA/PCA
+
+Section - Solutions SMART2D
+En complément de ses services de conseil et d'infrastructure, SMART2D dispose de solutions permettant de répondre à des besoins opérationnels concrets.
+Solution	Résumé accueil
+OSCAR	Plateforme d'observabilité, supervision et automatisation IT augmentée par l'IA, conçue pour améliorer la détection d'anomalies, les alertes et la continuité de service.
+OSCAR Academy	Tutoriels et ressources complètes pour maîtriser OSCAR et renforcer l'autonomie de vos équipes techniques.
+Smart Transfert	Plateforme de centralisation des opérations pour agences de transfert d'argent, pensée pour simplifier les parcours, fiabiliser les rapports et renforcer la traçabilité.
+
+Section - Pourquoi choisir SMART2D
+• Une expertise Oracle construite sur plus de 30 ans d'expérience.
+• Une capacité à intervenir sur les bases de données, les systèmes, le cloud et la supervision.
+• Une approche orientée continuité de service, sécurité, performance et transfert de compétences.
+• Un accompagnement local avec une expérience internationale.
+• Une vision moderne : OCI, Intelligence Artificielle, supervision intelligente et solutions métiers.
+
+CTA final accueil
+	Texte prêt à intégrer
+Vous exploitez un environnement Oracle, une base de données critique ou une infrastructure sensible ? Parlons de vos priorités techniques et identifions les actions à mener pour fiabiliser votre plateforme.
+
+ 
+3. Page À propos
+Objectif : installer la crédibilité, l'histoire technique et la valeur humaine de SMART2D.
+Élément	Contenu
+URL suggérée	/a-propos
+Title SEO	À propos de SMART2D Services | Conseil Oracle et infrastructures critiques
+Meta description	Découvrez SMART2D Services, cabinet de conseil IT basé à Lomé, partenaire Oracle, spécialisé dans Oracle, les bases de données, Linux/Unix, OCI, la sécurité, la supervision et les infrastructures critiques pour les banques, institutions financières, télécoms et organisations exigeantes.
+
+H1
+	Texte prêt à intégrer
+Un partenaire IT pour les infrastructures critiques.
+
+Introduction
+	Texte prêt à intégrer
+SMART2D Services est un cabinet de conseil technologique basé à Lomé, partenaire Oracle certifié, spécialisé dans l'administration, l'audit, la sécurisation, l'optimisation, la migration, la digitalisation et le maintien en condition opérationnelle des plateformes informatiques critiques.
+
+Fort de plus de 30 ans d'expérience autour des environnements Oracle, SMART2D accompagne les banques, institutions financières, télécoms et organisations exigeantes qui souhaitent renforcer la stabilité, la performance et la sécurité de leurs systèmes d'information.
+Notre valeur repose sur une combinaison de conseil, d'expertise terrain et de transfert de compétences. Nous ne nous limitons pas à intervenir après les incidents : nous aidons les équipes à mieux comprendre leurs environnements, à réduire les risques et à améliorer durablement leur exploitation.
+
+Mission
+Aider les organisations à sécuriser, optimiser, migrer, digitaliser et moderniser leurs infrastructures critiques afin de garantir la continuité de service, la performance et la maîtrise des opérations.
+
+Vision
+Accompagner les entreprises vers une exploitation plus proactive, plus supervisée et plus intelligente de leurs environnements IT, en combinant expertise Oracle, bonnes pratiques d'infrastructure, cloud, Intelligence Artificielle, automatisation et support.
+
+Ce qui guide notre approche
+Pilier	Explication
+Expertise	Une maîtrise technique des environnements Oracle, bases de données, Linux/Unix, cloud et supervision.
+Fiabilité	Des interventions orientées continuité de service, stabilité et maîtrise des risques.
+Sécurité	Une attention constante aux accès, configurations, sauvegardes, durcissement et bonnes pratiques.
+Transmission	Un accompagnement qui renforce l'autonomie des équipes internes via la formation et OSCAR Academy.
+Innovation utile	Des solutions modernes (IA, automatisation), mais toujours reliées à un besoin opérationnel réel.
+
+Texte image / encart humain
+Une équipe orientée terrain, capable d'intervenir sur des environnements sensibles et d'accompagner les équipes techniques dans la durée.
+
+CTA
+Vous souhaitez mieux comprendre notre approche ? Contactez SMART2D pour échanger sur vos enjeux Oracle, infrastructure ou supervision.
+ 
+4. Page Oracle & Infrastructure
+Objectif : page commerciale prioritaire du site. Elle doit être plus détaillée que la version reçue.
+Élément	Contenu
+URL suggérée	/oracle-infrastructure
+Title SEO	Expertise Oracle, OCI et infrastructures critiques | SMART2D Services
+Meta description	Administration Oracle Database, Cloud OCI, Linux/Unix, haute disponibilité, sauvegarde, sécurité, performance et supervision des environnements critiques.
+
+H1
+	Texte prêt à intégrer
+Oracle, bases de données et infrastructures critiques.
+
+Introduction
+	Texte prêt à intégrer
+Les environnements Oracle supportent souvent les applications les plus sensibles d'une organisation : données métiers, transactions, reporting, services numériques, applications internes et plateformes de production. Leur disponibilité, leur performance et leur sécurité ont un impact direct sur l'activité.
+
+SMART2D accompagne les entreprises dans la conception, l'administration, l'audit, la migration, la supervision et l'optimisation de leurs plateformes Oracle et des socles techniques qui les entourent.
+
+Administration Oracle Database
+SMART2D intervient sur les opérations d'administration courante et avancée : installation, configuration, gestion des instances, supervision, sauvegarde, restauration, patching, tuning, analyse des incidents et documentation des environnements.
+
+Haute disponibilité et continuité
+Les environnements critiques doivent être pensés pour résister aux incidents. SMART2D accompagne la mise en place et l'exploitation de mécanismes de disponibilité, de réplication, de sauvegarde et de reprise d'activité.
+• Oracle RAC
+• Data Guard
+• RMAN
+• ASM
+• Grid Infrastructure
+• Sauvegarde, restauration, PRA/PCA
+
+Performance et optimisation
+Une base de données mal optimisée peut ralentir toute une chaîne métier. SMART2D analyse les requêtes, les ressources, les paramètres, les index, les événements d'attente et les pratiques d'exploitation afin de proposer des actions concrètes.
+
+Sécurité Oracle et système
+La sécurité ne dépend pas uniquement d'un outil. Elle repose aussi sur la configuration, la gestion des accès, les permissions, les sauvegardes, les journaux, le durcissement système et le suivi régulier des bonnes pratiques.
+
+Cloud OCI et modernisation
+SMART2D accompagne les trajectoires vers Oracle Cloud Infrastructure : architecture, migration, intégration hybride, sécurité cloud, sauvegarde, supervision, optimisation des coûts et continuité de service.
+
+Linux / Unix autour d'Oracle
+Les bases Oracle reposent sur des socles systèmes qu'il faut maîtriser. SMART2D intervient sur Oracle Linux, Red Hat, AIX, Solaris et environnements Unix/Linux pour l'administration, le durcissement, les logs, les accès, le patching et la supervision.
+
+Technologies à afficher
+• Oracle Database
+• Oracle RAC, Data Guard, RMAN, ASM, Grid Infrastructure
+• WebLogic Server, Oracle Forms
+• Oracle Linux, Red Hat, AIX, Solaris
+• Oracle Cloud Infrastructure (OCI)
+• MySQL, PostgreSQL, SQL Server selon les contextes
+
+	Note
+Le statut ORACLE PARTNER est confirmé et le logo peut être affiché fièrement.
+
+CTA
+	Texte prêt à intégrer
+Vous exploitez un environnement Oracle critique ? Demandez un audit ou un échange technique pour identifier les risques, les priorités et les actions de stabilisation.
+
+ 
+5. Page Services
+Objectif : présenter clairement les prestations vendues, avec plus de détail que la version reçue.
+Élément	Contenu
+URL suggérée	/services
+Title SEO	Services IT, Oracle, bases de données, sécurité et supervision | SMART2D
+Meta description	SMART2D Services propose l'administration de bases de données, l'audit technique, la sécurité, Linux/Unix, Cloud OCI, supervision, MCO, Intelligence Artificielle & Automatisation, support et formation.
+
+H1
+	Texte prêt à intégrer
+Des services IT pour sécuriser, maintenir et moderniser vos plateformes.
+
+SMART2D intervient sur les environnements techniques sensibles avec une approche complète : comprendre l'existant, identifier les risques, stabiliser les plateformes, améliorer les performances et accompagner les équipes dans la durée.
+
+Service	Contenu enrichi
+Administration de bases de données	Installation, configuration, supervision, tuning, sauvegarde, restauration, migration, patching et support des bases Oracle, MySQL, PostgreSQL et SQL Server. Objectif : garantir la disponibilité, la performance et la maîtrise des données critiques.
+Audit technique, sécurité et performance	Analyse des configurations, des pratiques d'exploitation, des sauvegardes, des accès, des performances et des risques. Les recommandations sont priorisées pour faciliter la décision et la mise en oeuvre.
+Linux / Unix et infrastructures	Administration, durcissement, patching, logs, supervision, gestion des accès, automatisation et support des socles Oracle Linux, Red Hat, AIX, Solaris et Unix/Linux.
+Cloud OCI et architectures hybrides	Conseil, architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision, sécurité cloud et optimisation des coûts dans les environnements Oracle Cloud Infrastructure.
+Supervision, MCO et automatisation	Mise en place d'alertes, tableaux de bord, rapports, suivi de performance, prévention des incidents, automatisation des tâches récurrentes et maintien en condition opérationnelle.
+Intelligence Artificielle & Automatisation	Intégration de l'IA pour une supervision intelligente, la détection proactive d'anomalies, l'assistance au diagnostic et l'automatisation des tâches IT chronophages.
+Développement et intégration	Développement d'applications web ou métiers, intégration API, maintenance logicielle et digitalisation de processus, en soutien des besoins opérationnels et techniques.
+Support et formation	Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix, bonnes pratiques d'exploitation et transfert de compétences.
+
+Approche d'intervention
+• Diagnostic de l'existant et compréhension du contexte métier.
+• Identification des risques techniques et opérationnels.
+• Plan d'action priorisé : urgence, stabilisation, optimisation, modernisation.
+• Mise en oeuvre, documentation et transfert de compétences.
+• Suivi post-intervention et recommandations d'amélioration continue.
+
+CTA
+	Texte prêt à intégrer
+Vous avez besoin d'un audit, d'une mission DBA, d'un support Linux/Unix, d'une migration OCI ou d'une supervision plus fiable ? Contactez SMART2D pour cadrer le besoin.
+
+ 
+6. Page Solutions
+Objectif : donner plus de profondeur à OSCAR et Smart Transfert tout en les gardant en soutien du positionnement principal.
+Élément	Contenu
+URL suggérée	/solutions
+Title SEO	Solutions SMART2D | OSCAR AIOps et Smart Transfert
+Meta description	Découvrez les solutions SMART2D : OSCAR pour l'observabilité, l'automatisation IT et OSCAR Academy, ainsi que Smart Transfert pour la centralisation des opérations d'agences de transfert d'argent.
+
+H1
+	Texte prêt à intégrer
+Des solutions conçues pour simplifier les opérations et renforcer la maîtrise.
+
+En complément de ses services de conseil, SMART2D conçoit et intègre des solutions qui répondent à des problèmes opérationnels concrets : supervision intelligente, automatisation, centralisation des opérations, rapports fiables et réduction des erreurs.
+
+OSCAR - Observabilité, supervision et automatisation IT augmentées par l'IA
+Positionnement OSCAR
+	Texte prêt à intégrer
+OSCAR est une plateforme d'observabilité, de supervision et d'automatisation IT augmentée par l'IA. Elle aide les équipes à surveiller leurs serveurs, applications, bases de données et équipements, à détecter plus tôt les anomalies, à bénéficier d'une assistance intelligente au diagnostic et à automatiser certaines actions opérationnelles.
+
+Problèmes traités
+• Trop de journaux, métriques et alertes dispersés dans plusieurs outils.
+• Difficulté à identifier rapidement la cause d'un incident.
+• Supervision souvent réactive plutôt que proactive.
+• Tâches répétitives réalisées manuellement par les équipes.
+• Coûts élevés de certains outils commerciaux de monitoring ou d'automatisation.
+
+Bénéfices à mettre en avant
+• Supervision centralisée des environnements critiques.
+• Détection proactive d'anomalies et meilleure priorisation des alertes via l'IA.
+• Automatisation de tâches récurrentes ou de scripts d'exploitation.
+• Rapports opérationnels plus lisibles pour les équipes techniques et managers.
+• Architecture conteneurisée et intégration possible avec des outils open source comme Prometheus et Grafana.
+
+Fonctionnalités à présenter
+Fonctionnalité	Description
+Inventaire	Ajout et suivi des serveurs, composants, environnements et informations réseau.
+Agents de supervision	Collecte des métriques systèmes, applicatives, bases de données et équipements.
+Alertes	Configuration de règles, groupes de destinataires et fenêtres de temps.
+Automatisation	Création de tâches pour lancer des scripts ou actions planifiées.
+Rapports	Synthèse des événements, indicateurs, incidents et tendances.
+IA / AIOps	Aide à l'analyse, au diagnostic et à la compréhension des signaux opérationnels.
+
+OSCAR Academy
+	Texte prêt à intégrer
+Pour accompagner le déploiement d'OSCAR, nous avons mis en place OSCAR Academy : un espace dédié de tutoriels, documentations et ressources pour former vos équipes techniques. L'objectif est de garantir un transfert de compétences rapide et d'assurer l'autonomie de vos collaborateurs dans l'utilisation de la plateforme.
+
+Smart Transfert - Centralisation des opérations de transfert
+Positionnement Smart Transfert
+	Texte prêt à intégrer
+Smart Transfert est une plateforme de centralisation conçue pour les agences ou points de service qui gèrent plusieurs prestataires de transfert d'argent. Elle permet aux agents de travailler dans une interface unique, de réduire les erreurs, de fiabiliser les rapports et de renforcer la traçabilité des opérations.
+
+Problèmes traités
+• Multiplication des applications et parcours selon les prestataires.
+• Perte de temps lors du passage d'un outil à l'autre.
+• Risque d'erreurs de saisie ou d'oublis dans les opérations.
+• Rapports de fin de journée manuels, longs ou difficiles à rapprocher.
+• Besoin de meilleure traçabilité et de conservation maîtrisée des données.
+
+Bénéfices à mettre en avant
+• Une interface unique pour simplifier le travail des agents.
+• Parcours d'envoi et de retrait plus lisibles.
+• Rapports comptables plus fiables et plus rapides à produire.
+• Historique des transactions consultable pour le suivi et l'audit.
+• Gestion des utilisateurs, prestataires et corridors.
+• Réduction des erreurs et meilleure maîtrise opérationnelle.
+
+Fonctionnalités à présenter
+Fonctionnalité	Description
+Tableau de bord	Vue synthétique des opérations et indicateurs utiles.
+Parcours d'envoi	Expéditeur, bénéficiaire, tarification, récapitulatif, dépôt, reçu.
+Parcours de retrait	Recherche par code ou référence, vérification d'identité, paiement et reçu.
+Rapports	Rapports de fin de journée, comptabilité et exports utiles.
+Historique	Recherche et justification des transactions.
+Administration	Gestion des utilisateurs, prestataires, corridors et paramètres.
+
+CTA Solutions
+	Texte prêt à intégrer
+Vous souhaitez découvrir OSCAR ou Smart Transfert ? Contactez SMART2D pour organiser une présentation adaptée à votre contexte.
+
+ 
+7. Page Support & Formation
+Élément	Contenu
+URL suggérée	/support-formation
+Title SEO	Support Oracle, MCO et formation IT | SMART2D Services
+Meta description	SMART2D accompagne les équipes avec du support Oracle, Linux/Unix, bases de données, MCO, supervision, formation, transfert de compétences et OSCAR Academy.
+
+H1
+	Texte prêt à intégrer
+Un accompagnement continu pour vos équipes.
+
+La performance d'une infrastructure ne dépend pas uniquement des outils installés. Elle dépend aussi de la qualité du support, de la méthode d'exploitation et de l'autonomie des équipes internes.
+SMART2D accompagne les équipes techniques et métiers avec du support, de la supervision, du maintien en condition opérationnelle, de la formation et du transfert de compétences.
+
+Prestations
+• Support Oracle Database et bases de données.
+• Assistance Linux/Unix et infrastructures.
+• Maintien en condition opérationnelle (MCO).
+• Supervision, suivi des alertes et rapports.
+• Formation Oracle, bases de données, Linux/Unix et bonnes pratiques d'exploitation.
+• Transfert de compétences et documentation opérationnelle.
+• OSCAR Academy : tutoriels et ressources pour utiliser efficacement notre plateforme OSCAR.
+
+CTA Support
+	Texte prêt à intégrer
+Vous souhaitez renforcer vos équipes ou sécuriser l'exploitation d'une plateforme critique ? SMART2D peut vous accompagner en support ponctuel ou continu.
+
+ 
+8. Page Contact
+Élément	Contenu
+URL suggérée	/contact
+Title SEO	Contact SMART2D Services | Diagnostic Oracle, OCI et infrastructures
+Meta description	Contactez SMART2D Services pour un besoin Oracle, OCI, bases de données, Linux/Unix, audit, supervision, support, formation, OSCAR, OSCAR Academy, Smart Transfert, IA ou automatisation.
+
+H1
+	Texte prêt à intégrer
+Parlons de vos infrastructures critiques.
+
+Vous souhaitez sécuriser une base de données, moderniser une infrastructure, préparer une migration OCI, mettre en place une supervision ou organiser un support technique durable ? Contactez SMART2D Services pour une première analyse.
+
+Coordonnées à afficher
+• Email principal : contact@smart2dservices.com
+• Téléphone Togo : +228 72 14 09 23
+• Téléphone USA : +1 732 439 2272
+• Adresse : Hedzranawoe, Boulevard du Haho, Lomé - Togo
+
+Formulaire recommandé
+Champ	Rôle
+Nom et prénom	Identifier le contact
+Entreprise	Comprendre le contexte professionnel
+Email	Réponse écrite
+Téléphone	Rappel si nécessaire
+Type de demande	Oracle/DBA, Cloud OCI, Audit & sécurité, Linux/Unix, Supervision/MCO, Intelligence Artificielle & Automatisation, Support/formation, OSCAR, OSCAR Academy, Smart Transfert, Autre
+Message	Description libre du besoin
+
+Micro-texte sous formulaire : Un premier échange permet de cadrer le contexte, les contraintes et les priorités avant toute proposition technique.
+ 
+9. Footer, boutons et micro-contenus
+Footer
+Texte court footer
+	Texte prêt à intégrer
+SMART2D Services accompagne les banques, institutions financières, télécoms et organisations exigeantes dans la sécurisation, l'optimisation, la migration et la modernisation de leurs environnements Oracle, bases de données, Cloud OCI, Linux/Unix et infrastructures critiques.
+
+Boutons principaux
+• Demander un diagnostic
+• Découvrir nos services
+• Voir Oracle & Infrastructure
+• Voir nos solutions
+• Contacter SMART2D
+• Envoyer le message
+
+FAQ courte possible
+Question	Réponse
+SMART2D intervient-il uniquement sur Oracle ?	Oracle est le coeur de notre expertise, mais nous accompagnons aussi les bases de données, Linux/Unix, Cloud OCI, supervision (IA), sécurité, support et formation.
+Peut-on demander un audit ponctuel ?	Oui. Un audit permet d'identifier les risques, priorités de performance, points de sécurité et actions de stabilisation.
+OSCAR est-il une solution de supervision ?	OSCAR va au-delà d'une supervision classique : il centralise l'observabilité, les alertes, l'automatisation et l'aide au diagnostic grâce à l'IA.
+Smart Transfert est-il lié aux services Oracle ?	Non directement. C'est une solution métier SMART2D qui illustre la capacité de l'entreprise à concevoir des plateformes opérationnelles concrètes.
+Le site doit-il afficher des clients existants ?	Non pour le moment. Il est préférable d'utiliser des cas d'usage anonymisés si les références ne sont pas publiables.
+
+10. Points à valider avant intégration
+Point	Décision recommandée
+Statut Oracle Partner	Confirmé, afficher fièrement logo et mention.
+Captures OSCAR	Préparer des captures propres ou une galerie démo plus tard.
+Captures Smart Transfert	Préparer des captures propres si la solution est présentée en détail.
+Version anglaise	À produire après validation de cette version française.
+Dark mode	Ne pas le prioriser au lancement. Préférer une identité rouge/noir maîtrisée.
+Blog	Ne pas lancer au départ. Prévoir éventuellement une page Ressources/FAQ.

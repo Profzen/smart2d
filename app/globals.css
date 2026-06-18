@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* SMART2D Color System */
+  --smart2d-red: #EE3329;
+  --smart2d-anthracite: #221E1F;
+  --smart2d-cream: #F8F6F4;
+  --smart2d-warm-gray: #F0ECE8;
+  --smart2d-navy: #17233A;
+  --smart2d-green: #2F6B4F;
+  
+  /* Semantic tokens */
+  --background: #F8F6F4;
+  --foreground: #221E1F;
+  --card: #FFFFFF;
+  --card-foreground: #221E1F;
+  --popover: #FFFFFF;
+  --popover-foreground: #221E1F;
+  --primary: #EE3329;
+  --primary-foreground: #FFFFFF;
+  --secondary: #17233A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F0ECE8;
+  --muted-foreground: #5A5658;
+  --accent: #2F6B4F;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EE3329;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E0DC;
+  --input: #E5E0DC;
+  --ring: #EE3329;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom colors for Tailwind */
+  --color-smart2d-red: #EE3329;
+  --color-smart2d-anthracite: #221E1F;
+  --color-smart2d-cream: #F8F6F4;
+  --color-smart2d-warm-gray: #F0ECE8;
+  --color-smart2d-navy: #17233A;
+  --color-smart2d-green: #2F6B4F;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--smart2d-warm-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--smart2d-anthracite);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--smart2d-red);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

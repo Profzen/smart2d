@@ -1,0 +1,206 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { 
+  ArrowRight, 
+  Database, 
+  Search,
+  Shield,
+  Cloud,
+  Activity,
+  Code,
+  GraduationCap,
+  Terminal,
+  CheckCircle
+} from "lucide-react"
+
+const services = [
+  {
+    id: "dba",
+    icon: Database,
+    title: "Administration de bases de données",
+    description: "Installation, configuration, supervision, tuning, sauvegarde, restauration, migration, patching et support des bases Oracle, MySQL, PostgreSQL et SQL Server. Objectif : garantir la disponibilité, la performance et la maîtrise des données critiques.",
+    color: "bg-[#EE3329]",
+  },
+  {
+    id: "audit",
+    icon: Search,
+    title: "Audit technique, sécurité et performance",
+    description: "Analyse des configurations, des pratiques d'exploitation, des sauvegardes, des accès, des performances et des risques. Les recommandations sont priorisées pour faciliter la décision et la mise en œuvre.",
+    color: "bg-[#17233A]",
+  },
+  {
+    id: "linux",
+    icon: Terminal,
+    title: "Linux / Unix et infrastructures",
+    description: "Administration, durcissement, patching, logs, supervision, gestion des accès, automatisation et support des socles Oracle Linux, Red Hat, AIX, Solaris et Unix/Linux.",
+    color: "bg-[#2F6B4F]",
+  },
+  {
+    id: "cloud",
+    icon: Cloud,
+    title: "Cloud OCI et architectures hybrides",
+    description: "Conseil, architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision, sécurité cloud et optimisation des coûts dans les environnements Oracle Cloud Infrastructure.",
+    color: "bg-[#17233A]",
+  },
+  {
+    id: "mco",
+    icon: Activity,
+    title: "Supervision, MCO et automatisation",
+    description: "Mise en place d'alertes, tableaux de bord, rapports, suivi de performance, prévention des incidents, automatisation des tâches récurrentes et maintien en condition opérationnelle.",
+    color: "bg-[#EE3329]",
+  },
+  {
+    id: "dev",
+    icon: Code,
+    title: "Développement et intégration",
+    description: "Développement d'applications web ou métiers, intégration API, maintenance logicielle et digitalisation de processus, en soutien des besoins opérationnels et techniques.",
+    color: "bg-[#2F6B4F]",
+  },
+  {
+    id: "formation",
+    icon: GraduationCap,
+    title: "Support et formation",
+    description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix, bonnes pratiques d'exploitation et transfert de compétences.",
+    color: "bg-[#17233A]",
+  },
+]
+
+const approach = [
+  "Diagnostic de l'existant et compréhension du contexte métier",
+  "Identification des risques techniques et opérationnels",
+  "Plan d'action priorisé : urgence, stabilisation, optimisation, modernisation",
+  "Mise en œuvre, documentation et transfert de compétences",
+  "Suivi post-intervention et recommandations d'amélioration continue",
+]
+
+export function ServicesContent() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
+          >
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos services
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
+              Des services IT pour sécuriser, maintenir et moderniser vos plateformes
+            </h1>
+            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
+              SMART2D intervient sur les environnements techniques sensibles avec une 
+              approche complète : comprendre l&apos;existant, identifier les risques, stabiliser 
+              les plateformes, améliorer les performances et accompagner les équipes dans la durée.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-[#F8F6F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.id}
+                id={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-[#E5E0DC] scroll-mt-32"
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <div className={`w-14 h-14 rounded-xl ${service.color} flex items-center justify-center flex-shrink-0`}>
+                    <service.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{service.title}</h2>
+                    <p className="text-[#221E1F]/70 leading-relaxed">{service.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-20 bg-[#221E1F]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+                Notre approche
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Une méthodologie éprouvée
+              </h2>
+              <p className="mt-4 text-white/70 leading-relaxed">
+                Chaque intervention suit une démarche structurée pour garantir 
+                des résultats concrets et durables.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-4"
+            >
+              {approach.map((step, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 p-4 bg-white/5 rounded-lg border border-white/10"
+                >
+                  <div className="w-8 h-8 rounded-full bg-[#EE3329] flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">
+                    {index + 1}
+                  </div>
+                  <p className="text-white/80">{step}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#F0ECE8]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold text-[#221E1F] mb-4">
+              Vous avez besoin d&apos;un audit, d&apos;une mission DBA ou d&apos;un support ?
+            </h2>
+            <p className="text-[#221E1F]/70 text-lg mb-8">
+              Contactez SMART2D pour cadrer le besoin et définir ensemble la meilleure approche.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
+            >
+              Contacter SMART2D
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  )
+}

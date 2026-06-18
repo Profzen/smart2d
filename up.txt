@@ -1,0 +1,223 @@
+================================================================================
+MISES À JOUR DU CAHIER DES CHARGES (CDC) — v1.0 → v1.1
+================================================================================
+
+
+================================================================================
+EN-TÊTE
+================================================================================
+
+Changer "Version 1.0" → "Version 1.1"
+Changer "Date Mai 2026" → "Date Juin 2026"
+
+
+================================================================================
+SECTION 4 — Périmètre du projet
+================================================================================
+
+Dans la colonne "Inclus au lancement" :
+  Changer "Refonte du site vitrine en FR/EN"
+  → "Refonte du site vitrine en FR"
+
+Dans la colonne "Hors périmètre initial / phase ultérieure" :
+  Ajouter "Version anglaise (EN) — à produire après validation FR"
+  Ajouter "FAQ / page Ressources"
+  Ajouter "Dark mode"
+
+
+================================================================================
+SECTION 6 — Arborescence et structure des pages
+================================================================================
+
+Page "Accueil", colonne "Sections clés" :
+  Changer "Hero, confiance, expertises, Oracle/OCI, services, solutions, pourquoi SMART2D, CTA"
+  → "Hero (carrousel 7 slides), positionnement, expertises (6 domaines), Oracle, services (6 cards), solutions (OSCAR + Smart Transfert), pourquoi SMART2D (5 raisons), CTA"
+
+Page "À propos", colonne "Sections clés" :
+  Changer "Mission, vision, valeurs, expérience, zone d'intervention"
+  → "Mission, vision, valeurs, expérience, OSCAR, Smart Transfert"
+
+
+================================================================================
+SECTION 8 — Direction UX/UI et design
+================================================================================
+
+PALETTE — Ajouter ces lignes au tableau existant :
+
+  Crème            #F8F6F4 — background principal du site
+  Gris chaud       #F0ECE8 — sections alternées
+  Bleu nuit/Navy   #17233A — hero, sections Oracle et infrastructure
+  Vert             #2F6B4F — sécurité, disponibilité, Smart Transfert
+
+LOGOS — Changer :
+  "Logo header   Logo compact SMART 2D"
+  → "Logo header   Logo complet SMART 2D SERVICES (blanc sur fond sombre avant scroll), puis logo compact SMART 2D (noir sur fond clair après scroll)"
+
+TYPOGRAPHIE — Ajouter au tableau :
+  Police principale    Inter (Google Fonts, sans-serif)
+  Police secondaire    Geist Mono (monospace)
+
+ANIMATIONS — Ajouter après "compteurs animés" :
+  "Technologie : Framer Motion (bibliothèque React)."
+
+
+================================================================================
+SECTION 9 — Fonctionnalités attendues
+================================================================================
+
+Ligne "Bilingue FR/EN" :
+  Changer la priorité "Haute" → "Phase 2"
+
+Ligne "Ressources/FAQ" :
+  Changer la priorité "Moyenne" → "Phase 2"
+
+Ajouter ces lignes au tableau :
+
+  Carrousel hero          Haute     7 slides avec autoplay, contrôles manuels et compteur
+  Header adaptatif        Haute     Changement de logo et couleur au scroll
+  Menu mobile animé       Haute     Menu hamburger avec animation Framer Motion
+
+Ligne "Formulaire de contact" — ajouter à la description :
+  "Backend d'envoi à implémenter (Node.js, PHP cPanel ou service externe)."
+
+
+================================================================================
+SECTION 10 — Spécifications techniques
+================================================================================
+
+Changer tout le tableau "Architecture technique cible" :
+
+  Stack                Next.js 16 / React 19 (App Router)
+  Langage              TypeScript 5.7
+  Style                Tailwind CSS v4 (via @tailwindcss/postcss)
+  Animations           Framer Motion
+  Composants UI        shadcn/ui (basé sur Radix UI)
+  Icônes               lucide-react
+  Analytics            Vercel Analytics
+  Contenus             Intégrés dans les composants React (pas de fichier JSON centralisé)
+  Hébergement          cPanel chez prestataire
+  Hypothèse actuelle   cPanel supporte Node.js
+  Plan de secours      Export statique Next.js si Node.js non disponible
+
+Ajouter après le tableau "Pré-requis cPanel" :
+
+  Hébergement des assets
+  • Les logos SMART2D sont hébergés sur Vercel Blob Storage (URLs externes).
+    À migrer en local dans /public avant déploiement cPanel.
+  • Les images hero (7 fichiers, 1 à 1.5 Mo chacune) sont en /public/images/hero/.
+    L'optimisation d'images Next.js est désactivée (images.unoptimized: true).
+    Compresser manuellement avant mise en production.
+
+
+================================================================================
+SECTION 11 — SEO, bilingue et performance
+================================================================================
+
+SEO — Ajouter le tableau des titres et descriptions par page :
+
+  Accueil
+    Title : SMART2D Services | Expertise Oracle, OCI et infrastructures critiques
+    Description : SMART2D Services accompagne les entreprises dans l'administration, la sécurisation, la supervision et la modernisation de leurs environnements Oracle, OCI, bases de données et infrastructures critiques.
+
+  À propos
+    Title : À propos de SMART2D Services | Conseil Oracle et infrastructures critiques
+    Description : Découvrez SMART2D Services, cabinet de conseil IT basé à Lomé, spécialisé dans Oracle, les bases de données, Linux/Unix, OCI, la sécurité et la supervision des infrastructures critiques.
+
+  Oracle & Infrastructure
+    Title : Expertise Oracle, OCI et infrastructures critiques | SMART2D Services
+    Description : Administration Oracle Database, Cloud OCI, Linux/Unix, haute disponibilité, sauvegarde, sécurité, performance et supervision des environnements critiques.
+
+  Services
+    Title : Services IT, Oracle, bases de données, sécurité et supervision | SMART2D
+    Description : SMART2D Services propose l'administration de bases de données, l'audit technique, la sécurité, Linux/Unix, Cloud OCI, supervision, MCO, support et formation.
+
+  Solutions
+    Title : Solutions SMART2D | OSCAR AIOps et Smart Transfert
+    Description : Découvrez les solutions SMART2D : OSCAR pour l'observabilité et l'automatisation IT, et Smart Transfert pour la centralisation des opérations d'agences de transfert d'argent.
+
+  Support & Formation
+    Title : Support Oracle, MCO et formation IT | SMART2D Services
+    Description : SMART2D accompagne les équipes avec du support Oracle, Linux/Unix, bases de données, MCO, supervision, formation et transfert de compétences.
+
+  Contact
+    Title : Contact SMART2D Services | Diagnostic Oracle, OCI et infrastructures
+    Description : Contactez SMART2D Services pour un besoin Oracle, OCI, bases de données, Linux/Unix, audit, supervision, support, formation, OSCAR ou Smart Transfert.
+
+Bilingue — Changer :
+  "Préparer une indexation claire FR/EN"
+  → "Phase 2 — Version anglaise à produire après validation des textes FR."
+
+Performance — Ajouter :
+  "L'optimisation d'images Next.js est désactivée pour compatibilité cPanel. Les images sont à compresser manuellement avant déploiement."
+
+
+================================================================================
+SECTION 12 — Planning et organisation
+================================================================================
+
+Mettre à jour l'avancement :
+
+  Phase 1 — Validation cadrage         ✅ Terminé
+  Phase 2 — Contenus FR                ✅ Terminé (ct.txt v3 validé)
+  Phase 3 — Maquette codée             ✅ Terminé (toutes les pages codées)
+  Phase 4 — Développement              🔄 En cours
+  Phase 5 — Recette                    ❌ Non commencée
+  Phase 6 — Mise en production         ❌ Non commencée
+
+Ajouter :
+  "Organisation : Le travail est réparti entre Aziz (interface, UX, technique — branche feature/ui-refonte) et Marius (contenu, textes — branche feature/content-update). Voir sprint.md."
+
+
+================================================================================
+SECTION 13 — Recette et critères d'acceptation
+================================================================================
+
+Ligne "Contenu" :
+  Changer "Textes FR/EN relus"
+  → "Textes FR relus et conformes au ct.txt v3. Version EN en phase ultérieure."
+
+Ligne "Formulaire" :
+  Changer "Champs corrects, envoi testé, protection anti-spam prévue"
+  → "Champs corrects, envoi fonctionnel testé (backend implémenté), protection anti-spam prévue"
+
+
+================================================================================
+SECTION 14 — Points de vigilance et décisions restantes
+================================================================================
+
+Ajouter ces lignes au tableau :
+
+  Logos hébergés en externe     À traiter     Migrer de Vercel Blob Storage vers /public avant déploiement cPanel.
+  Images hero non optimisées    À traiter     Compresser les 7 images (1-1.5 Mo chacune) avant mise en production.
+  Formulaire de contact         À implémenter L'envoi est simulé. Implémenter le backend avant mise en production.
+  Contenus non centralisés      Choix fait    Textes dans les composants React. Anticiper la structure i18n pour la version EN.
+  20 ans vs 30 ans              À confirmer   Le CDC et le ct.txt disent 30 ans. Le sprint initial demandait 20 ans. Confirmer avec la direction.
+  Statut Oracle Partner         Confirmé      La plaquette officielle indique "ORACLE PARTNER". Le logo et la mention peuvent être utilisés.
+
+
+================================================================================
+ANNEXES — Ajouter
+================================================================================
+
+Ajouter "Annexe D — Stack technique détaillée" :
+
+  Dépendance              Version       Usage
+  Next.js                 16.2.6        Framework principal (App Router)
+  React                   19            Bibliothèque UI
+  TypeScript              5.7.3         Langage
+  Tailwind CSS            4.2           Styles
+  Framer Motion           12.39+        Animations
+  Radix UI                Multiple      Composants primitifs (shadcn/ui)
+  Lucide React            0.564+        Icônes
+  Vercel Analytics        1.6.1         Analytics (production)
+  next-themes             0.4.6         Gestion thèmes (installé, non activé)
+
+Ajouter "Annexe E — Fichiers de référence du projet" :
+
+  Fichier        Rôle
+  cdc.txt        Cahier des charges (ce document)
+  ct.txt         Contenus FR optimisés v3 — textes et SEO par page
+  sprint.md      Organisation du travail et checklist par page
+  memoire.md     Contexte technique complet et journal de bord
+
+================================================================================
