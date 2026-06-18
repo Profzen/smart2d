@@ -2,14 +2,8 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { 
-  Mail, 
-  Phone, 
-  MapPin,
-  Send,
-  CheckCircle,
-  AlertCircle
-} from "lucide-react"
+import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { HeroDecoration } from "@/components/ui/hero-decoration"
 
 const requestTypes = [
   "Oracle / DBA",
@@ -71,8 +65,9 @@ export function ContactContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4] overflow-hidden">
+        <HeroDecoration pageType="contact" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

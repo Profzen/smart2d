@@ -15,6 +15,7 @@ import {
   Clock,
   CheckCircle
 } from "lucide-react"
+import { HeroDecoration } from "@/components/ui/hero-decoration"
 
 const prestations = [
   {
@@ -77,8 +78,9 @@ export function SupportFormationContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4] overflow-hidden">
+        <HeroDecoration pageType="support" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
