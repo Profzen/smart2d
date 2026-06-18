@@ -12,8 +12,15 @@ import {
   Code,
   GraduationCap,
   Terminal,
-  CheckCircle
+  CheckCircle,
+  Monitor
 } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+
+const servicesAnchors: Anchor[] = [
+  { id: "domaines", title: "Domaines d'intervention" },
+  { id: "demarche", title: "Notre Démarche" },
+]
 
 const services = [
   {
@@ -87,6 +94,8 @@ export function ServicesContent() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <HeroAnchors anchors={servicesAnchors} />
+
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               Nos services
             </span>
@@ -103,7 +112,7 @@ export function ServicesContent() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-[#F8F6F4]">
+      <section id="domaines" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             {services.map((service, index) => (
@@ -132,7 +141,7 @@ export function ServicesContent() {
       </section>
 
       {/* Approach */}
-      <section className="py-20 bg-[#221E1F]">
+      <section id="demarche" className="py-20 bg-[#221E1F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div

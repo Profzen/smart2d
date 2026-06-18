@@ -13,8 +13,16 @@ import {
   HardDrive,
   Lock,
   Activity,
+  Gauge,
   CheckCircle
 } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+
+const oracleAnchors: Anchor[] = [
+  { id: "expertises", title: "Expertises" },
+  { id: "avantages", title: "Nos Avantages" },
+  { id: "mco", title: "Approche MCO" },
+]
 
 const technologies = [
   "Oracle Database",
@@ -92,6 +100,8 @@ export function OracleInfraContent() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <HeroAnchors anchors={oracleAnchors} />
+
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               Notre expertise principale
             </span>
@@ -114,8 +124,8 @@ export function OracleInfraContent() {
         </div>
       </section>
 
-      {/* Sections */}
-      <section className="py-20 bg-[#F8F6F4]">
+      {/* Expertise Grid */}
+      <section id="expertises" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             {sections.map((section, index) => (
@@ -156,8 +166,8 @@ export function OracleInfraContent() {
         </div>
       </section>
 
-      {/* Technologies */}
-      <section className="py-20 bg-[#F0ECE8]">
+      {/* Why Us */}
+      <section id="avantages" className="py-20 bg-[#F0ECE8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,8 +203,8 @@ export function OracleInfraContent() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#221E1F]">
+      {/* Approach */}
+      <section id="mco" className="py-20 bg-[#221E1F]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

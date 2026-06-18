@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 
 // ==========================================
 // CONFIGURATION DU CARROUSEL - MODIFIABLE
@@ -64,40 +65,13 @@ const slides = [
   },
 ]
 
-// ==========================================
-// SERVICES MIS EN AVANT - BARRE DU BAS
-// ==========================================
-const featuredServices = [
-  { 
-    name: "Oracle Database", 
-    href: "/oracle-infrastructure",
-    description: "Administration et optimisation"
-  },
-  { 
-    name: "Cloud OCI", 
-    href: "/oracle-infrastructure",
-    description: "Migration et déploiement"
-  },
-  { 
-    name: "Linux / Unix", 
-    href: "/services",
-    description: "Administration systèmes"
-  },
-  { 
-    name: "Sécurité IT", 
-    href: "/services",
-    description: "Protection des données"
-  },
-  { 
-    name: "Haute Disponibilité", 
-    href: "/oracle-infrastructure",
-    description: "RAC, Data Guard, GoldenGate"
-  },
-  { 
-    name: "Formation", 
-    href: "/support-formation",
-    description: "Oracle, Linux, Systèmes"
-  },
+const homeAnchors: Anchor[] = [
+  { id: "positionnement", title: "Notre Approche" },
+  { id: "expertises", title: "Expertises" },
+  { id: "oracle", title: "Oracle & Infra" },
+  { id: "services", title: "Nos Services" },
+  { id: "solutions", title: "Solutions" },
+  { id: "pourquoi-nous", title: "Pourquoi SMART2D" },
 ]
 
 export function HeroSection() {
@@ -201,7 +175,8 @@ export function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
           {/* Text Content */}
-          <div>
+          <div className="flex flex-col">
+            <HeroAnchors anchors={homeAnchors} />
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -302,30 +277,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Featured Services Bar - Style Oracle */}
-      <div className="relative z-10 border-t border-white/10 bg-[#17233A]/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {featuredServices.map((service) => (
-              <Link
-                key={service.name}
-                href={service.href}
-                className="group relative py-6 px-4 text-center border-r border-white/10 last:border-r-0 hover:bg-white/5 transition-all"
-              >
-                {/* Red top accent on hover */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#EE3329] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                
-                <h3 className="text-white font-semibold text-sm lg:text-base group-hover:text-[#EE3329] transition-colors">
-                  {service.name}
-                </h3>
-                <p className="text-white/50 text-xs mt-1 hidden sm:block">
-                  {service.description}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
 
     </section>

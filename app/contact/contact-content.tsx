@@ -10,6 +10,12 @@ import {
   CheckCircle,
   AlertCircle
 } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+
+const contactAnchors: Anchor[] = [
+  { id: "coordonnees", title: "Nos Coordonnées" },
+  { id: "formulaire", title: "Nous Écrire" },
+]
 
 const requestTypes = [
   "Oracle / DBA",
@@ -79,6 +85,8 @@ export function ContactContent() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <HeroAnchors anchors={contactAnchors} />
+
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               Contact
             </span>
@@ -95,7 +103,7 @@ export function ContactContent() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-[#F8F6F4]">
+      <section id="coordonnees" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Info */}
@@ -171,7 +179,7 @@ export function ContactContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-[#E5E0DC]">
+              <div id="formulaire" className="bg-white rounded-2xl p-8 shadow-xl border border-[#E5E0DC]/50 lg:-mt-32 relative z-10 scroll-mt-20">
                 <h2 className="text-2xl font-bold text-[#221E1F] mb-6">Envoyez-nous un message</h2>
                 
                 {formState === "success" ? (

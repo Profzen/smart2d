@@ -13,8 +13,15 @@ import {
   FileText,
   Users,
   Clock,
-  CheckCircle
+  CheckCircle,
+  Monitor
 } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+
+const supportAnchors: Anchor[] = [
+  { id: "support", title: "Support & MCO" },
+  { id: "formation", title: "Formation Continue" },
+]
 
 const prestations = [
   {
@@ -85,6 +92,8 @@ export function SupportFormationContent() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <HeroAnchors anchors={supportAnchors} />
+
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               Support & Formation
             </span>
@@ -105,8 +114,8 @@ export function SupportFormationContent() {
         </div>
       </section>
 
-      {/* Prestations */}
-      <section className="py-20 bg-[#F8F6F4]">
+      {/* Support Section */}
+      <section id="support" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,8 +153,8 @@ export function SupportFormationContent() {
         </div>
       </section>
 
-      {/* Support Modes */}
-      <section className="py-20 bg-[#221E1F]">
+      {/* Formation Section */}
+      <section id="formation" className="py-20 bg-[#221E1F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
