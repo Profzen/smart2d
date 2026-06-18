@@ -4,8 +4,8 @@ import { Footer } from "@/components/layout/footer"
 import { SupportFormationContent } from "./support-formation-content"
 
 export const metadata: Metadata = {
-  title: "Support et Formation Oracle, bases de données et Linux | SMART2D Services",
-  description: "Support technique, formation Oracle, bases de données, Linux/Unix, transfert de compétences et maintien en condition opérationnelle par SMART2D Services.",
+  title: "Support Oracle, MCO et formation IT | SMART2D Services",
+  description: "SMART2D accompagne les équipes avec du support Oracle, Linux/Unix, bases de données, MCO, supervision, formation, transfert de compétences et OSCAR Academy.",
 }
 
 export default function SupportFormationPage() {

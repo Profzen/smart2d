@@ -4,8 +4,8 @@ import { Footer } from "@/components/layout/footer"
 import { SolutionsContent } from "./solutions-content"
 
 export const metadata: Metadata = {
-  title: "Solutions SMART2D | OSCAR & Smart Transfert",
-  description: "Découvrez OSCAR, plateforme d'observabilité et d'automatisation IT augmentée par l'IA, et Smart Transfert, solution de centralisation pour agences de transfert d'argent.",
+  title: "Solutions SMART2D | OSCAR AIOps et Smart Transfert",
+  description: "Découvrez les solutions SMART2D : OSCAR pour l'observabilité, l'automatisation IT et OSCAR Academy, ainsi que Smart Transfert pour la centralisation des opérations d'agences de transfert d'argent.",
 }
 
 export default function SolutionsPage() {
