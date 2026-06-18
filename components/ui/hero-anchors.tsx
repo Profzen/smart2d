@@ -62,7 +62,7 @@ export function HeroAnchors({ anchors }: HeroAnchorsProps) {
   if (!anchors || anchors.length === 0) return null
 
   return (
-    <div className="w-full pt-8 pb-4 relative z-20">
+    <div className="w-full -mt-16 mb-10 relative z-20">
       <div className="flex flex-wrap gap-4 items-center justify-start sm:justify-center lg:justify-start">
         {anchors.map((anchor) => (
           <a
