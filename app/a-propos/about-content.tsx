@@ -10,10 +10,68 @@ import {
   Shield, 
   Users, 
   Zap,
-  Award
+  Award,
+  Activity,
+  Send,
+  Bell,
+  Bot,
+  BarChart3,
+  Receipt,
+  FileText,
+  History,
+  Cpu
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
+
+const oscarFeatures = [
+  { icon: Activity, label: "Supervision centralisée" },
+  { icon: Bell, label: "Alertes proactives" },
+  { icon: Bot, label: "Détection d'anomalies IA" },
+  { icon: Zap, label: "Automatisation" },
+  { icon: BarChart3, label: "Rapports & tableaux" },
+  { icon: Cpu, label: "Inventaire IT" },
+]
+
+const smartTransfertFeatures = [
+  { icon: Send, label: "Parcours d'envoi" },
+  { icon: Receipt, label: "Parcours de retrait" },
+  { icon: FileText, label: "Rapports comptables" },
+  { icon: History, label: "Historique complet" },
+  { icon: Users, label: "Gestion utilisateurs" },
+  { icon: BarChart3, label: "Traçabilité" },
+]
+
+const solutions = [
+  {
+    icon: Activity,
+    title: "OSCAR",
+    subtitle: "Supervision & AIOps",
+    description: "Plateforme d'observabilité, de supervision et d'automatisation IT augmentée par l'IA.",
+    longDescription: "OSCAR aide les équipes à surveiller leurs serveurs, applications, bases de données et équipements, à détecter plus tôt les anomalies et à automatiser certaines actions opérationnelles.",
+    features: oscarFeatures,
+    href: "/solutions#oscar",
+    accent: "bg-[#17233A]",
+    iconBg: "bg-[#EE3329]",
+    iconColor: "text-white",
+    linkText: "Découvrir OSCAR",
+    featureIconColor: "text-[#17233A]",
+  },
+  {
+    icon: Send,
+    title: "Smart Transfert",
+    subtitle: "Transfert d'argent",
+    description: "Plateforme de centralisation des opérations pour agences de transfert d'argent.",
+    longDescription: "Smart Transfert permet aux agents de travailler dans une interface unique, de réduire les erreurs, de fiabiliser les rapports et de renforcer la traçabilité des opérations.",
+    features: smartTransfertFeatures,
+    href: "/solutions#smart-transfert",
+    accent: "bg-[#2F6B4F]",
+    iconBg: "bg-white",
+    iconColor: "text-[#2F6B4F]",
+    linkText: "Découvrir Smart Transfert",
+    featureIconColor: "text-[#2F6B4F]",
+  },
+]
 
 const aboutAnchors: Anchor[] = [
   { id: "experience", title: "Notre Expérience" },
@@ -77,7 +135,7 @@ export function AboutContent() {
               Un partenaire IT pour les infrastructures critiques
             </h1>
             <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
-              SMART2D Services est un cabinet de conseil technologique basé à Lomé, 
+              SMART2D Services est un cabinet de conseil technologique 
               spécialisé dans l&apos;administration, l&apos;audit, la sécurisation, l&apos;optimisation 
               et le maintien en condition opérationnelle des plateformes informatiques critiques.
             </p>
@@ -95,7 +153,7 @@ export function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-[#EE3329] text-7xl md:text-9xl font-bold">30+</div>
+              <div className="text-[#EE3329] text-7xl md:text-9xl font-bold">20+</div>
               <p className="text-white text-2xl font-semibold mt-2">années d&apos;expérience Oracle</p>
             </motion.div>
             <motion.div
@@ -105,7 +163,7 @@ export function AboutContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-white/70 text-lg leading-relaxed">
-                Fort de plus de 30 ans d&apos;expérience autour des environnements Oracle, 
+                Fort de plus de 20 ans d&apos;expérience autour des environnements Oracle, 
                 SMART2D accompagne les organisations qui souhaitent renforcer la stabilité, 
                 la performance et la sécurité de leurs systèmes d&apos;information.
               </p>
@@ -161,6 +219,85 @@ export function AboutContent() {
                 expertise Oracle, bonnes pratiques d&apos;infrastructure, cloud, automatisation et support.
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions */}
+      <section className="py-20 bg-[#F8F6F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Solutions SMART2D
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
+              Des solutions qui accélèrent vos opérations
+            </h2>
+            <p className="mt-4 text-lg text-[#221E1F]/70 max-w-2xl mx-auto">
+              En complément de notre conseil, nous proposons des plateformes prêtes à l&apos;emploi
+              pour la supervision IT et les transferts d&apos;argent.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {solutions.map((solution, index) => (
+              <motion.div
+                key={solution.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#E5E0DC]"
+              >
+                {/* Header */}
+                <div className={`${solution.accent} p-6`}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`w-10 h-10 rounded-lg ${solution.iconBg} flex items-center justify-center`}>
+                      <solution.icon className={`w-5 h-5 ${solution.iconColor}`} />
+                    </div>
+                    <span className="text-xs font-mono text-white/50 bg-white/10 px-2 py-1 rounded">
+                      {solution.subtitle.toUpperCase()}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">{solution.title}</h3>
+                  <p className="mt-2 text-white/70">{solution.description}</p>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <p className="text-[#221E1F]/70 mb-6">{solution.longDescription}</p>
+
+                  {/* Features */}
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    {solution.features.map((feature) => (
+                      <div
+                        key={feature.label}
+                        className="flex items-center gap-2 p-3 bg-[#F8F6F4] rounded-lg"
+                      >
+                        <feature.icon className={`w-4 h-4 ${solution.featureIconColor}`} />
+                        <span className="text-sm text-[#221E1F]">{feature.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={solution.href}
+                    className={`inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all ${
+                      solution.title === "OSCAR" ? "text-[#EE3329]" : "text-[#2F6B4F]"
+                    }`}
+                  >
+                    {solution.linkText}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

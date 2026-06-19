@@ -6,8 +6,8 @@ import { Clock, Database, Shield, Users, Globe } from "lucide-react"
 const reasons = [
   {
     icon: Clock,
-    title: "30+ ans d'expertise Oracle",
-    description: "Une expertise construite sur plus de trois décennies d'expérience autour des environnements Oracle.",
+    title: "20+ ans d'expertise Oracle",
+    description: "Une expertise construite sur plus de deux décennies d'expérience autour des environnements Oracle.",
   },
   {
     icon: Database,

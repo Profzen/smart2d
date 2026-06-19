@@ -152,7 +152,7 @@ export function Footer() {
               © {new Date().getFullYear()} SMART2D Services. Tous droits réservés.
             </p>
             <div className="flex items-center gap-6 text-sm text-white/50">
-              <span>Plus de 30 ans d&apos;expertise Oracle</span>
+              <span>Plus de 20 ans d&apos;expertise Oracle</span>
             </div>
           </div>
         </div>

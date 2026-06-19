@@ -24,8 +24,8 @@ const slides = [
   {
     id: 1,
     image: "/images/hero/oracle-database.webp",
-    title: "Expertise Oracle Database",
-    subtitle: "Administration et optimisation de vos bases de données Oracle par des ingénieurs avec plus de 30 ans d'expérience",
+    title: "Oracle Database",
+    subtitle: "Administration et optimisation de vos bases de données Oracle par des ingénieurs avec plus de 20 ans d'expérience",
   },
   {
     id: 2,
