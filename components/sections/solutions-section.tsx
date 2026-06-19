@@ -96,7 +96,7 @@ export function SolutionsSection() {
               </p>
 
               {/* Features */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {oscarFeatures.map((feature) => (
                   <div
                     key={feature.label}
@@ -153,7 +153,7 @@ export function SolutionsSection() {
               </p>
 
               {/* Features */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {smartTransfertFeatures.map((feature) => (
                   <div
                     key={feature.label}
