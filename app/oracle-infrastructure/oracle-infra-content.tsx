@@ -17,6 +17,7 @@ import {
   CheckCircle
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+import { HeroDecoration } from "@/components/ui/hero-decoration"
 
 const oracleAnchors: Anchor[] = [
   { id: "expertises", title: "Expertises" },
@@ -87,13 +88,9 @@ export function OracleInfraContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-[#17233A] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EE3329]/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl" />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 bg-[#17233A] overflow-hidden">
+        <HeroDecoration pageType="oracle" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
