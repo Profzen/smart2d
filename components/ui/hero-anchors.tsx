@@ -70,7 +70,7 @@ export function HeroAnchors({ anchors }: HeroAnchorsProps) {
             href={`#${anchor.id}`}
             onClick={(e) => scrollTo(anchor.id, e)}
             className={`
-              relative px-6 py-4 bg-white shadow-lg border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-w-[140px] text-center
+              relative px-6 py-4 bg-white shadow-lg border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-w-[140px] flex-1 sm:flex-none text-center
               ${activeId === anchor.id 
                 ? "border-[#EE3329]/30 ring-1 ring-[#EE3329] shadow-md shadow-[#EE3329]/10" 
                 : "border-white/10"}
