@@ -37,7 +37,7 @@ const smartTransfertFeatures = [
 
 export function SolutionsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#F0ECE8]">
+    <section id="solutions" className="py-20 lg:py-28 bg-[#F0ECE8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -96,7 +96,7 @@ export function SolutionsSection() {
               </p>
 
               {/* Features */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {oscarFeatures.map((feature) => (
                   <div
                     key={feature.label}
@@ -153,7 +153,7 @@ export function SolutionsSection() {
               </p>
 
               {/* Features */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {smartTransfertFeatures.map((feature) => (
                   <div
                     key={feature.label}

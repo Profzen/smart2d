@@ -15,7 +15,6 @@ const navigation = [
   { name: "Services", href: "/services" },
   { name: "Solutions", href: "/solutions" },
   { name: "Support & Formation", href: "/support-formation" },
-  { name: "Contact", href: "/contact" },
 ]
 
 // Logo URLs

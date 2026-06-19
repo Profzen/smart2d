@@ -23,6 +23,12 @@ import {
   Clock,
   TrendingUp
 } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+
+const solutionsAnchors: Anchor[] = [
+  { id: "oscar", title: "OSCAR" },
+  { id: "smart-transfert", title: "Smart Transfert" },
+]
 
 const oscarProblems = [
   "Trop de journaux, métriques et alertes dispersés dans plusieurs outils",
@@ -87,6 +93,8 @@ export function SolutionsContent() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <HeroAnchors anchors={solutionsAnchors} />
+
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               Nos solutions
             </span>

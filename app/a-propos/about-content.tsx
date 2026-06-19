@@ -21,6 +21,7 @@ import {
   History,
   Cpu
 } from "lucide-react"
+import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
 
 const oscarFeatures = [
@@ -72,6 +73,13 @@ const solutions = [
   },
 ]
 
+const aboutAnchors: Anchor[] = [
+  { id: "experience", title: "Notre Expérience" },
+  { id: "mission", title: "Mission & Vision" },
+  { id: "valeurs", title: "Nos Valeurs" },
+  { id: "equipe", title: "Notre Équipe" },
+]
+
 const values = [
   {
     icon: Award,
@@ -118,6 +126,8 @@ export function AboutContent() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <HeroAnchors anchors={aboutAnchors} />
+
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               À propos
             </span>
@@ -134,7 +144,7 @@ export function AboutContent() {
       </section>
 
       {/* Experience */}
-      <section className="py-20 bg-[#221E1F]">
+      <section id="experience" className="py-20 bg-[#221E1F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -169,7 +179,7 @@ export function AboutContent() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-[#F8F6F4]">
+      <section id="mission" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
@@ -293,7 +303,7 @@ export function AboutContent() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-[#F0ECE8]">
+      <section id="valeurs" className="py-20 bg-[#F0ECE8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -332,7 +342,7 @@ export function AboutContent() {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-[#17233A]">
+      <section id="equipe" className="py-20 bg-[#17233A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -19,7 +19,7 @@ const technologies = [
 
 export function OracleSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#17233A] relative overflow-hidden">
+    <section id="oracle" className="py-20 lg:py-28 bg-[#17233A] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EE3329]/10 rounded-full blur-3xl" />

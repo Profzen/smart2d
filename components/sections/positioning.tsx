@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function PositioningSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#F8F6F4]">
+    <section id="positionnement" className="py-20 lg:py-28 bg-[#F8F6F4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
