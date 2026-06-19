@@ -95,7 +95,7 @@ export function AboutContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-white/70 text-lg leading-relaxed">
-                Fort de plus de 30 ans d&apos;expérience autour des environnements Oracle, 
+                Fort de plus de 20 ans d&apos;expérience autour des environnements Oracle, 
                 SMART2D accompagne les organisations qui souhaitent renforcer la stabilité, 
                 la performance et la sécurité de leurs systèmes d&apos;information.
               </p>
