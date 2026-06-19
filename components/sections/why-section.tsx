@@ -33,7 +33,7 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#221E1F]">
+    <section id="pourquoi-nous" className="py-20 lg:py-28 bg-[#221E1F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

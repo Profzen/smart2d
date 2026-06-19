@@ -44,7 +44,7 @@ const expertises = [
 
 export function ExpertiseSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#F0ECE8]">
+    <section id="expertises" className="py-20 lg:py-28 bg-[#F0ECE8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
