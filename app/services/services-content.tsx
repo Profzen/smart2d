@@ -205,10 +205,10 @@ export function ServicesContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-[#221E1F] mb-4">
-              Vous avez besoin d&apos;un audit, d&apos;une mission DBA ou d&apos;un support ?
+              Prêt à sécuriser et optimiser vos infrastructures ?
             </h2>
             <p className="text-[#221E1F]/70 text-lg mb-8">
-              Contactez SMART2D pour cadrer le besoin et définir ensemble la meilleure approche.
+              Contactez SMART2D dès aujourd'hui pour concevoir votre solution sur mesure.
             </p>
             <Link
               href="/contact"
