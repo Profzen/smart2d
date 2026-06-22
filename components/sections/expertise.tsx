@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Database, Cloud, HardDrive, Terminal, Shield, Activity } from "lucide-react"
+import { Database, Cloud, HardDrive, Terminal, Shield, Activity, Cpu } from "lucide-react"
 
 const expertises = [
   {
@@ -39,6 +39,12 @@ const expertises = [
     title: "Supervision & MCO",
     description: "Suivi continu, alertes, rapports, prévention des incidents et maintien en condition opérationnelle des plateformes critiques.",
     color: "bg-[#2F6B4F]",
+  },
+  {
+    icon: Cpu,
+    title: "Intelligence Artificielle & Automatisation",
+    description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
+    color: "bg-[#17233A]",
   },
 ]
 

@@ -81,6 +81,12 @@ const slides = [
     title: "DIGITALISER",
     subtitle: "Transformer vos processus traditionnels en solutions numériques modernes et intuitives",
   },
+  {
+    id: 11,
+    image: "/images/hero/formation.webp",
+    title: "NOS PARTENAIRES",
+    subtitle: "Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières",
+  },
 ]
 
 const homeAnchors: Anchor[] = [
