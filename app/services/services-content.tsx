@@ -10,6 +10,7 @@ import {
   Cloud,
   Activity,
   Code,
+  Cpu,
   GraduationCap,
   Terminal,
   CheckCircle,
@@ -65,6 +66,13 @@ const services = [
     title: "Développement et intégration",
     description: "Développement d'applications web ou métiers, intégration API, maintenance logicielle et digitalisation de processus, en soutien des besoins opérationnels et techniques.",
     color: "bg-[#2F6B4F]",
+  },
+  {
+    id: "ai",
+    icon: Cpu,
+    title: "Intelligence Artificielle & Automatisation",
+    description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
+    color: "bg-[#17233A]",
   },
   {
     id: "formation",
