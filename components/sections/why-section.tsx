@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Clock, Database, Shield, Users, Globe } from "lucide-react"
+import { Clock, Database, Shield, Users, Globe, Cpu } from "lucide-react"
 
 const reasons = [
   {
@@ -28,6 +28,11 @@ const reasons = [
     icon: Globe,
     title: "Vision moderne",
     description: "OCI, automatisation, supervision intelligente et solutions métiers pour une IT plus agile.",
+  },
+  {
+    icon: Cpu,
+    title: "Intelligence Artificielle",
+    description: "Transformez vos données brutes en opportunités stratégiques grâce à des algorithmes prédictifs et des solutions d'apprentissage automatique adaptés à vos exigences.",
   },
 ]
 
