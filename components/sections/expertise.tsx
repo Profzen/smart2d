@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Database, Cloud, HardDrive, Terminal, Shield, Activity, Cpu } from "lucide-react"
+import { Database, Cloud, HardDrive, Terminal, Shield, Cpu, RefreshCw, GraduationCap } from "lucide-react"
 
 const expertises = [
   {
@@ -35,15 +35,21 @@ const expertises = [
     color: "bg-[#EE3329]",
   },
   {
-    icon: Activity,
-    title: "Supervision & MCO",
-    description: "Suivi continu, alertes, rapports, prévention des incidents et maintien en condition opérationnelle des plateformes critiques.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
     icon: Cpu,
     title: "Intelligence Artificielle & Automatisation",
     description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
+    color: "bg-[#17233A]",
+  },
+  {
+    icon: RefreshCw,
+    title: "Migration & modernisation",
+    description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
+    color: "bg-[#2F6B4F]",
+  },
+  {
+    icon: GraduationCap,
+    title: "Support & formation",
+    description: "Assistance technique, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
     color: "bg-[#17233A]",
   },
 ]
