@@ -59,6 +59,13 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4 mt-8">
+              Nos partenaires
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières
+            </p>
           </div>
 
           {/* Solutions */}

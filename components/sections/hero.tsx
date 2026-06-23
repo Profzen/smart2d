@@ -63,6 +63,30 @@ const slides = [
     title: "Formation & Transfert",
     subtitle: "Formations Oracle Database, Linux, administration systèmes - Développez les compétences de vos équipes",
   },
+  {
+    id: 8,
+    image: "/images/hero/formation.webp",
+    title: "OPTIMISER",
+    subtitle: "Maximiser les performances et l'efficacité de vos bases de données et de vos systèmes",
+  },
+  {
+    id: 9,
+    image: "/images/hero/cloud-oci.webp",
+    title: "MIGRER",
+    subtitle: "Transférer vos infrastructures, bases de données et applications vers de nouveaux environnements",
+  },
+  {
+    id: 10,
+    image: "/images/hero/formation.webp",
+    title: "DIGITALISER",
+    subtitle: "Transformer vos processus traditionnels en solutions numériques modernes et intuitives",
+  },
+  {
+    id: 11,
+    image: "/images/hero/formation.webp",
+    title: "NOS PARTENAIRES",
+    subtitle: "Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières",
+  },
 ]
 
 const homeAnchors: Anchor[] = [
