@@ -162,13 +162,13 @@ export function SolutionsContent() {
             </div>
 
             {/* Droite — Screenshot page accueil OSCAR (7 colonnes sur 12) */}
-            <div className="lg:col-span-7 rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC] cursor-zoom-in group">
+            <div className="lg:col-span-7 rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC] cursor-zoom-in transition-transform duration-500 ease-out hover:scale-[1.03] self-center">
               <Image
                 src="/images/oscar/oscar-app.png"
                 alt="Page d'accueil OSCAR — Observe, Detect, Analyze, Automate"
                 width={900}
                 height={560}
-                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                className="w-full h-auto"
               />
             </div>
           </motion.div>
