@@ -93,7 +93,6 @@ const homeAnchors: Anchor[] = [
   { id: "positionnement", title: "Notre Approche" },
   { id: "expertises", title: "Expertises" },
   { id: "oracle", title: "Oracle & Infra" },
-  { id: "services", title: "Nos Services" },
   { id: "solutions", title: "Solutions" },
   { id: "pourquoi-nous", title: "Pourquoi SMART2D" },
 ]
