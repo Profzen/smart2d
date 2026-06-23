@@ -2,18 +2,16 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { 
-  ArrowRight, 
-  Database, 
-  Search,
+import {
+  ArrowRight,
+  Database,
   Shield,
   Cloud,
-  Activity,
-  Code,
-  GraduationCap,
   Terminal,
-  CheckCircle,
-  Monitor
+  HardDrive,
+  Cpu,
+  RefreshCw,
+  GraduationCap,
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
@@ -25,52 +23,59 @@ const servicesAnchors: Anchor[] = [
 
 const services = [
   {
-    id: "dba",
+    id: "oracle-database-middleware",
     icon: Database,
-    title: "Administration de bases de données",
-    description: "Installation, configuration, supervision, tuning, sauvegarde, restauration, migration, patching et support des bases Oracle, MySQL, PostgreSQL et SQL Server. Objectif : garantir la disponibilité, la performance et la maîtrise des données critiques.",
+    title: "Oracle Database & Middleware",
+    description: "Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.",
     color: "bg-[#EE3329]",
   },
   {
-    id: "audit",
-    icon: Search,
-    title: "Audit technique, sécurité et performance",
-    description: "Analyse des configurations, des pratiques d'exploitation, des sauvegardes, des accès, des performances et des risques. Les recommandations sont priorisées pour faciliter la décision et la mise en œuvre.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "linux",
-    icon: Terminal,
-    title: "Linux / Unix et infrastructures",
-    description: "Administration, durcissement, patching, logs, supervision, gestion des accès, automatisation et support des socles Oracle Linux, Red Hat, AIX, Solaris et Unix/Linux.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    id: "cloud",
+    id: "cloud-oci-hybrides",
     icon: Cloud,
-    title: "Cloud OCI et architectures hybrides",
-    description: "Conseil, architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision, sécurité cloud et optimisation des coûts dans les environnements Oracle Cloud Infrastructure.",
+    title: "Cloud OCI & architectures hybrides",
+    description: "Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.",
     color: "bg-[#17233A]",
   },
   {
-    id: "mco",
-    icon: Activity,
-    title: "Supervision, MCO et automatisation",
-    description: "Mise en place d'alertes, tableaux de bord, rapports, suivi de performance, prévention des incidents, automatisation des tâches récurrentes et maintien en condition opérationnelle.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    id: "dev",
-    icon: Code,
-    title: "Développement et intégration",
-    description: "Développement d'applications web ou métiers, intégration API, maintenance logicielle et digitalisation de processus, en soutien des besoins opérationnels et techniques.",
+    id: "bases-de-donnees-critiques",
+    icon: HardDrive,
+    title: "Bases de données critiques",
+    description: "Installation, tuning, monitoring, sauvegarde et restauration sur Oracle, MySQL, PostgreSQL, SQL Server et environnements associés.",
     color: "bg-[#2F6B4F]",
   },
   {
-    id: "formation",
+    id: "linux-unix",
+    icon: Terminal,
+    title: "Linux / Unix",
+    description: "Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris.",
+    color: "bg-[#17233A]",
+  },
+  {
+    id: "audit-securite-performance",
+    icon: Shield,
+    title: "Audit, sécurité & performance",
+    description: "Analyse des risques, vérification des configurations, recommandations opérationnelles et plans de remédiation priorisés.",
+    color: "bg-[#EE3329]",
+  },
+  {
+    id: "ia-automatisation",
+    icon: Cpu,
+    title: "Intelligence Artificielle & Automatisation",
+    description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
+    color: "bg-[#17233A]",
+  },
+  {
+    id: "migration-modernisation",
+    icon: RefreshCw,
+    title: "Migration & modernisation",
+    description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
+    color: "bg-[#2F6B4F]",
+  },
+  {
+    id: "support-formation",
     icon: GraduationCap,
-    title: "Support et formation",
-    description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix, bonnes pratiques d'exploitation et transfert de compétences.",
+    title: "Support & formation",
+    description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
     color: "bg-[#17233A]",
   },
 ]
