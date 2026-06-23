@@ -141,10 +141,10 @@ export function SolutionsContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="grid lg:grid-cols-2 gap-8 mb-16"
+            className="grid lg:grid-cols-12 gap-8 mb-16"
           >
-            {/* Gauche — Ce que fait OSCAR */}
-            <div className="bg-[#F0ECE8] rounded-2xl p-8 border border-[#E5E0DC] flex flex-col justify-center">
+            {/* Gauche — Ce que fait OSCAR (5 colonnes sur 12) */}
+            <div className="lg:col-span-5 bg-white rounded-2xl p-8 border border-[#E5E0DC] shadow-sm flex flex-col justify-center">
               <h3 className="text-xl font-bold text-[#221E1F] mb-6">Ce que fait OSCAR</h3>
               <ul className="space-y-4">
                 {[
@@ -161,14 +161,14 @@ export function SolutionsContent() {
               </ul>
             </div>
 
-            {/* Droite — Screenshot page accueil OSCAR */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC]">
+            {/* Droite — Screenshot page accueil OSCAR (7 colonnes sur 12) */}
+            <div className="lg:col-span-7 rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC] cursor-zoom-in group">
               <Image
                 src="/images/oscar/oscar-app.png"
                 alt="Page d'accueil OSCAR — Observe, Detect, Analyze, Automate"
-                width={800}
-                height={500}
-                className="w-full h-full object-cover"
+                width={900}
+                height={560}
+                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </div>
           </motion.div>
