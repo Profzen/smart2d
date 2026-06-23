@@ -146,6 +146,11 @@ export function AboutContent() {
       {/* Experience */}
       <section id="experience" className="py-20 bg-[#221E1F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Notre Expérience
+            </span>
+          </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -181,6 +186,11 @@ export function AboutContent() {
       {/* Mission & Vision */}
       <section id="mission" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Notre Mission & Vision
+            </span>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
             <motion.div
