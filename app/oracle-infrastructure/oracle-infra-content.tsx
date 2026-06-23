@@ -21,7 +21,7 @@ import { HeroDecoration } from "@/components/ui/hero-decoration"
 
 const oracleAnchors: Anchor[] = [
   { id: "expertises", title: "Expertises" },
-  { id: "avantages", title: "Nos Avantages" },
+  { id: "avantages", title: "Nos Technologies" },
   { id: "mco", title: "Approche MCO" },
 ]
 
@@ -124,6 +124,11 @@ export function OracleInfraContent() {
       {/* Expertise Grid */}
       <section id="expertises" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos domaines d&apos;expertise
+            </span>
+          </div>
           <div className="space-y-12">
             {sections.map((section, index) => (
               <motion.div
