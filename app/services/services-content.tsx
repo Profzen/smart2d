@@ -121,6 +121,11 @@ export function ServicesContent() {
       {/* Services Grid */}
       <section id="domaines" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos domaines d&apos;intervention
+            </span>
+          </div>
           <div className="space-y-8">
             {services.map((service, index) => (
               <motion.div
