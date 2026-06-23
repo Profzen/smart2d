@@ -330,6 +330,23 @@ export function SolutionsContent() {
             </motion.div>
           </div>
 
+          {/* Smart Transfert Dashboard Screenshot — Pleine largeur */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 transition-transform duration-500 ease-out hover:scale-[1.03] cursor-zoom-in"
+          >
+            <Image
+              src="/images/smart-transfert/smart-transfert-dashboard.png"
+              alt="Dashboard Smart Transfert — centralisation et opérations"
+              width={1664}
+              height={943}
+              className="w-full h-auto block rounded-2xl shadow-xl"
+            />
+          </motion.div>
+
           {/* Features */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
