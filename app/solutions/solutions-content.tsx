@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
 import { 
   ArrowRight, 
@@ -18,6 +19,7 @@ import {
   FileText,
   History,
   Settings,
+  Shield,
   CheckCircle,
   AlertTriangle,
   Clock,
@@ -112,120 +114,139 @@ export function SolutionsContent() {
       </section>
 
       {/* OSCAR */}
-      <section id="oscar" className="py-20 bg-[#17233A] scroll-mt-20">
+      <section id="oscar" className="py-20 bg-[#F8F6F4] scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
+          {/* Header OSCAR */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            className="mb-12"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-[#EE3329] flex items-center justify-center">
-                <Activity className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <span className="text-xs font-mono text-white/50 bg-white/10 px-2 py-1 rounded">
-                  SUPERVISION & AIOPS
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">OSCAR</h2>
-              </div>
-            </div>
-            <p className="text-xl text-white/70 max-w-3xl">
-              Plateforme d&apos;observabilité, de supervision et d&apos;automatisation IT 
-              augmentée par l&apos;IA. OSCAR aide les équipes à surveiller leurs serveurs, 
-              applications, bases de données et équipements, à détecter plus tôt les 
-              anomalies et à automatiser certaines actions opérationnelles.
+            <h2 className="text-4xl md:text-5xl font-bold text-[#EE3329] mb-3">OSCAR</h2>
+            <p className="text-xl md:text-2xl font-semibold text-[#221E1F] mb-4">
+              Observabilité, supervision et automatisation IT
+            </p>
+            <p className="text-[#221E1F]/70 text-lg leading-relaxed max-w-4xl">
+              OSCAR centralise la supervision des serveurs, applications, bases de données 
+              et équipements. Il aide les équipes à observer, détecter, analyser et automatiser 
+              certaines opérations techniques pour améliorer la continuité des services.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Problems */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-[#EE3329]" />
-                Problèmes traités
-              </h3>
-              <div className="space-y-3">
-                {oscarProblems.map((problem, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 p-4 bg-white/5 rounded-lg border border-white/10"
-                  >
-                    <span className="text-[#EE3329]">•</span>
-                    <span className="text-white/70">{problem}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Benefits */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-[#2F6B4F]" />
-                Bénéfices
-              </h3>
-              <div className="space-y-3">
-                {oscarBenefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 p-4 bg-[#2F6B4F]/20 rounded-lg border border-[#2F6B4F]/30"
-                  >
-                    <CheckCircle className="w-5 h-5 text-[#2F6B4F] flex-shrink-0 mt-0.5" />
-                    <span className="text-white/80">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Features */}
+          {/* Ce que fait OSCAR + Screenshot App — 2 colonnes */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="grid lg:grid-cols-2 gap-8 mb-16"
           >
-            <h3 className="text-lg font-semibold text-white mb-6">Fonctionnalités principales</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {oscarFeatures.map((feature) => (
+            {/* Gauche — Ce que fait OSCAR */}
+            <div className="bg-[#F0ECE8] rounded-2xl p-8 border border-[#E5E0DC] flex flex-col justify-center">
+              <h3 className="text-xl font-bold text-[#221E1F] mb-6">Ce que fait OSCAR</h3>
+              <ul className="space-y-4">
+                {[
+                  "Observer les infrastructures critiques",
+                  "Détecter rapidement les incidents",
+                  "Analyser les événements techniques",
+                  "Automatiser certaines actions répétitives",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#EE3329] mt-1.5 flex-shrink-0" />
+                    <span className="text-[#221E1F]/80 text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Droite — Screenshot page accueil OSCAR */}
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC]">
+              <Image
+                src="/images/oscar/oscar-app.png"
+                alt="Page d'accueil OSCAR — Observe, Detect, Analyze, Automate"
+                width={800}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
+          {/* Fonctions clés — Grille 2x2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px flex-1 bg-[#E5E0DC]" />
+              <h3 className="text-lg font-semibold text-[#221E1F] whitespace-nowrap">Fonctions clés</h3>
+              <div className="h-px flex-1 bg-[#E5E0DC]" />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: Server,
+                  title: "Surveillance continue",
+                  description: "Surveillance continue des serveurs, équipements réseau, systèmes, applications et bases de données.",
+                },
+                {
+                  icon: Shield,
+                  title: "Audit des environnements critiques",
+                  description: "Audit des environnements critiques, notamment les bases de données Oracle, MySQL et autres systèmes sensibles.",
+                },
+                {
+                  icon: Bell,
+                  title: "Alertes en temps réel",
+                  description: "Avertissement en temps réel sur les actions sensibles et événements critiques.",
+                },
+                {
+                  icon: Bot,
+                  title: "Assistance intelligente",
+                  description: "Assistance intelligente en langage naturel pour identifier rapidement quoi, quand et sur quel système.",
+                },
+              ].map((func, index) => (
                 <div
-                  key={feature.label}
-                  className="flex flex-col items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10"
+                  key={func.title}
+                  className="bg-white rounded-xl p-6 border border-[#E5E0DC] shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#EE3329]/20 flex items-center justify-center">
-                    <feature.icon className="w-5 h-5 text-[#EE3329]" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-[#EE3329] flex items-center justify-center flex-shrink-0">
+                      <func.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-[#221E1F] mb-1">{func.title}</h4>
+                      <p className="text-sm text-[#221E1F]/60 leading-relaxed">{func.description}</p>
+                    </div>
                   </div>
-                  <span className="text-sm text-white/70 text-center">{feature.label}</span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Future demo note */}
+          {/* Dashboard Screenshot — Pleine largeur */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 p-4 bg-white/5 rounded-lg border border-white/10"
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <p className="text-white/50 text-sm flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              Une démo OSCAR sera disponible prochainement : vidéo, captures commentées ou parcours interactif.
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC]">
+              <Image
+                src="/images/oscar/oscar-dashboard.png"
+                alt="Dashboard OSCAR — supervision des ressources, disponibilité et indicateurs techniques"
+                width={1400}
+                height={700}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="mt-4 text-sm text-[#221E1F]/50 flex items-center gap-2">
+              <Activity className="w-4 h-4" />
+              Dashboard OSCAR : supervision des ressources, disponibilité et indicateurs techniques.
             </p>
           </motion.div>
         </div>
