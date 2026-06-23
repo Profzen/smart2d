@@ -235,15 +235,13 @@ export function SolutionsContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-[#E5E0DC]">
-              <Image
-                src="/images/oscar/oscar-dashboard.png"
-                alt="Dashboard OSCAR — supervision des ressources, disponibilité et indicateurs techniques"
-                width={1400}
-                height={700}
-                className="w-full h-auto"
-              />
-            </div>
+            <Image
+              src="/images/oscar/oscar-dashboard.png"
+              alt="Dashboard OSCAR — supervision des ressources, disponibilité et indicateurs techniques"
+              width={1127}
+              height={598}
+              className="w-full h-auto block rounded-2xl shadow-xl transition-transform duration-500 ease-out hover:scale-[1.03] cursor-zoom-in"
+            />
             <p className="mt-4 text-sm text-[#221E1F]/50 flex items-center gap-2">
               <Activity className="w-4 h-4" />
               Dashboard OSCAR : supervision des ressources, disponibilité et indicateurs techniques.
