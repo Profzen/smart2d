@@ -1,40 +1,41 @@
-# Déploiement cPanel : Mise à jour SMART2D
+# Procédure de déploiement cPanel - SMART2D
 
-Ce document décrit la procédure stricte pour déployer une mise à jour du site Next.js sur cPanel, où une version est déjà existante.
+Ce document décrit la procédure interne de déploiement d'une mise à jour du site Next.js sur notre environnement cPanel.
 
-## 1. 🛡️ Sauvegarde (Backup) - OBLIGATOIRE
-*Ne jamais écraser la version en production sans copie de sécurité.*
-1. Connectez-vous au **cPanel** > **Gestionnaire de fichiers**.
-2. Allez dans le dossier racine de l'application (ex: `smart2d-app/` ou `public_html/`).
-3. Sélectionnez tous les fichiers et dossiers actuels, puis cliquez sur **Compresser** (format `.zip`).
-4. Nommez l'archive `backup_smart2d_YYYYMMDD.zip` et téléchargez-la sur votre ordinateur.
+## 1. Sauvegarde (Backup)
+1. Se connecter au cPanel, ouvrir le Gestionnaire de fichiers.
+2. Aller dans le dossier racine de l'application.
+3. Sélectionner tous les fichiers et dossiers actuels, puis les compresser en une archive .zip.
+4. Nommer l'archive backup_smart2d_YYYYMMDD.zip et la conserver par sécurité.
 
-## 2. ⚙️ Préparation du Build (Local)
-Sur votre machine de développement :
-1. Assurez-vous d'être sur la branche `develop` à jour :
+## 2. Récupération des sources (Terminal cPanel)
+1. Ouvrir le Terminal dans cPanel (ou se connecter via SSH).
+2. Se déplacer dans le répertoire de l'application :
    ```bash
+   cd chemin/vers/application
+   ```
+3. Récupérer les dernières modifications de la branche cible (develop) :
+   ```bash
+   git fetch origin
    git checkout develop
    git pull origin develop
    ```
-2. Installez les dépendances propres et lancez la compilation :
+
+## 3. Installation et Compilation
+Dans le terminal cPanel, exécuter les commandes suivantes pour mettre à jour les dépendances et recompiler l'application :
+1. Installation propre des dépendances :
    ```bash
    npm ci
+   ```
+2. Lancement du build de production :
+   ```bash
    npm run build
    ```
-3. Préparez un dossier d'envoi. Vous n'aurez besoin d'envoyer **que** les éléments suivants :
-   - Le dossier `.next/` (contient l'application compilée)
-   - Le dossier `public/` (contient les nouvelles images et favicons)
-   - Le fichier `package.json` et `package-lock.json`
-   - *(Optionnel)* Le fichier `.env` s'il y a eu de nouvelles variables.
 
-## 3. 🚀 Déploiement (cPanel)
-1. Dans le **Gestionnaire de fichiers** cPanel, supprimez l'ancien dossier `.next/` et l'ancien dossier `public/` du serveur.
-2. Uploadez vos nouveaux dossiers `.next/` et `public/` (il est conseillé de les zipper localement, de les uploader, puis d'utiliser l'outil **Extraire** de cPanel pour gagner du temps).
-3. Remplacez le fichier `package.json` par le nouveau.
-4. *Note : Ne supprimez pas le dossier `node_modules/` du serveur s'il n'y a pas eu de gros changements de dépendances. Sinon, supprimez-le et relancez l'installation des dépendances depuis l'interface cPanel.*
+*Note technique : Si la commande `npm run build` échoue (ex: erreur de mémoire/OOM), cela est dû aux limites de RAM imposées par le serveur cPanel. Dans ce seul cas, la compilation devra être effectuée en local, et le dossier `.next/` résultant transféré manuellement via le Gestionnaire de fichiers pour écraser l'ancien.*
 
-## 4. 🔄 Redémarrage
-1. Dans cPanel, allez dans **Setup Node.js App** (ou l'outil équivalent que vous utilisez).
-2. Sélectionnez votre application SMART2D.
-3. Cliquez sur le bouton **Restart** (Redémarrer).
-4. Videz le cache de votre navigateur et vérifiez que le site en production est à jour (Vérifiez les logos et le scroll horizontal).
+## 4. Redémarrage de l'application
+1. Dans cPanel, ouvrir l'outil "Setup Node.js App".
+2. Sélectionner l'application SMART2D.
+3. Cliquer sur le bouton "Restart".
+4. Vider le cache du navigateur web et vérifier la prise en compte de la mise à jour en production.
