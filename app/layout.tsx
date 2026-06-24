@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   keywords: 'Oracle, OCI, DBA, infrastructure critique, Linux, Unix, supervision, SMART2D, Togo',
   authors: [{ name: 'SMART2D Services' }],
   icons: {
-    icon: '/images/logo/smart2d-logo-dark.png',
-    apple: '/images/logo/smart2d-logo-dark.png',
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 
