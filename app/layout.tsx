@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="bg-[#F8F6F4]">
-      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased overflow-x-hidden`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
