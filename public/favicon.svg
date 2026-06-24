@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond transparent, carrés rouge et anthracite -->
+  <rect x="32" y="96" width="224" height="320" rx="32" fill="#EE3329" />
+  <rect x="256" y="96" width="224" height="320" rx="32" fill="#221E1F" />
+  <!-- Texte -->
+  <text x="144" y="330" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="180" fill="white" text-anchor="middle">S</text>
+  <text x="368" y="325" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="140" fill="white" text-anchor="middle">2D</text>
+</svg>

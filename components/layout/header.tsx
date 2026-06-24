@@ -18,8 +18,8 @@ const navigation = [
 ]
 
 // Logo URLs
-const LOGO_LIGHT = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/smart2d_logo-Lnk0x8f9RkLdJeRxxHqkdSqNb7ZSJH.png" // Logo avec SERVICES (pour fond sombre)
-const LOGO_DARK = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/smart2d%20logo_noir-17MeryHNMUifJOMbKLZIBz6kLEVSax.png" // Logo noir (pour fond clair)
+const LOGO_LIGHT = "/images/logo/smart2d-logo-light.png" // Logo avec SERVICES (pour fond sombre)
+const LOGO_DARK = "/images/logo/smart2d-logo-dark.png" // Logo noir (pour fond clair)
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)

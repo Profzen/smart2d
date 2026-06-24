@@ -28,7 +28,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/smart2d_logo-Lnk0x8f9RkLdJeRxxHqkdSqNb7ZSJH.png"
+              src="/images/logo/smart2d-logo-light.png"
               alt="SMART2D Services"
               width={200}
               height={60}
