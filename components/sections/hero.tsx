@@ -209,9 +209,9 @@ export function HeroSection() {
                 transition={{ duration: 0.5 }}
               >
                 {/* Tagline */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20">
-                  <span className="w-2 h-2 bg-[#EE3329] rounded-full animate-pulse" />
-                  <span className="text-sm font-medium text-white/90">
+                <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-full mb-6 border border-white/20">
+                  <span className="w-2 h-2 bg-[#EE3329] rounded-full animate-pulse shrink-0" />
+                  <span className="text-xs sm:text-sm font-medium text-white/90 text-center">
                     Conseil IT • Oracle • Infrastructures critiques
                   </span>
                 </div>
@@ -230,25 +230,25 @@ export function HeroSection() {
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/30 group"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/30 group text-sm sm:text-base text-center"
                   >
-                    Demander un diagnostic gratuit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="whitespace-normal">Demander un diagnostic gratuit</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
                   </Link>
                   <Link
                     href="/oracle-infrastructure"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 text-sm sm:text-base text-center"
                   >
-                    Découvrir nos expertises
+                    <span className="whitespace-normal">Découvrir nos expertises</span>
                   </Link>
                 </div>
               </motion.div>
             </AnimatePresence>
 
             {/* Carousel Controls */}
-            <div className="mt-12 flex items-center gap-4">
+            <div className="mt-12 flex flex-wrap items-center gap-4">
               {/* Dots */}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {slides.map((_, index) => (
                   <button
                     key={index}
@@ -264,7 +264,7 @@ export function HeroSection() {
               </div>
 
               {/* Navigation buttons */}
-              <div className="flex items-center gap-2 ml-4">
+              <div className="flex items-center gap-2 ml-0 sm:ml-4">
                 <button
                   onClick={prevSlide}
                   className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
