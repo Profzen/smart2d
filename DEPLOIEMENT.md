@@ -25,6 +25,8 @@ Ce document décrit la procédure interne de déploiement d'une mise à jour du 
    ```
 
 ## 3. Installation et Compilation
+
+### Option 1 : Compilation sur le serveur (Recommandée)
 Dans le terminal cPanel, exécuter les commandes suivantes pour mettre à jour les dépendances et recompiler l'application :
 1. Installation propre des dépendances :
    ```bash
@@ -34,8 +36,18 @@ Dans le terminal cPanel, exécuter les commandes suivantes pour mettre à jour l
    ```bash
    npm run build
    ```
+*Note : Si la commande `npm run build` échoue (ex: erreur OOM due aux limites de RAM du cPanel), passez à l'Option 2.*
 
-*Note technique : Si la commande `npm run build` échoue (ex: erreur de mémoire/OOM), cela est dû aux limites de RAM imposées par le serveur cPanel. Dans ce seul cas, la compilation devra être effectuée en local, et le dossier `.next/` résultant transféré manuellement via le Gestionnaire de fichiers pour écraser l'ancien.*
+### Option 2 : Compilation locale (Alternative)
+Si le serveur n'a pas assez de RAM pour compiler l'application :
+1. Sur votre machine locale, assurez-vous d'être sur la branche `develop` à jour et lancez la compilation :
+   ```bash
+   npm ci
+   npm run build
+   ```
+2. Compressez les dossiers `.next/` et `public/` générés localement en `.zip`.
+3. Dans le Gestionnaire de fichiers cPanel, supprimez les anciens dossiers `.next/` et `public/` du serveur.
+4. Uploadez votre archive `.zip` sur le serveur et extrayez-la pour remplacer les anciens dossiers.
 
 ## 4. Redémarrage de l'application
 1. Dans cPanel, ouvrir l'outil "Setup Node.js App".
