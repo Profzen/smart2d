@@ -3,10 +3,13 @@
 Ce document décrit la procédure interne de déploiement d'une mise à jour du site Next.js sur notre environnement cPanel.
 
 ## 1. Sauvegarde (Backup)
-1. Se connecter au cPanel, ouvrir le Gestionnaire de fichiers.
-2. Aller dans le dossier racine de l'application.
-3. Sélectionner tous les fichiers et dossiers actuels, puis les compresser en une archive .zip.
-4. Nommer l'archive backup_smart2d_YYYYMMDD.zip et la conserver par sécurité.
+1. Ouvrir le Terminal dans cPanel (ou se connecter via SSH).
+2. Se déplacer dans le répertoire parent de l'application.
+3. Créer une archive complète du répertoire de l'application :
+   ```bash
+   tar -czvf backup_smart2d_$(date +%Y%m%d).tar.gz chemin/vers/application
+   ```
+4. Conserver cette archive par sécurité avant toute manipulation.
 
 ## 2. Récupération des sources (Terminal cPanel)
 1. Ouvrir le Terminal dans cPanel (ou se connecter via SSH).
