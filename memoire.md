@@ -1,9 +1,9 @@
 # 🧠 MÉMOIRE DU PROJET — SMART2D Services Website
 
-> **Dernière mise à jour** : 24 juin 2026 (Fix Responsive Mobile, Logos Locaux, Favicon SVG)  
-> **Statut global** : Les correctifs de responsive (suppression du scroll horizontal) et le rapatriement local des logos/favicons ont été fusionnés sur `develop`. La refonte des sections OSCAR et Smart Transfert est également terminée et pushée.
-> **Prochaines étapes immédiates** : Générer le rapport d'avancement pour le client et vérifier l'historique du fichier `footer.txt.back`.
-> **Branche d'intégration** : `develop` | **Dernière branche de travail** : `aziz/local-logos-favicon` (fusionnée)
+> **Dernière mise à jour** : 26 juin 2026 (Déploiement Vercel, Configuration SMTP, Fix API Contact)  
+> **Statut global** : Le dépôt a été initialisé sur GitHub et Gitea. Le déploiement sur Vercel est en place (l'erreur de lockfile pnpm a été résolue). L'API de contact a été sécurisée avec un fix pour la vérification des variables d'environnement SMTP.
+> **Prochaines étapes immédiates** : Valider la PR `aziz/fix-contact-500` sur Gitea, fusionner dans `develop` et faire un redeploy Vercel pour tester les envois d'e-mails réels avec Google Workspace.
+> **Branche d'intégration** : `develop` | **Dernière branche de travail** : `aziz/fix-contact-500`
 
 ---
 
@@ -438,6 +438,19 @@ Fichiers `.png` à la racine : `content.png`, `desktop-final.png`, `hero-new.png
 ---
 
 ## 12. 📝 Journal des modifications
+
+### 26 juin 2026
+- **Déploiement initial sur GitHub et Vercel** : 
+  - Push complet de toutes les branches locales vers le nouveau dépôt GitHub distant (`Profzen/smart2d`).
+  - Lancement des premiers builds Vercel.
+- **Correction du build Vercel (Package Manager Conflict)** :
+  - Suppression du fichier `pnpm-lock.yaml` sur `develop` car il entrait en conflit avec le flux de travail purement `npm` du projet. Vercel utilise désormais correctement `package-lock.json`.
+- **Mise en place de l'environnement SMTP (Google Workspace)** :
+  - Création d'un fichier `.env.local` type contenant les variables nécessaires à Nodemailer (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL`) pour communiquer via le SMTP de Google Workspace (port 465, App Password).
+- **Correction de la route API de contact (Tâche D1 - Fix)** sur la branche `aziz/fix-contact-500` :
+  - L'API `/api/contact/route.ts` retournait une erreur 500 silencieuse sur Vercel à cause de l'absence des variables d'environnement.
+  - Ajout d'une vérification stricte : le backend rejette désormais la requête proprement et renvoie un message détaillé pour aider au débogage Vercel si `SMTP_USER` ou `SMTP_PASS` sont manquants.
+  - Push de la branche sur GitHub et sur l'instance locale Gitea (`http://192.168.132.128:3000/Aziz/Smart2d-site.git`) pour création et validation de la PR vers `develop`.
 
 ### 24 juin 2026
 - **Fusion et mise à jour de `develop`** : `develop` est désormais synchronisée à 100% avec les deux dernières PRs.
