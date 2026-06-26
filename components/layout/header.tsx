@@ -28,7 +28,7 @@ export function Header() {
 
   // Pages where the hero background is dark (#17233A)
   const isDarkHero = pathname === "/" || pathname === "/oracle-infrastructure"
-  
+
   // Use dark text (and dark logo/red button) if we scrolled OR if the hero background is light
   const useDarkText = isScrolled || !isDarkHero
 
