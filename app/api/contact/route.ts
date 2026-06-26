@@ -10,6 +10,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });
     }
 
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error("Erreur serveur : Variables d'environnement SMTP_USER ou SMTP_PASS manquantes.");
+      return NextResponse.json(
+        { 
+          error: "Erreur de configuration serveur. Les variables SMTP ne sont pas définies.",
+          details: "Vérifiez que les variables d'environnement sont bien ajoutées sur Vercel et que le projet a été redéployé."
+        }, 
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "localhost",
       port: Number(process.env.SMTP_PORT) || 587,
@@ -53,10 +64,13 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Erreur d'envoi du mail de contact:", error);
     return NextResponse.json(
-      { error: "Une erreur s'est produite lors de l'envoi de l'e-mail." },
+      { 
+        error: "Une erreur s'est produite lors de l'envoi de l'e-mail.",
+        details: error.message || "Erreur inconnue"
+      },
       { status: 500 }
     );
   }
