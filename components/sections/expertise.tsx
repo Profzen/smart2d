@@ -94,7 +94,7 @@ export function ExpertiseSection() {
               <h3 className="text-lg font-bold text-[#221E1F] mb-2">
                 {expertise.title}
               </h3>
-              <p className="text-[#221E1F]/60 text-sm leading-relaxed">
+              <p className="text-[#221E1F]/80 text-sm font-medium leading-relaxed">
                 {expertise.description}
               </p>
 

@@ -81,20 +81,30 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navigation.map((item) => (
+            {navigation.map((item) => {
+              const isActive = pathname === item.href
+              return (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                  useDarkText
-                    ? "text-[#221E1F] hover:text-[#EE3329] hover:bg-[#221E1F]/5"
-                    : "text-white/90 hover:text-white hover:bg-white/10"
+                  "relative px-3 py-2 text-sm font-medium rounded-md transition-all group",
+                  isActive 
+                    ? (useDarkText ? "text-[#EE3329]" : "text-white")
+                    : (useDarkText
+                      ? "text-[#221E1F] hover:text-[#EE3329] hover:bg-[#221E1F]/5"
+                      : "text-white/90 hover:text-white hover:bg-white/10")
                 )}
               >
                 {item.name}
+                {isActive && (
+                  <span className={cn(
+                    "absolute bottom-1 left-3 right-3 h-0.5 rounded-full",
+                    useDarkText ? "bg-[#EE3329]" : "bg-white"
+                  )} />
+                )}
               </Link>
-            ))}
+            )})}
           </div>
 
           {/* CTA Button */}
@@ -143,16 +153,23 @@ export function Header() {
             className="lg:hidden bg-[#221E1F] border-t border-white/10"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map((item) => {
+                const isActive = pathname === item.href
+                return (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className={cn(
+                    "block px-4 py-3 rounded-lg transition-colors",
+                    isActive
+                      ? "text-white bg-[#EE3329]"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
+                  )}
                 >
                   {item.name}
                 </Link>
-              ))}
+              )})}
               <div className="pt-4">
                 <Link
                   href="/contact"
