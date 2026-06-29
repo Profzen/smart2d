@@ -24,14 +24,12 @@ const slides = [
   {
     id: 1,
     image: "/images/hero/oracle-database-new.webp",
-    title: "Oracle Database",
-    subtitle: "Administration et optimisation de vos bases de données Oracle par des ingénieurs avec plus de 20 ans d'expérience",
+    title: t("oracle_title"), subtitle: t("oracle_sub"),
   },
   {
     id: 2,
     image: "/images/hero/cloud-oci-new.webp",
-    title: "Cloud & OCI",
-    subtitle: "Migration et déploiement sur Oracle Cloud Infrastructure - Modernisez votre infrastructure IT",
+    title: t("cloud_title"), subtitle: t("cloud_sub"),
   },
   {
     id: 3,
@@ -54,50 +52,42 @@ const slides = [
   {
     id: 6,
     image: "/images/hero/support-mco.webp",
-    title: "Support & MCO",
-    subtitle: "Maintien en conditions opérationnelles et support réactif pour vos environnements critiques",
+    title: t("support_title"), subtitle: t("support_sub"),
   },
   {
     id: 7,
     image: "/images/hero/training-new.webp",
-    title: "Formation & Transfert",
-    subtitle: "Formations Oracle Database, Linux, administration systèmes - Développez les compétences de vos équipes",
+    title: t("formation_title"), subtitle: t("formation_sub"),
   },
   {
     id: 8,
     image: "/images/hero/linux-unix-new.webp",
-    title: "OPTIMISER",
-    subtitle: "Maximiser les performances et l'efficacité de vos bases de données et de vos systèmes",
+    title: t("opt_title"), subtitle: t("opt_sub"),
   },
   {
     id: 9,
     image: "/images/hero/cloud-oci-new.webp",
-    title: "MIGRER",
-    subtitle: "Transférer vos infrastructures, bases de données et applications vers de nouveaux environnements",
+    title: t("mig_title"), subtitle: t("mig_sub"),
   },
   {
     id: 10,
     image: "/images/hero/oracle-database-new.webp",
-    title: "DIGITALISER",
-    subtitle: "Transformer vos processus traditionnels en solutions numériques modernes et intuitives",
+    title: t("dig_title"), subtitle: t("dig_sub"),
   },
   {
     id: 11,
     image: "/images/hero/formation-new.webp",
-    title: "NOS PARTENAIRES",
-    subtitle: "Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières",
+    title: t("part_title"), subtitle: t("part_sub"),
   },
   {
     id: 12,
     image: "/images/oscar/oscar-dashboard.png",
-    title: "OSCAR",
-    subtitle: "Plateforme d'observabilité, supervision et automatisation IT augmentée par l'IA",
+    title: t("oscar_title"), subtitle: t("oscar_sub"),
   },
   {
     id: 13,
     image: "/images/smart-transfert/smart-transfert-dashboard.png",
-    title: "Smart Transfert",
-    subtitle: "Plateforme de centralisation pour agences de transfert d'argent",
+    title: t("smart_title"), subtitle: t("smart_sub"),
   },
 ]
 

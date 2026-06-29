@@ -1,1 +1,22 @@
-{"Navigation": {"home": "Accueil", "about": "À propos", "oracle": "Oracle & Infrastructure", "services": "Services", "solutions": "Solutions", "support": "Support & Formation", "contact": "Nous contacter"}}
+{
+  "Navigation": {
+    "home": "Accueil", "about": "À propos", "oracle": "Oracle & Infrastructure", "services": "Services", "solutions": "Solutions", "support": "Support & Formation", "contact": "Nous contacter"
+  },
+  "Hero": {
+    "oracle_title": "Oracle Database", "oracle_sub": "Administration et optimisation de vos bases de données Oracle par des ingénieurs avec plus de 20 ans d'expérience",
+    "cloud_title": "Cloud & OCI", "cloud_sub": "Migration et déploiement sur Oracle Cloud Infrastructure - Modernisez votre infrastructure IT",
+    "linux_title": "Systèmes Linux & Unix", "linux_sub": "Administration systèmes d'exploitation pour vos environnements critiques de production",
+    "security_title": "Sécurité & Audit", "security_sub": "Protection des données et sécurisation de vos infrastructures Oracle et systèmes",
+    "ha_title": "Haute Disponibilité", "ha_sub": "RAC, Data Guard, GoldenGate - Garantissez la continuité de vos services 24/7",
+    "support_title": "Support & MCO", "support_sub": "Maintien en conditions opérationnelles et support réactif pour vos environnements critiques",
+    "formation_title": "Formation & Transfert", "formation_sub": "Formations Oracle Database, Linux, administration systèmes - Développez les compétences de vos équipes",
+    "opt_title": "OPTIMISER", "opt_sub": "Maximiser les performances et l'efficacité de vos bases de données et de vos systèmes",
+    "mig_title": "MIGRER", "mig_sub": "Transférer vos infrastructures, bases de données et applications vers de nouveaux environnements",
+    "dig_title": "DIGITALISER", "dig_sub": "Transformer vos processus traditionnels en solutions numériques modernes et intuitives",
+    "part_title": "NOS PARTENAIRES", "part_sub": "Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières",
+    "oscar_title": "OSCAR", "oscar_sub": "Plateforme d'observabilité, supervision et automatisation IT augmentée par l'IA",
+    "smart_title": "Smart Transfert", "smart_sub": "Plateforme de centralisation pour agences de transfert d'argent",
+    "btn_diag": "Demander un diagnostic gratuit",
+    "btn_exp": "Découvrir nos expertises"
+  }
+}

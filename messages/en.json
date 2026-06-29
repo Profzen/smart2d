@@ -1,1 +1,22 @@
-{"Navigation": {"home": "Home", "about": "About", "oracle": "Oracle & Infrastructure", "services": "Services", "solutions": "Solutions", "support": "Support & Training", "contact": "Contact us"}}
+{
+  "Navigation": {
+    "home": "Home", "about": "About", "oracle": "Oracle & Infrastructure", "services": "Services", "solutions": "Solutions", "support": "Support & Training", "contact": "Contact us"
+  },
+  "Hero": {
+    "oracle_title": "Oracle Database", "oracle_sub": "Administration and optimization of your Oracle databases by engineers with over 20 years of experience",
+    "cloud_title": "Cloud & OCI", "cloud_sub": "Migration and deployment on Oracle Cloud Infrastructure - Modernize your IT infrastructure",
+    "linux_title": "Linux & Unix Systems", "linux_sub": "Operating systems administration for your critical production environments",
+    "security_title": "Security & Audit", "security_sub": "Data protection and securing of your Oracle infrastructures and systems",
+    "ha_title": "High Availability", "ha_sub": "RAC, Data Guard, GoldenGate - Guarantee 24/7 continuity of your services",
+    "support_title": "Support & MCO", "support_sub": "Operational maintenance and reactive support for your critical environments",
+    "formation_title": "Training & Transfer", "formation_sub": "Oracle Database, Linux, sysadmin training - Develop your teams' skills",
+    "opt_title": "OPTIMIZE", "opt_sub": "Maximize the performance and efficiency of your databases and systems",
+    "mig_title": "MIGRATE", "mig_sub": "Transfer your infrastructures, databases and applications to new environments",
+    "dig_title": "DIGITALIZE", "dig_sub": "Transform your traditional processes into modern and intuitive digital solutions",
+    "part_title": "OUR PARTNERS", "part_sub": "Banks, Telecoms, Public & Private Institutions, Tech and Financial Companies",
+    "oscar_title": "OSCAR", "oscar_sub": "AI-augmented IT observability, supervision and automation platform",
+    "smart_title": "Smart Transfert", "smart_sub": "Centralization platform for money transfer agencies",
+    "btn_diag": "Request a free diagnostic",
+    "btn_exp": "Discover our expertise"
+  }
+}
