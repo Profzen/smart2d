@@ -82,10 +82,7 @@ const smartTransfertFeatures = [
   { icon: Users, label: "Gestion utilisateurs" },
 ]
 
-import { useTranslations } from "next-intl";
 export function SolutionsContent() {
-  const t = useTranslations("Solutions");
-
   return (
     <>
       {/* Hero */}
@@ -100,9 +97,18 @@ export function SolutionsContent() {
           >
             <HeroAnchors anchors={solutionsAnchors} />
 
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Nossoluti")}</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">{t("Dessoluti")}</h1>
-            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">{t("Encomplm")}</p>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos solutions
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
+              Des solutions conçues pour simplifier les opérations
+            </h1>
+            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
+              En complément de ses services de conseil, SMART2D conçoit et intègre des 
+              solutions qui répondent à des problèmes opérationnels concrets : supervision 
+              intelligente, automatisation, centralisation des opérations, rapports fiables 
+              et réduction des erreurs.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -119,8 +125,14 @@ export function SolutionsContent() {
             className="mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#EE3329] mb-3">OSCAR</h2>
-            <p className="text-xl md:text-2xl font-semibold text-[#221E1F] mb-4">{t("Observabil")}</p>
-            <p className="text-[#221E1F]/70 text-lg leading-relaxed max-w-4xl">{t("OSCARcent")}</p>
+            <p className="text-xl md:text-2xl font-semibold text-[#221E1F] mb-4">
+              Observabilité, supervision et automatisation IT
+            </p>
+            <p className="text-[#221E1F]/70 text-lg leading-relaxed max-w-4xl">
+              OSCAR centralise la supervision des serveurs, applications, bases de données 
+              et équipements. Il aide les équipes à observer, détecter, analyser et automatiser 
+              certaines opérations techniques pour améliorer la continuité des services.
+            </p>
           </motion.div>
 
           {/* Ce que fait OSCAR + Screenshot App — 2 colonnes */}
@@ -231,7 +243,9 @@ export function SolutionsContent() {
               className="w-full h-auto block rounded-2xl shadow-xl transition-transform duration-500 ease-out hover:scale-[1.03] cursor-zoom-in"
             />
             <p className="mt-4 text-sm text-[#221E1F]/50 flex items-center gap-2">
-              <Activity className="w-4 h-4" />{t("Dashboard")}</p>
+              <Activity className="w-4 h-4" />
+              Dashboard OSCAR : supervision des ressources, disponibilité et indicateurs techniques.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -252,11 +266,18 @@ export function SolutionsContent() {
                 <Send className="w-7 h-7 text-white" />
               </div>
               <div>
-                <span className="text-xs font-mono text-[#2F6B4F] bg-[#2F6B4F]/10 px-2 py-1 rounded">{t("TRANSFERT")}</span>
+                <span className="text-xs font-mono text-[#2F6B4F] bg-[#2F6B4F]/10 px-2 py-1 rounded">
+                  TRANSFERT D&apos;ARGENT
+                </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F] mt-2">Smart Transfert</h2>
               </div>
             </div>
-            <p className="text-xl text-[#221E1F]/70 max-w-3xl">{t("Plateforme")}</p>
+            <p className="text-xl text-[#221E1F]/70 max-w-3xl">
+              Plateforme de centralisation conçue pour les agences ou points de service 
+              qui gèrent plusieurs prestataires de transfert d&apos;argent. Elle permet aux 
+              agents de travailler dans une interface unique, de réduire les erreurs, 
+              de fiabiliser les rapports et de renforcer la traçabilité des opérations.
+            </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -268,7 +289,9 @@ export function SolutionsContent() {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-lg font-semibold text-[#221E1F] mb-6 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-[#EE3329]" />{t("Problmes")}</h3>
+                <AlertTriangle className="w-5 h-5 text-[#EE3329]" />
+                Problèmes traités
+              </h3>
               <div className="space-y-3">
                 {smartTransfertProblems.map((problem, index) => (
                   <div
@@ -290,7 +313,9 @@ export function SolutionsContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="text-lg font-semibold text-[#221E1F] mb-6 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-[#2F6B4F]" />{t("Bnfices")}</h3>
+                <TrendingUp className="w-5 h-5 text-[#2F6B4F]" />
+                Bénéfices
+              </h3>
               <div className="space-y-3">
                 {smartTransfertBenefits.map((benefit, index) => (
                   <div
@@ -357,12 +382,18 @@ export function SolutionsContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-white mb-4">{t("Voussouha")}</h2>
-            <p className="text-white/70 text-lg mb-8">{t("Contactez")}</p>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Vous souhaitez découvrir OSCAR ou Smart Transfert ?
+            </h2>
+            <p className="text-white/70 text-lg mb-8">
+              Contactez SMART2D pour organiser une présentation adaptée à votre contexte.
+            </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
-            >{t("Demanderu")}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            >
+              Demander une présentation
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

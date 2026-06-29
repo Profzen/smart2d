@@ -81,10 +81,7 @@ const supportModes = [
   },
 ]
 
-import { useTranslations } from "next-intl";
 export function SupportFormationContent() {
-  const t = useTranslations("Support");
-
   return (
     <>
       {/* Hero */}
@@ -99,10 +96,22 @@ export function SupportFormationContent() {
           >
             <HeroAnchors anchors={supportAnchors} />
 
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Support")}</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">{t("Unaccompa")}</h1>
-            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">{t("Laperform")}</p>
-            <p className="mt-4 text-[#221E1F]/60 leading-relaxed">{t("SMARTDac")}</p>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Support & Formation
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
+              Un accompagnement continu pour vos équipes
+            </h1>
+            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
+              La performance d&apos;une infrastructure ne dépend pas uniquement des outils 
+              installés. Elle dépend aussi de la qualité du support, de la méthode 
+              d&apos;exploitation et de l&apos;autonomie des équipes internes.
+            </p>
+            <p className="mt-4 text-[#221E1F]/60 leading-relaxed">
+              SMART2D accompagne les équipes techniques et métiers avec du support, 
+              de la supervision, du maintien en condition opérationnelle, de la formation 
+              et du transfert de compétences.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -117,8 +126,12 @@ export function SupportFormationContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Nospresta")}</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">{t("Supportf")}</h2>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos prestations
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
+              Support, formation et accompagnement
+            </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -152,8 +165,12 @@ export function SupportFormationContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Modesdap")}</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">{t("Uneapproc")}</h2>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Modes d&apos;intervention
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Une approche flexible selon vos besoins
+            </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -186,12 +203,18 @@ export function SupportFormationContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-[#221E1F] mb-4">{t("Voussouha")}</h2>
-            <p className="text-[#221E1F]/70 text-lg mb-8">{t("SMARTDpe")}</p>
+            <h2 className="text-3xl font-bold text-[#221E1F] mb-4">
+              Vous souhaitez renforcer vos équipes ou sécuriser l&apos;exploitation ?
+            </h2>
+            <p className="text-[#221E1F]/70 text-lg mb-8">
+              SMART2D peut vous accompagner en support ponctuel ou continu.
+            </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
-            >{t("Nousconta")}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            >
+              Nous contacter
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

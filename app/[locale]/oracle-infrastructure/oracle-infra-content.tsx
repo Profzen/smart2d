@@ -84,10 +84,7 @@ const sections = [
   },
 ]
 
-import { useTranslations } from "next-intl";
 export function OracleInfraContent() {
-  const t = useTranslations("Oracle");
-
   return (
     <>
       {/* Hero */}
@@ -102,10 +99,24 @@ export function OracleInfraContent() {
           >
             <HeroAnchors anchors={oracleAnchors} />
 
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Notreexpe")}</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">{t("Oracleba")}</h1>
-            <p className="mt-6 text-xl text-white/70 leading-relaxed">{t("Lesenviro")}</p>
-            <p className="mt-4 text-white/60 leading-relaxed">{t("SMARTDac")}</p>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Notre expertise principale
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              Oracle, bases de données et infrastructures critiques
+            </h1>
+            <p className="mt-6 text-xl text-white/70 leading-relaxed">
+              Les environnements Oracle supportent souvent les applications les plus 
+              sensibles d&apos;une organisation : données métiers, transactions, reporting, 
+              services numériques, applications internes et plateformes de production. 
+              Leur disponibilité, leur performance et leur sécurité ont un impact direct 
+              sur l&apos;activité.
+            </p>
+            <p className="mt-4 text-white/60 leading-relaxed">
+              SMART2D accompagne les entreprises dans la conception, l&apos;administration, 
+              l&apos;audit, la migration, la supervision et l&apos;optimisation de leurs plateformes 
+              Oracle et des socles techniques qui les entourent.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -114,7 +125,9 @@ export function OracleInfraContent() {
       <section id="expertises" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Nosdomain")}</span>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos domaines d&apos;expertise
+            </span>
           </div>
           <div className="space-y-12">
             {sections.map((section, index) => (
@@ -165,8 +178,12 @@ export function OracleInfraContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">{t("Technologi")}</span>
-            <h2 className="text-3xl font-bold text-[#221E1F]">{t("Uncosyst")}</h2>
+            <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
+              Technologies maîtrisées
+            </span>
+            <h2 className="text-3xl font-bold text-[#221E1F]">
+              Un écosystème complet
+            </h2>
           </motion.div>
 
           <motion.div
@@ -197,12 +214,19 @@ export function OracleInfraContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-white mb-4">{t("Vousexplo")}</h2>
-            <p className="text-white/70 text-lg mb-8">{t("Demandezu")}</p>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Vous exploitez un environnement Oracle critique ?
+            </h2>
+            <p className="text-white/70 text-lg mb-8">
+              Demandez un audit ou un échange technique pour identifier les risques, 
+              les priorités et les actions de stabilisation.
+            </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
-            >{t("Demanderu")}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            >
+              Demander un audit Oracle
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
