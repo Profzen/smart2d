@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export interface Anchor {
   id: string
@@ -13,6 +13,25 @@ interface HeroAnchorsProps {
 
 export function HeroAnchors({ anchors }: HeroAnchorsProps) {
   const [activeId, setActiveId] = useState<string>("")
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Autoscroll for mobile
+    const interval = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
+        // Si on est à la fin, on revient au début
+        if (Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 10) {
+          scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' })
+        } else {
+          // Sinon on scrolle vers la droite
+          scrollContainerRef.current.scrollBy({ left: 160, behavior: 'smooth' })
+        }
+      }
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,15 +81,19 @@ export function HeroAnchors({ anchors }: HeroAnchorsProps) {
   if (!anchors || anchors.length === 0) return null
 
   return (
-    <div className="w-full pt-8 pb-4 relative z-20">
-      <div className="flex flex-wrap gap-4 items-center justify-start sm:justify-center lg:justify-start">
+    <div className="w-full pt-2 pb-4 relative z-20">
+      <div 
+        ref={scrollContainerRef}
+        className="flex flex-nowrap gap-4 items-center justify-start overflow-x-auto no-scrollbar pb-2"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         {anchors.map((anchor) => (
           <a
             key={anchor.id}
             href={`#${anchor.id}`}
             onClick={(e) => scrollTo(anchor.id, e)}
             className={`
-              relative px-4 py-3 sm:px-6 sm:py-4 bg-white shadow-lg border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-w-[120px] sm:min-w-[140px] flex-1 sm:flex-none text-center
+              relative px-4 py-3 sm:px-6 sm:py-4 bg-white shadow-lg border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-w-[140px] flex-none text-center
               ${activeId === anchor.id 
                 ? "border-[#EE3329]/30 ring-1 ring-[#EE3329] shadow-md shadow-[#EE3329]/10" 
                 : "border-white/10"}
