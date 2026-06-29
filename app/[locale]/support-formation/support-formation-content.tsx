@@ -13,14 +13,19 @@ import {
   FileText,
   Users,
   Clock,
-  CheckCircle,
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 
 export function SupportFormationContent() {
   const t = useTranslations("Support")
+  const locale = useLocale()
+
+  const getLocalizedHref = (href: string) => {
+    if (href.startsWith("#")) return href
+    return `/${locale}${href}`
+  }
 
   const supportAnchors: Anchor[] = [
     { id: "support", title: t("anc_support") },
@@ -208,10 +213,10 @@ export function SupportFormationContent() {
               {t("cta_desc")}
             </p>
             <Link
-              href="/contact"
+              href={getLocalizedHref("/contact")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
-              Contacter SMART2D
+              {t("cta_btn")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

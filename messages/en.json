@@ -203,7 +203,8 @@
     "intervention_tag": "Intervention Modes",
     "intervention_title": "A flexible approach based on your needs",
     "cta_title": "Do you want to reinforce your teams or secure operations?",
-    "cta_desc": "SMART2D can accompany you with ad-hoc or continuous support."
+    "cta_desc": "SMART2D can accompany you with ad-hoc or continuous support.",
+    "cta_btn": "Contact SMART2D"
   },
   "Oracle": {
     "anc_expertises": "Expertise",
@@ -237,5 +238,8 @@
     "sec5_desc": "SMART2D accompanies paths towards Oracle Cloud Infrastructure: architecture, migration, hybrid integration, cloud security, backup, supervision, cost optimization and service continuity.",
     "sec6_title": "Linux / Unix around Oracle",
     "sec6_desc": "Oracle databases rely on system foundations that must be mastered. SMART2D intervenes on Oracle Linux, Red Hat, AIX, Solaris and Unix/Linux environments for administration, hardening, logs, access, patching and supervision."
+  },
+  "ScrollToTop": {
+    "label": "Scroll to top"
   }
 }

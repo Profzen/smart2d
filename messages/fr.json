@@ -203,7 +203,8 @@
     "intervention_tag": "Modes d'intervention",
     "intervention_title": "Une approche flexible selon vos besoins",
     "cta_title": "Vous souhaitez renforcer vos �quipes ou s�curiser l'exploitation ?",
-    "cta_desc": "SMART2D peut vous accompagner en support ponctuel ou continu."
+    "cta_desc": "SMART2D peut vous accompagner en support ponctuel ou continu.",
+    "cta_btn": "Contacter SMART2D"
   },
   "Oracle": {
     "anc_expertises": "Expertises",
@@ -237,5 +238,8 @@
     "sec5_desc": "SMART2D accompagne les trajectoires vers Oracle Cloud Infrastructure : architecture, migration, int�gration hybride, s�curit� cloud, sauvegarde, supervision, optimisation des co�ts et continuit� de service.",
     "sec6_title": "Linux / Unix autour d'Oracle",
     "sec6_desc": "Les bases Oracle reposent sur des socles syst�mes qu'il faut ma�triser. SMART2D intervient sur Oracle Linux, Red Hat, AIX, Solaris et environnements Unix/Linux pour l'administration, le durcissement, les logs, les acc�s, le patching et la supervision."
+  },
+  "ScrollToTop": {
+    "label": "Retour en haut"
   }
 }

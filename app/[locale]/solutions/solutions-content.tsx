@@ -25,10 +25,16 @@ import {
   TrendingUp
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 
 export function SolutionsContent() {
   const t = useTranslations("Solutions")
+  const locale = useLocale()
+
+  const getLocalizedHref = (href: string) => {
+    if (href.startsWith("#")) return href
+    return `/${locale}${href}`
+  }
 
   const solutionsAnchors: Anchor[] = [
     { id: "oscar", title: "OSCAR" },
@@ -400,7 +406,7 @@ export function SolutionsContent() {
               {t("cta_desc")}
             </p>
             <Link
-              href="/contact"
+              href={getLocalizedHref("/contact")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
               {t("cta_btn")}

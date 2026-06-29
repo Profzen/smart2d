@@ -1,18 +1,20 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 
 const footerLinks = {
   expertise: [
-    { name: "Oracle & Infrastructure", href: "/oracle-infrastructure" },
-    { name: "Services", href: "/services" },
-    { name: "solutions", href: "/solutions" },
-    { name: "Support & Formation", href: "/support-formation" },
+    { key: "oracle", href: "/oracle-infrastructure" },
+    { key: "services", href: "/services" },
+    { key: "solutions", href: "/solutions" },
+    { key: "support", href: "/support-formation" },
   ],
   entreprise: [
-    { name: "À propos", href: "/a-propos" },
-    { name: "contact", href: "/contact" },
+    { key: "about", href: "/a-propos" },
+    { key: "contact", href: "/contact" },
   ],
   solutions: [
     { name: "OSCAR", href: "/solutions#oscar" },
@@ -22,6 +24,13 @@ const footerLinks = {
 
 export function Footer() {
   const t = useTranslations("Footer")
+  const tNav = useTranslations("Navigation")
+  const locale = useLocale()
+
+  const getLocalizedHref = (href: string) => {
+    if (href.startsWith("#")) return href
+    return `/${locale}${href}`
+  }
 
   return (
     <footer className="bg-[#221E1F] text-white">
@@ -49,12 +58,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {footerLinks.expertise.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link
-                    href={link.href}
+                    href={getLocalizedHref(link.href)}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
-                    {link.name === "solutions" ? t(link.name) : link.name}
+                    {tNav(link.key)}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
@@ -78,7 +87,7 @@ export function Footer() {
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
+                    href={getLocalizedHref(link.href)}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     {link.name}
@@ -93,12 +102,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {footerLinks.entreprise.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link
-                    href={link.href}
+                    href={getLocalizedHref(link.href)}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
-                    {link.name === "contact" ? t(link.name) : link.name}
+                    {tNav(link.key)}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
