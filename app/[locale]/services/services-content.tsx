@@ -15,69 +15,11 @@ import {
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
+import { useTranslations } from "next-intl"
 
 const servicesAnchors: Anchor[] = [
   { id: "domaines", title: "Domaines d'intervention" },
   { id: "demarche", title: "Notre Démarche" },
-]
-
-const services = [
-  {
-    id: "oracle-database-middleware",
-    icon: Database,
-    title: t("oracle_title"),
-    description: "Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    id: "cloud-oci-hybrides",
-    icon: Cloud,
-    title: t("cloud_title"),
-    description: "Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "bases-de-donnees-critiques",
-    icon: HardDrive,
-    title: "Bases de données critiques",
-    description: "Installation, tuning, monitoring, sauvegarde et restauration sur Oracle, MySQL, PostgreSQL, SQL Server et environnements associés.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    id: "linux-unix",
-    icon: Terminal,
-    title: t("linux_title"),
-    description: "Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "audit-securite-performance",
-    icon: Shield,
-    title: "Audit, sécurité & performance",
-    description: "Analyse des risques, vérification des configurations, recommandations opérationnelles et plans de remédiation priorisés.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    id: "ia-automatisation",
-    icon: Cpu,
-    title: t("ia_title"),
-    description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "migration-modernisation",
-    icon: RefreshCw,
-    title: t("mig_title"),
-    description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    id: "support-formation",
-    icon: GraduationCap,
-    title: t("sup_title"),
-    description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
-    color: "bg-[#17233A]",
-  },
 ]
 
 const approach = [
@@ -85,12 +27,70 @@ const approach = [
   "Identification des risques techniques et opérationnels",
   "Plan d'action priorisé : urgence, stabilisation, optimisation, modernisation",
   "Mise en œuvre, documentation et transfert de compétences",
-  "Suivi post-intervention et recommandations d'amélioration continue",
+  "Suivi post-intervention et recommendations d'amélioration continue",
 ]
 
-import { useTranslations } from "next-intl";
 export function ServicesContent() {
-  const t = useTranslations("Services");
+  const t = useTranslations("Services")
+
+  const services = [
+    {
+      id: "oracle-database-middleware",
+      icon: Database,
+      title: t("oracle_title"),
+      description: "Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.",
+      color: "bg-[#EE3329]",
+    },
+    {
+      id: "cloud-oci-hybrides",
+      icon: Cloud,
+      title: t("cloud_title"),
+      description: "Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.",
+      color: "bg-[#17233A]",
+    },
+    {
+      id: "bases-de-donnees-critiques",
+      icon: HardDrive,
+      title: "Bases de données critiques",
+      description: "Installation, tuning, monitoring, sauvegarde et restauration sur Oracle, MySQL, PostgreSQL, SQL Server et environnements associés.",
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      id: "linux-unix",
+      icon: Terminal,
+      title: t("linux_title"),
+      description: "Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris.",
+      color: "bg-[#17233A]",
+    },
+    {
+      id: "audit-securite-performance",
+      icon: Shield,
+      title: "Audit, sécurité & performance",
+      description: "Analyse des risques, vérification des configurations, recommandations opérationnelles et plans de remédiation priorisés.",
+      color: "bg-[#EE3329]",
+    },
+    {
+      id: "ia-automatisation",
+      icon: Cpu,
+      title: t("ia_title"),
+      description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
+      color: "bg-[#17233A]",
+    },
+    {
+      id: "migration-modernisation",
+      icon: RefreshCw,
+      title: t("mig_title"),
+      description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      id: "support-formation",
+      icon: GraduationCap,
+      title: t("sup_title"),
+      description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
+      color: "bg-[#17233A]",
+    },
+  ]
 
   return (
     <>

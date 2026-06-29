@@ -4,65 +4,65 @@ import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import { Database, Cloud, HardDrive, Terminal, Shield, Cpu, RefreshCw, GraduationCap, Code } from "lucide-react"
 
-const expertises = [
-  {
-    icon: Database,
-    title: t("oracle_title"),
-    description: t("oracle_desc"),
-    color: "bg-[#EE3329]",
-  },
-  {
-    icon: Cloud,
-    title: t("cloud_title"),
-    description: t("cloud_desc"),
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: HardDrive,
-    title: t("db_title"),
-    description: t("db_desc"),
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    icon: Terminal,
-    title: t("linux_title"),
-    description: t("linux_desc"),
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Shield,
-    title: t("audit_title"),
-    description: t("audit_desc"),
-    color: "bg-[#EE3329]",
-  },
-  {
-    icon: Cpu,
-    title: t("ia_title"),
-    description: t("ia_desc"),
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: RefreshCw,
-    title: t("mig_title"),
-    description: t("mig_desc"),
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    icon: GraduationCap,
-    title: t("sup_title"),
-    description: t("sup_desc"),
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Code,
-    title: t("apex_title"),
-    description: t("apex_desc"),
-    color: "bg-[#EE3329]",
-  },
-]
-
 export function ExpertiseSection() {
   const t = useTranslations("Expertise");
+
+  const expertises = [
+    {
+      icon: Database,
+      title: t("oracle_title"),
+      description: t("oracle_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      icon: Cloud,
+      title: t("cloud_title"),
+      description: t("cloud_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: HardDrive,
+      title: t("db_title"),
+      description: t("db_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      icon: Terminal,
+      title: t("linux_title"),
+      description: t("linux_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Shield,
+      title: t("audit_title"),
+      description: t("audit_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      icon: Cpu,
+      title: t("ia_title"),
+      description: t("ia_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: RefreshCw,
+      title: t("mig_title"),
+      description: t("mig_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      icon: GraduationCap,
+      title: t("sup_title"),
+      description: t("sup_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Code,
+      title: t("apex_title"),
+      description: t("apex_desc"),
+      color: "bg-[#EE3329]",
+    },
+  ]
 
   return (
     <section id="expertises" className="py-20 lg:py-28 bg-[#F0ECE8]">
