@@ -15,82 +15,6 @@ const CAROUSEL_CONFIG = {
   transitionDuration: 0.8, // Durée de transition en secondes
 }
 
-// ==========================================
-// SLIDES DU CARROUSEL
-// Pour ajouter une image: placez-la dans /public/images/hero/
-// puis ajoutez une entrée ici
-// ==========================================
-const slides = [
-  {
-    id: 1,
-    image: "/images/hero/oracle-database-new.webp",
-    title: t("oracle_title"), subtitle: t("oracle_sub"),
-  },
-  {
-    id: 2,
-    image: "/images/hero/cloud-oci-new.webp",
-    title: t("cloud_title"), subtitle: t("cloud_sub"),
-  },
-  {
-    id: 3,
-    image: "/images/hero/linux-unix-new.webp",
-    title: "Systèmes Linux & Unix",
-    subtitle: "Administration systèmes d'exploitation pour vos environnements critiques de production",
-  },
-  {
-    id: 4,
-    image: "/images/hero/security-new.webp",
-    title: "Sécurité & Audit",
-    subtitle: "Protection des données et sécurisation de vos infrastructures Oracle et systèmes",
-  },
-  {
-    id: 5,
-    image: "/images/hero/oracle-database-new.webp",
-    title: "Haute Disponibilité",
-    subtitle: "RAC, Data Guard, GoldenGate - Garantissez la continuité de vos services 24/7",
-  },
-  {
-    id: 6,
-    image: "/images/hero/support-mco.webp",
-    title: t("support_title"), subtitle: t("support_sub"),
-  },
-  {
-    id: 7,
-    image: "/images/hero/training-new.webp",
-    title: t("formation_title"), subtitle: t("formation_sub"),
-  },
-  {
-    id: 8,
-    image: "/images/hero/linux-unix-new.webp",
-    title: t("opt_title"), subtitle: t("opt_sub"),
-  },
-  {
-    id: 9,
-    image: "/images/hero/cloud-oci-new.webp",
-    title: t("mig_title"), subtitle: t("mig_sub"),
-  },
-  {
-    id: 10,
-    image: "/images/hero/oracle-database-new.webp",
-    title: t("dig_title"), subtitle: t("dig_sub"),
-  },
-  {
-    id: 11,
-    image: "/images/hero/formation-new.webp",
-    title: t("part_title"), subtitle: t("part_sub"),
-  },
-  {
-    id: 12,
-    image: "/images/oscar/oscar-dashboard.png",
-    title: t("oscar_title"), subtitle: t("oscar_sub"),
-  },
-  {
-    id: 13,
-    image: "/images/smart-transfert/smart-transfert-dashboard.png",
-    title: t("smart_title"), subtitle: t("smart_sub"),
-  },
-]
-
 const homeAnchors: Anchor[] = [
   { id: "positionnement", title: "Notre Approche" },
   { id: "expertises", title: "Expertises" },
@@ -100,6 +24,79 @@ const homeAnchors: Anchor[] = [
 ]
 
 export function HeroSection() {
+  const t = useTranslations("Hero");
+
+  const slides = [
+    {
+      id: 1,
+      image: "/images/hero/oracle-database-new.webp",
+      title: t("oracle_title"), subtitle: t("oracle_sub"),
+    },
+    {
+      id: 2,
+      image: "/images/hero/cloud-oci-new.webp",
+      title: t("cloud_title"), subtitle: t("cloud_sub"),
+    },
+    {
+      id: 3,
+      image: "/images/hero/linux-unix-new.webp",
+      title: t("linux_title"),
+      subtitle: t("linux_sub"),
+    },
+    {
+      id: 4,
+      image: "/images/hero/security-new.webp",
+      title: t("security_title"),
+      subtitle: t("security_sub"),
+    },
+    {
+      id: 5,
+      image: "/images/hero/oracle-database-new.webp",
+      title: t("ha_title"),
+      subtitle: t("ha_sub"),
+    },
+    {
+      id: 6,
+      image: "/images/hero/support-mco.webp",
+      title: t("support_title"), subtitle: t("support_sub"),
+    },
+    {
+      id: 7,
+      image: "/images/hero/training-new.webp",
+      title: t("formation_title"), subtitle: t("formation_sub"),
+    },
+    {
+      id: 8,
+      image: "/images/hero/linux-unix-new.webp",
+      title: t("opt_title"), subtitle: t("opt_sub"),
+    },
+    {
+      id: 9,
+      image: "/images/hero/cloud-oci-new.webp",
+      title: t("mig_title"), subtitle: t("mig_sub"),
+    },
+    {
+      id: 10,
+      image: "/images/hero/oracle-database-new.webp",
+      title: t("dig_title"), subtitle: t("dig_sub"),
+    },
+    {
+      id: 11,
+      image: "/images/hero/formation-new.webp",
+      title: t("part_title"), subtitle: t("part_sub"),
+    },
+    {
+      id: 12,
+      image: "/images/oscar/oscar-dashboard.png",
+      title: t("oscar_title"), subtitle: t("oscar_sub"),
+    },
+    {
+      id: 13,
+      image: "/images/smart-transfert/smart-transfert-dashboard.png",
+      title: t("smart_title"), subtitle: t("smart_sub"),
+    },
+  ]
+
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [direction, setDirection] = useState(0)
