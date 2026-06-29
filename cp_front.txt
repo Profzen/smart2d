@@ -1,0 +1,594 @@
+
+ 
+Table des matières 
+ 
+1.	Introduction	2
+2.	Lancement de SmartACCESS	3
+2.1.	Comment accéder à l’application ?	4
+2.2.	Présentation de l’interface graphique de SmartACCESS	6
+3.	Le Démarrage du Gestionnaire de Taches	7
+4.	Le Scan des chèques	10
+5.	La saisie des chèques	12
+5.1.	Saisie des Remises	12
+5.2.	L’ajustement des remises chèques	18
+6.	Création des effets	20
+7.	Création des virements	22
+8.	Ajustements des effets / virements	25
+9.	Le suivi des chèques, effets, et virements	25
+10.	Les chèques, effets et virements prêt pour ICOM1 (Mise en erreur )	26
+11.	L’édition des rapports	29
+12.	Génération des fichiers EXA/EXR	32
+13.	Vérification des chèques par les opérationnels et gestionnaires	32
+14.	Les chèques, effets et virements prêt pour ICOM2 (Mise à jour)	36
+15.	Génération des fichiers CRO / EXR	37
+
+ 	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.	Introduction
+ 
+Ce document présente l’utilisation de SmartACCESS en Front Office. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.	Lancement de SmartACCESS
+ 
+
+2.1.	Comment accéder à l’application ?
+
+Pour accéder à l’application SmartACCESS, vous devez double cliquer sur l’icône SmartACCESS disponible sur votre bureau ou accéder à l’adresse 
+https://@ipserveur:@port/SmartACCESS dans un navigateur de votre choix :
+
+
+ 
+
+
+La page de démarrage de l’application s’affiche dans une fenêtre du Navigateur.
+
+
+
+ 
+
+
+Entrez vos informations de connexion (Identifiant et Mot de Passe)
+Exemple :
+•	Login : admin
+•	Mot de Passe : XXX@@Mty
+
+Une fois correctement authentifié, vous serez redirigé sur la page principale de l’application.
+
+ 
+
+
+Les menus de SmartACCESS sont dynamiques, paramétrables et organisés selon des thématiques. Selon les besoins fonctionnels de votre profil, vous aurez accès à certains menus et/ou certaines thématiques.
+
+
+2.2.	Présentation de l’interface graphique de SmartACCESS
+
+
+
+
+1.	Les menus dans la Zone 1 regroupe les taches métiers liées à votre profil. Ces menus sont regroupés par type d’opérations (Chèques, Virements, Effets, Prélèvements). Selon votre profil, vous pouvez également avoir accès à un menu Compensation, qui regroupe les taches Back-Office.
+2.	La Zone 2 regroupe les menus et informations relatifs à l’utilisateur connecté.
+3.	La Zone 3 regroupe les menus généraux tels que les menus de Paramétrage, de Production de rapport et de Fichiers, etc.
+4.	La Zone 4 est la zone principale d’affichage des taches de l’application. Tout menu choisi affichera une fenêtre dans cette zone sous forme d’un onglet.
+5.	La Zone 5 affiche les dates de compensation Nationale & Régionale fournies par le Système de Compensation.
+6.	La Zone 6 permet de rafraichir (manuellement) les paramètres de l’applicatif, le cas échéant.
+
+3.	Le Démarrage du Gestionnaire de Taches
+ 
+
+Le Gestionnaire de Taches est accessible dans la Zone 3, et est reconnaissable grâce à une icône de chronomètre.
+
+
+ 
+
+
+
+(1)	Indique le menu et le nombre de taches automatiques lancés 
+(2)	Le menu de démarrage, de listing des évènements de traitements automatiques déclenchés par le gestionnaire de taches.
+Cliquer sur le Menu Gestionnaire des Processus pour accéder à l’écran du gestionnaire de tache :
+
+ 
+
+
+Cliquer sur le bouton « Demarrer » pour Démarrer le Gestionnaire, ou « Arreter » pour l’arrêter. 
+	Une fois démarré, une notification à l’écran vous informera du démarrage du Gestionnaire (1)
+	Les taches automatiquement démarrées afficheront leurs informations d’exécution dans le journal des évènements (2)
+	Le Nombre de taches automatiques démarrées dans l’application s’affichera sur l’icône du gestionnaire de tache (3). Exemple d’écran :
+
+ 
+
+
+
+	Le journal des évènements se met à jour automatiquement lors de l’exécution d’une tache.
+	Il utilise un code couleur en fonction du statut du traitement en cours :
+o	Vert (Succès).
+o	Jaune (Avertissement)
+o	Rouge (Erreur)
+o	Blanc (Information)
+	Un bouton Détails permet d’avoir plus de détails sur l’exécution d’une tache.
+ 
+4.	Le Scan des chèques
+ 
+
+L’application propose le scan des chèques directement dans l’interface Web.
+Selon votre mode de traitement, vous pouvez accéder au menu de scan qui vous convient :
+
+Menu « Chèques\Scan des Chèques » : Pour scanner les chèques avec ou sans les bordereaux de remise.
+
+ 
+
+
+Zone 1 : Menu “Scan des Chèques”
+Cette zone se trouve dans le menu latéral gauche de l’application SmartACCESS.
+Elle permet d’accéder à la fonctionnalité de scan des chèques.
+•	Pour y accéder, l’utilisateur clique sur Scan des Chèques.
+
+Zone 2 : Sélection de la machine de scan
+Cette zone contient un menu déroulant intitulé Machine de Scan.
+Elle permet de sélectionner la machine (scanner) qui sera utilisée pour la numérisation.
+•	Chaque utilisateur peut être rattaché à une machine spécifique, par exemple :
+MACHINE02-MACHINE02
+
+Zone 3 : Panneau de commande du scanner
+Cette zone regroupe les différents boutons de contrôle du scanner.
+C’est ici que l’utilisateur effectue les actions nécessaires au déroulement complet du scan.
+Voici le déroulement logique des actions :
+1.	Initialiser le Scanner
+o	Permet d’établir la connexion entre l’application et le périphérique (scanner).
+o	Cette étape est obligatoire avant toute autre action.
+2.	Activer les Options
+o	Une fois le scanner initialisé, on active les paramètres nécessaires au fonctionnement
+3.	Démarrer le Scan
+o	Lance le processus de numérisation des chèques.
+o	Les images et données (montant, numéro, etc.) sont récupérées automatiquement.
+4.	Arrêter le Scan
+o	Permet de mettre fin à la session de numérisation.
+o	À effectuer une fois que tous les chèques ont été scannés.
+
+
+
+
+
+5.	La saisie des chèques
+ 
+
+L’application propose 2 types de saisie selon les options acquises :
+1.	Une saisie manuelle standard des chèques ou effets ;
+2.	Une saisie assistée par l’ICR (La reconnaissance de caractère)
+
+Selon votre mode de traitement, vous pouvez accéder au menu de saisie qui vous convient :
+Menu « Chèques\Saisie des Remises » : Pour saisir les chèques avec les bordereaux de remise.
+Menu « Chèques\Saisie des Chèques » : Pour saisir les chèques sans les bordereaux de remise.
+Menu « Effets\Saisie des Remises » : Pour saisir les effets avec les bordereaux de remise.
+Menu « Effets\Saisie des effets » : Pour saisir les effets sans les bordereaux de remise.
+Menu « Chèques\Saisie des Remises (ICR) » : Pour saisir les chèques avec les bordereaux de remise avec assistance de l’ICR.
+Menu « Chèques\Saisie des Chèques (ICR) » : Pour saisir les chèques sans les bordereaux de remise avec assistance de l’ICR.
+
+
+5.1.	Saisie des Remises
+
+Cet écran permet d’enregistrer les chèques scannés afin de constituer une remise que le client dépose à la banque.
+
+Chaque remise contient un ou plusieurs chèques associés à un bordereau.
+
+
+Exemple d’écran :
+
+
+ 
+
+Zone 1 : Menu “Saisie des Remises”
+Cette zone se trouve dans le menu latéral gauche de l’application SmartACCESS.
+•	L’utilisateur clique sur Saisie des Remises pour ouvrir la page.
+
+Zone 2 : Remises et chèques restants
+Cette zone affiche le nombre de remises et de chèques restants à traiter.
+Elle contient également un bouton de suppression.
+•	Le bouton 🗑️ permet de supprimer une remise ou un chèque avant validation.
+•	Le bandeau indique le nombre de remises ou de chèques non encore validés (par exemple : “Remises et chèques restants : 5”).
+
+Zone 3 : Images de la remise ou des chèques
+Cette zone affiche les images scannées :
+•	soit du bordereau de remise,
+•	soit des chèques associés.
+L’utilisateur peut visualiser le recto et le verso pour vérifier la lisibilité, la signature, et le montant.
+Ces images proviennent du scan effectué dans le module Scan des Chèques.
+Zone 4 : Outils de zoom (Recto / Verso)
+Cette zone propose des boutons de zoom 🔍 permettant d’agrandir ou de réduire les images affichées :
+•	Zoom sur le recto du chèque,
+•	Zoom sur le verso du chèque.
+Cela facilite la vérification des mentions manuscrites, signatures ou tampons.
+
+Zone 5 : Bordereau du client
+Cette zone permet de constituer le bordereau de remise.
+L’utilisateur saisit ici les informations nécessaires avant validation :
+•	Numéro de Compte du client,
+•	Si le compte remettant entré à l’écran, existe les informations seront récupérées et affichées à l’écran ; sinon, un message d’erreur informera l’utilisateur. 
+
+•	Montant de la Remise,
+•	Nombre de Chèques,
+•	Nom du Client,
+•	Agence Remettante,
+
+
+•	Référence (facultative).
+Une fois tous les champs remplis, il faut cliquer sur Valider pour enregistrer la remise dans le système.
+
+
+Après avoir constituer la remises, le Panel de Saisie de Chèques apparait. Exemple d’écran :
+
+ 
+
+Le bouton « REMISE XX » permet de repartir sur la Remise en Cours. S’il y a plusieurs chèques sur le bordereau, des boutons de navigation « Suivant » et « Précédent » seront activés. Exemple d’écran :
+
+ 
+
+A l’écran de saisie des chèques, on peut voir si toutes les informations récupérées par le scanner sont bonnes :
+(1)	Le code Banque du Chèque récupéré par le Scanner, de même que le libellé de cette banque
+(2)	Le code agence du chèque
+(3)	Le numéro de chèque
+(4)	Le numéro de compte du chèque (le tireur)
+(5)	La clef RIB
+(*) Entrez le Montant du Chèque dans le champ « Montant »
+(*) Entrez le Nom de l’émetteur du chèque si nécessaire
+     Entrez la date d’Emission du chèque
+     Cliquer sur le Bouton « Valider » pour valider la saisie du chèque courant 
+La Navigation pour passer au Chèque suivant se fait :
+•	Soit après clic sur le bouton « Valider » (les informations saisies sont enregistrées en base de données) 
+•	Soit après clic sur les boutons « Suivant » « Précédent » (les informations saisies ne sont pas enregistrées en base de données) 
+1.	Les contrôles de cohérences sont faits lors de la saisie de la remise et de ses chèques (clef rib, montant de la remise supérieur ou inférieur à celui de la somme des chèques, etc.). Un message d’alerte est affiché en fonction du résultat des contrôles.
+2.	La zone « Somme Courante » affiche la somme calculée des montants des chèques sur la remise en cours.
+3.	La saisie se fait au fil de l’eau des chèques des bordereaux intégrés.
+4.	Il est possible de ressaisir la remise du chèque en cliquant sur le bouton contenant le numéro de la remise.
+5.	L’utilisateur peut tirer son état pour pointage une fois sa saisie terminée. Exemple d’écran :
+
+ 
+ 5.2.	L’ajustement des remises chèques
+ 
+
+Menu : « Cheques »\Ajuster des Remises Chèques
+
+
+Le menu d’ajustement des remises chèque permet de modifier une remise chèque déjà saisie.
+1.	(1) La ligne concernant la remise des chèques
+2.	(2) La ligne des chèques de la remise
+3.	Pour supprimer un chèque de la remise, il suffit de cliquer sur le bouton vert « Icone Poubelle » de la ligne du chèque.
+4.	Pour modifier les informations d’un chèque, il suffit de cliquer sur le bouton bleu « Icone crayon » de la ligne du chèque.
+
+La modification permet de modifier tous les champs. Les contrôles de cohérence (Clé rib, etc) sont effectués à la validation. Pour ne pas déséquilibrer la remise, si le montant est modifié, toute la remise est recalculée.
+ 6.	Création des effets
+ 
+
+Écran : Création des Effets
+Cet écran permet à l’utilisateur de créer un effet (lettre de change, billet à ordre, etc.) en renseignant les informations du tireur, du bénéficiaire, et les caractéristiques de l’effet.
+
+ 
+
+
+Zone 1 : Menu “Création Effets”
+Située dans le menu latéral gauche, cette zone permet d’accéder à la fonctionnalité de création d’un nouvel effet.
+•	Pour y accéder, cliquez sur Création Effets.
+•	Ce menu regroupe toutes les opérations liées à la gestion des effets (création, liste, suivi)..
+
+Zone 2 : Informations sur l’Effet
+Cette zone contient tous les champs nécessaires à la définition de l’effet.
+Les champs principaux sont :
+•	Type d’Effet : permet de choisir la nature de l’effet
+(ex. 045 – Billet à ordre nouvelle norme).
+•	Date d’échéance : date à laquelle l’effet devra être payé.
+•	Date de création : date de saisie de l’effet dans le système.
+•	Numéro de l’Effet : identifiant unique de l’effet.
+•	Montant : valeur monétaire de l’effet.
+Des cases à cocher complètent les informations :
+•	✅ Escompté ? → indique si l’effet est escompté.
+•	✅ Avalié ? → indique si l’effet est avalisé par une tierce personne.
+•	✅ Protestable ? → permet de signaler si l’effet peut faire l’objet d’un protêt.
+•	✅ Frais au Tiré ? → précise si les frais sont à la charge du tiré.
+
+Zone 3 : Informations sur le Bénéficiaire
+Cette section regroupe les coordonnées du bénéficiaire de l’effet.
+Les champs à renseigner sont :
+•	Compte Bénéficiaire : numéro de compte du bénéficiaire.
+o	Si le compte remettant entré à l’écran, existe les informations seront récupérées et affichées à l’écran ; sinon, un message d’erreur informera l’utilisateur. 
+
+•	Banque Bénéficiaire : seront récupérées automatiquement.
+•	RIB Bénéficiaire : seront récupérées automatiquement.
+•	Nom Bénéficiaire : seront récupérées automatiquement.
+
+Zone 4 : Informations sur le Tiré / Souscripteur
+Cette partie contient les informations du tireur ou souscripteur (celui qui émet ou s’engage sur l’effet).
+Les champs incluent :
+•	Nom du Tiré / Souscripteur : à renseigner
+•	RIB du Tiré : à renseigner
+•	Banque, Agence, Compte, RIB (sélectionnés à partir des listes déroulantes) à renseigner.
+
+Zone 5 : Bouton de création
+Une fois toutes les informations saisies, l’utilisateur doit cliquer sur le bouton Créer pour enregistrer l’effet.
+•	Si les champs obligatoires sont bien remplis, l’effet est enregistré avec succès.
+•	En cas d’erreur ou de champ manquant, un message d’alerte s’affiche pour correction.
+
+7.	Création des virements
+ 
+
+
+Écran : Création de Virements
+Cet écran permet de créer un virement client entre un donneur d’ordre (celui qui envoie les fonds) et un bénéficiaire (celui qui reçoit les fonds).
+
+ 
+
+
+Zone 1 : Menu “Création Virements”
+Cette zone se situe dans le menu latéral gauche de l’application SmartACCESS.
+Elle permet d’accéder à la page de création d’un nouveau virement.
+•	Pour y accéder, cliquez sur Création Virements.
+
+
+
+Zone 2 : Informations du Donneur d’Ordre
+Cette section contient les informations de la personne ou de l’entreprise à l’origine du virement.
+Les champs à renseigner sont :
+•	Type de Virement : choisir le type dans la liste déroulante
+(exemple : 015 – Virement Standard de clientèle nouvelle norme).
+•	Banque : code de la banque du donneur d’ordre (ex. TG160).
+•	Numéro de Compte : numéro de compte du client qui effectue le virement (champ obligatoire marqué d’un *).
+
+
+Zone 3 : Informations du Bénéficiaire
+Cette zone permet de saisir les informations concernant le destinataire du virement.
+Les champs sont :
+•	Montant* : somme à transférer.
+•	Nom Bénéficiaire* : nom du bénéficiaire du virement.
+•	Libellé : description ou motif du virement (exemple : VIREMENT CLTE).
+
+Zone 4 : Coordonnées bancaires du bénéficiaire (RIB Bénéficiaire)
+Cette sous-section permet de préciser les détails bancaires du bénéficiaire.
+Les champs à remplir sont :
+•	Banque : sélectionner la banque du bénéficiaire.
+•	Agence : choisir l’agence où le compte est domicilié.
+•	Compte Bénéficiaire* : numéro de compte du bénéficiaire.
+•	RIB* : identifiant bancaire complet (Relevé d’Identité Bancaire).
+
+
+Zone 5 : Bouton “Créer”
+Après avoir renseigné toutes les informations obligatoires :
+1.	Cliquez sur le bouton “Créer” pour valider la saisie.
+2.	Le virement s’ajoute à la liste des virements en attente de traitement.
+3.	Si un champ obligatoire est manquant, un message d’erreur s’affiche pour correction.
+
+
+8.	Ajustements des effets / virements
+ 
+
+Après la saisie des effets et virements, l’application affiche automatiquement la liste des valeurs créées (Effets/Virements) sous le formulaire de saisie.
+C’est à partir de cette liste que l’utilisateur peut :
+•	Ajuster les informations d’un effet ou d’un virement (en cas d’erreur ou de modification nécessaire),
+•	Supprimer une valeur non conforme ou saisie par erreur.
+État concerné :
+Les effets et virements disponibles pour ajustement ou suppression se trouvent à l’état = 50.
+
+
+9.	Le suivi des chèques, effets, et virements
+ 
+Le suivi des chèques est effectué dans le menu « Cheques\Liste des Chèques ». Exemple d’écran :
+
+ 
+
+
+Dans l’écran ci-dessus, renseignez les critères de recherche de chèques et cliquez sur « Afficher » pour afficher la liste des chèques correspondant à votre recherche. 
+
+La liste des chèques peut être filtrée et triée selon l’ensemble des colonnes affichées. La liste peut être exportée en fichier Excel.
+
+ Exemple d’écran :
+
+ 
+
+
+
+NB : Les listes de virements, effets fonctionnent de la même manière.
+
+
+
+10.	Les chèques, effets et virements prêt pour ICOM1 (Mise en erreur )
+ 
+
+Après la saisie des chèques, ceux-ci deviennent prêts pour ICOM1, c’est-à-dire l’envoi vers la BCEAO (Banque Centrale).
+Avant cet envoi, les utilisateurs disposent d’un écran de contrôle permettant de visualiser l’ensemble des chèques à transmettre.
+Cet écran offre une dernière étape de vérification avant que les fichiers soient effectivement transmis à la BCEAO.
+
+
+
+ 
+
+Étapes à suivre pour mettre un chèque en erreur
+1.	Localisez le chèque concerné dans la liste affichée à l’écran.
+2.	Cliquez sur le chèque pour le sélectionner.
+3.	Cliquez sur le bouton rouge “Mise en Erreur” situé en haut de l’écran.
+4.	Le chèque passera automatiquement à l’état “22 - Mise en erreur”, ce qui signifie qu’il ne sera pas pris en compte dans le lot ICOM1.
+NB : Vous pouvez effectuer le même processus pour les effets et les virements, dans leurs menus respectifs.
+Les écrans et les boutons fonctionnent de la même manière pour ces opérations.
+ 
+11.	L’édition des rapports
+ 
+L’application vous permet de sortir des états dans différents formats grâce au menu « Rapports Généraux ».
+
+ 
+
+La fenêtre de Rapport suivante s’affiche :
+
+ 
+
+Les rapports peuvent se faire à tout moment du flux pour la plupart du temps faire un pointage. 
+La procédure pour générer un rapport est la suivante :
+o	Sélection du type de date (Date traitement ou Date compensation)
+o	Sélection de la période souhaitée (Date début et date fin)
+o	Sélection de la banque créditrice (TOUS) pour sélectionner toutes les banques.
+o	Sélection de l’agence créditrice (TOUS) pour sélectionner toutes les agences
+o	Sélection de la banque débitrice (TOUS si vous voulez sélectionner toutes les banques débitrices)
+o	Sélection de l’agence débitrice (TOUS si vous souhaitez sélectionner toutes les agences débitrices)
+o	Sélection du code état des ordres à imprimer
+o	Sélection ensuite du type d’ordre (Effet, Chèque, Prélevement ou Virement)
+Les champs énumérés sont à remplir obligatoirement. 
+Les champs suivants ne sont pas obligatoires :
+o	Utilisateur : Cochez cette case et sélectionnez l’utilisateur concerné si vous voulez éditer les ordres saisis uniquement par cet utilisateur
+o	Machine :  Cochez cette case et sélectionnez la machine concernée si vous voulez éditer les chèques scannés uniquement avec cette machine.
+o	Compte créditeur :  Cochez cette case et saisissez le compte créditeur concerné si vous voulez éditer uniquement les ordres concernés par ce compte.
+o	 Compte débiteur :  Cochez cette case et saisissez le compte débiteur concerné si vous voulez éditer uniquement les ordres concernés par ce compte.
+o	Montant minimum :  cochez cette case et saisissez un montant si vous voulez afficher les ordres dont le montant est supérieur au montant minimum saisi.
+o	Vous pouvez également regrouper les ordres affichés par compte débiteur ou créditeur ou par remise ; cochez pour cela les boutons radio (Regroupé par compte débiteur ou Regroupé par compte créditeur ou regroupé par remise)
+o	Le rapport peut également être imprimé au format Word, Excel, PDF, Html.
+Lorsque tous les choix sont effectués, cliquez sur le bouton « Afficher » pour sortir le rapport.
+ 
+
+12.	Génération des fichiers EXA/EXR
+ 
+
+
+Les fichiers EXA et CRA sont générés automatiquement après acceptation totale des remises.
+Ces fichiers contiennent exclusivement les remises Chèques et Virements ayant été acceptées en ICOM1 (État = 130).
+Les fichiers générés sont ensuite mis à disposition du SIB dans le répertoire suivant :
+C:/smartaccess/interfaces/sortie/aller/
+
+
+
+
+
+
+13.	Vérification des chèques par les opérationnels et gestionnaires
+ 
+Après la réception du fichier OUTGO, les opérationnels (OPS) et les gestionnaires (GES) procèdent à la vérification des chèques retours à travers les écrans dédiés :
+•	Vérification des Chèques (OPS)
+•	Vérification des Chèques (GES)
+Ces deux écrans permettent de contrôler les images et les informations des chèques retournés avant leur validation ou leur rejet définitif.
+
+ 
+
+1. Vérification par les OPS (Première étape) (chèques état = 150)
+Les OPS effectuent la première vérification des chèques :
+•	Ils vérifient la signature, le montant, la date, et les informations du compte.
+•	Si une anomalie est constatée, ils peuvent rejeter le chèque en sélectionnant d’abord un motif de rejet dans la liste prévue 
+•	 
+Impact : les chèques passe à l’état 250 ;
+
+•	Si tout est conforme, ils valident le chèque.
+ 
+	Chèques passe à l’état = 180
+Si le chèque nécessite une vérification ultérieure 
+•	Cliquer sur le bouton « En attente ».
+•	Le chèque est temporairement mis de côté pour être revu plus tard.
+
+ 
+
+
+Les chèques validés par les OPS passent alors à l’étape suivante pour être contrôlés par les GES.
+
+3.Vérification par les GES (Seconde étape)
+Une fois la première vérification terminée :
+•	Les GES prennent la main sur les chèques validés par les OPS.
+•	Ils effectuent une seconde vérification pour confirmer la conformité du chèque.
+•	Comme les OPS, ils peuvent à leur tour :
+o	✅ Valider le chèque s’il est conforme.
+o	❌ Rejeter le chèque en précisant le motif de rejet approprié.
+
+
+NB : Dans l’écran de vérification, l’utilisateur dispose de la possibilité de mettre un chèque en attente afin de procéder à des vérifications ou validations ultérieures.
+Nombre maximum d’attentes autorisées :
+Un même chèque peut être mis en attente jusqu’à 4 fois consécutives.
+À la 5ᵉ tentative, il est obligatoire de statuer définitivement sur le sort du chèque (acceptation ou rejet) avant de passer au chèque suivant.
+
+ 
+14.	Les chèques, effets et virements prêt pour ICOM2 (Mise à jour)
+ 
+Après la phase de vérification des chèques par les OPS (opérationnels) et les GES (gestionnaires), certains chèques peuvent être refusés pour diverses raisons (signature non conforme, montant erroné, informations manquantes, etc.).
+Une fois refusés, ces chèques passent automatiquement à l’état “Prêt pour ICOM2”, correspondant à l’envoi des rejets à la BCEAO.
+
+ 
+ 
+Étapes à suivre pour mettre un chèque à jour
+1.	Localisez le chèque concerné dans la liste affichée à l’écran.
+2.	Cliquez sur le chèque pour le sélectionner.
+3.	Cliquez sur le bouton rouge “Mise à jour” situé en haut de l’écran.
+4.	Le chèque passera automatiquement à l’état “180 - Mise à jour ”, ce qui signifie qu’il ne sera pas pris en compte dans le lot ICOM2.
+
+NB : Vous pouvez effectuer le même processus pour les effets et les virements, dans leurs menus respectifs.
+Les écrans et les boutons fonctionnent de la même manière pour ces opérations.
+
+15.	Génération des fichiers CRO / EXR
+ 
+
+1. Fichier CRO
+Le fichier CRO est généré automatiquement après la réception du fichier OUTGO.
+Il contient les informations liées aux chèques retours reçus de la BCEAO.
+Ce fichier est déposé automatiquement dans le répertoire suivant :
+C:/smartaccess/interfaces/sortie/retour/
+________________________________________
+2. Fichier EXR
+Le fichier EXR est quant à lui généré manuellement par les OPS après la phase de vérification des chèques retours.
+Il contient uniquement les chèques validés, c’est-à-dire ceux ayant satisfait aux critères suivants :
+•	Signature conforme,
+•	Chèque régulier,
+•	Provision disponible,
+•	État = 180.
+Le fichier EXR est également disponible dans le répertoire suivant :
+C:/smartaccess/interfaces/sortie/retour/
+
+
+

@@ -1,17 +1,18 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 const footerLinks = {
   expertise: [
     { name: "Oracle & Infrastructure", href: "/oracle-infrastructure" },
     { name: "Services", href: "/services" },
-    { name: "{t("solutions")}", href: "/solutions" },
+    { name: "solutions", href: "/solutions" },
     { name: "Support & Formation", href: "/support-formation" },
   ],
   entreprise: [
     { name: "À propos", href: "/a-propos" },
-    { name: "{t("contact")}", href: "/contact" },
+    { name: "contact", href: "/contact" },
   ],
   solutions: [
     { name: "OSCAR", href: "/solutions#oscar" },
@@ -19,9 +20,8 @@ const footerLinks = {
   ],
 }
 
-import { useTranslations } from "next-intl";
 export function Footer() {
-  const t = useTranslations("Footer");
+  const t = useTranslations("Footer")
 
   return (
     <footer className="bg-[#221E1F] text-white">
@@ -42,7 +42,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* {t("expertise")} */}
+          {/* Expertise */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4">
               {t("expertise")}
@@ -54,7 +54,7 @@ export function Footer() {
                     href={link.href}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
-                    {link.name}
+                    {link.name === "solutions" ? t(link.name) : link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
@@ -69,7 +69,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* {t("solutions")} */}
+          {/* Solutions */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4">
               {t("solutions")}
@@ -98,7 +98,7 @@ export function Footer() {
                     href={link.href}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
-                    {link.name}
+                    {link.name === "contact" ? t(link.name) : link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
@@ -106,7 +106,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* {t("contact")} */}
+          {/* Contact */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4">
               {t("contact")}
