@@ -85,7 +85,7 @@ export function HeroAnchors({ anchors, containerClassName = "pt-8 pb-4" }: HeroA
     <div className={`w-full relative z-20 ${containerClassName}`}>
       <div 
         ref={scrollContainerRef}
-        className="flex flex-nowrap sm:flex-wrap gap-4 items-center justify-start sm:justify-center overflow-x-auto sm:overflow-visible no-scrollbar pb-2"
+        className="flex flex-nowrap sm:flex-wrap gap-4 items-center justify-start sm:justify-start overflow-x-auto sm:overflow-visible no-scrollbar pb-2"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {anchors.map((anchor) => (
