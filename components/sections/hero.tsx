@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
+import { useTranslations } from "next-intl"
 
 // ==========================================
 // CONFIGURATION DU CARROUSEL - MODIFIABLE
