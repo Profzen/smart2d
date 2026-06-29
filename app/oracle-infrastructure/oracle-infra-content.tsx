@@ -145,7 +145,7 @@ export function OracleInfraContent() {
                   </div>
                   <div className="flex-1">
                     <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{section.title}</h2>
-                    <p className="text-[#221E1F]/70 leading-relaxed">{section.description}</p>
+                    <p className="text-[#221E1F]/80 font-medium leading-relaxed">{section.description}</p>
                     
                     {section.items && (
                       <div className="mt-4 flex flex-wrap gap-2">

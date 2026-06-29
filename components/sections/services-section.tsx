@@ -99,7 +99,7 @@ export function ServicesSection() {
                 <h3 className="text-lg font-bold text-[#221E1F] mb-2 group-hover:text-[#EE3329] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-[#221E1F]/60 text-sm leading-relaxed">
+                <p className="text-[#221E1F]/80 text-sm font-medium leading-relaxed">
                   {service.description}
                 </p>
 
