@@ -6,15 +6,16 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, Globe } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslations } from "next-intl"
 import { cn } from "@/lib/utils"
 
 const navigation = [
-  { name: "Accueil", href: "/" },
-  { name: "À propos", href: "/a-propos" },
-  { name: "Oracle & Infrastructure", href: "/oracle-infrastructure" },
-  { name: "Services", href: "/services" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Support & Formation", href: "/support-formation" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/a-propos" },
+  { key: "oracle", href: "/oracle-infrastructure" },
+  { key: "services", href: "/services" },
+  { key: "solutions", href: "/solutions" },
+  { key: "support", href: "/support-formation" },
 ]
 
 // Logo URLs
@@ -22,6 +23,7 @@ const LOGO_LIGHT = "/images/logo/smart2d-logo-light.png" // Logo avec SERVICES (
 const LOGO_DARK = "/images/logo/smart2d-logo-dark.png" // Logo noir (pour fond clair)
 
 export function Header() {
+  const t = useTranslations("Navigation")
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -96,7 +98,7 @@ export function Header() {
                       : "text-white/90 hover:text-white hover:bg-white/10")
                 )}
               >
-                {item.name}
+                {t(item.key)}
                 {isActive && (
                   <span className={cn(
                     "absolute bottom-1 left-3 right-3 h-0.5 rounded-full",
@@ -130,7 +132,7 @@ export function Header() {
                   : "bg-white text-[#221E1F] hover:bg-white/90 shadow-lg"
               )}
             >
-              Nous contacter
+              {t('contact')}
             </Link>
           </div>
 
