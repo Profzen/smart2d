@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle, AlertCircle, MessageCircle } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
 
@@ -163,6 +163,21 @@ export function ContactContent() {
                     </p>
                   </div>
                 </div>
+
+                <a
+                  href="https://wa.me/2289337515"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E5E0DC] hover:border-[#25D366]/50 hover:shadow-md transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#25D366] flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#221E1F] group-hover:text-[#25D366] transition-colors">WhatsApp</p>
+                    <p className="text-[#221E1F]/60 text-sm">Discutez avec nous</p>
+                  </div>
+                </a>
               </div>
             </motion.div>
 
