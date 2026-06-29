@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Globe } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 
@@ -107,8 +107,20 @@ export function Header() {
             )})}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Button & Language Switcher */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              className={cn(
+                "p-2 rounded-full transition-all flex items-center gap-1.5",
+                useDarkText
+                  ? "text-[#221E1F] hover:bg-[#221E1F]/5"
+                  : "text-white hover:bg-white/10"
+              )}
+              title="Switch language"
+            >
+              <Globe className="w-5 h-5" />
+              <span className="text-sm font-medium">FR</span>
+            </button>
             <Link
               href="/contact"
               className={cn(
