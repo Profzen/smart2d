@@ -439,6 +439,23 @@ Fichiers `.png` à la racine : `content.png`, `desktop-final.png`, `hero-new.png
 
 ## 12. 📝 Journal des modifications
 
+### 29 juin 2026
+- **Validation du Plan Correctifs UI/UX et Contenus** : Fin de la série de 3 branches d'améliorations pour la refonte finale.
+- **UI et Navigation globale** (`aziz/ui-global-improvements`) :
+  - **Scroll-to-top** : Création d'un bouton de retour en haut discret (`scroll-to-top.tsx`) apparaissant au défilement.
+  - **Header actif** : Implémentation d'un indicateur visuel de la page active dans le menu principal (texte rouge avec un petit trait souligné).
+  - **Lisibilité** : Augmentation du contraste (texte plus sombre) et ajustement de l'épaisseur (`font-medium`) sur toutes les cartes du site (Accueil, Services, Support, Oracle & Infra).
+- **Refonte des Ancres et du Hero** (`aziz/hero-anchors-refonte`) :
+  - **Carrousel mobile** : Ajout d'un défilement automatique (2s) des ancres de navigation exclusivement sur mobile.
+  - **Layout Desktop** : Déplacement des ancres en pleine largeur pour un alignement horizontal propre sur une seule ligne.
+  - **Alignement Pixel-Perfect** : Forçage de l'alignement à gauche (`justify-start`) et ajustement des paddings (`pt-8` global, `pt-2` pour l'accueil) pour cadrer les ancres avec les titres.
+  - **CTA fixes** : Extraction des boutons d'appels à l'action de l'animation de fond du Hero pour qu'ils restent figés et accessibles.
+  - **Nouvelles Slides** : Intégration des slides de présentation pour OSCAR et Smart Transfert avec leurs dashboards.
+- **Ajouts de Contenus Spécifiques** (`marius/contenu-ajouts`) :
+  - **Oracle Forms & APEX** : Ajout de l'expertise sur l'accueil, créant une grille symétrique (3x3, 9 expertises totales).
+  - **Contact WhatsApp** : Intégration d'un bouton WhatsApp cliquable (avec couleur officielle au survol) dans les coordonnées de la page contact.
+  - **Ajustement UI Contact** : Remontée de la colonne des coordonnées (marge négative) pour qu'elle s'aligne harmonieusement en hauteur avec le formulaire de droite.
+
 ### 24 juin 2026
 - **Fusion et mise à jour de `develop`** : `develop` est désormais synchronisée à 100% avec les deux dernières PRs.
 - **Correction du responsive & Scroll horizontal (Tâche E2)** (branche `aziz/responsive-fix`) :
