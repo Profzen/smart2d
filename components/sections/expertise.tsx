@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Database, Cloud, HardDrive, Terminal, Shield, Cpu, RefreshCw, GraduationCap } from "lucide-react"
+import { Database, Cloud, HardDrive, Terminal, Shield, Cpu, RefreshCw, GraduationCap, Code } from "lucide-react"
 
 const expertises = [
   {
@@ -51,6 +51,12 @@ const expertises = [
     title: "Support & formation",
     description: "Assistance technique, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
     color: "bg-[#17233A]",
+  },
+  {
+    icon: Code,
+    title: "Oracle Forms et APEX",
+    description: "Modernisation, migration et développement d'applications avec Oracle Forms et APEX pour des processus métiers agiles.",
+    color: "bg-[#EE3329]",
   },
 ]
 
