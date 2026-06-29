@@ -1,0 +1,1 @@
+const fs = require('fs'); let code = fs.readFileSync('app/[locale]/solutions/solutions-content.tsx', 'utf8'); code = code.replace('export function SolutionsContent() {', 'import { useTranslations } from "next-intl";\nexport function SolutionsContent() {\n  const t = useTranslations("Solutions");\n'); fs.writeFileSync('app/[locale]/solutions/solutions-content.tsx', code);

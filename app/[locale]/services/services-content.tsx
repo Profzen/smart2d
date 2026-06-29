@@ -25,14 +25,14 @@ const services = [
   {
     id: "oracle-database-middleware",
     icon: Database,
-    title: "Oracle Database & Middleware",
+    title: t("oracle_title"),
     description: "Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.",
     color: "bg-[#EE3329]",
   },
   {
     id: "cloud-oci-hybrides",
     icon: Cloud,
-    title: "Cloud OCI & architectures hybrides",
+    title: t("cloud_title"),
     description: "Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.",
     color: "bg-[#17233A]",
   },
@@ -46,7 +46,7 @@ const services = [
   {
     id: "linux-unix",
     icon: Terminal,
-    title: "Linux / Unix",
+    title: t("linux_title"),
     description: "Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris.",
     color: "bg-[#17233A]",
   },
@@ -60,21 +60,21 @@ const services = [
   {
     id: "ia-automatisation",
     icon: Cpu,
-    title: "Intelligence Artificielle & Automatisation",
+    title: t("ia_title"),
     description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
     color: "bg-[#17233A]",
   },
   {
     id: "migration-modernisation",
     icon: RefreshCw,
-    title: "Migration & modernisation",
+    title: t("mig_title"),
     description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
     color: "bg-[#2F6B4F]",
   },
   {
     id: "support-formation",
     icon: GraduationCap,
-    title: "Support & formation",
+    title: t("sup_title"),
     description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
     color: "bg-[#17233A]",
   },
@@ -88,7 +88,10 @@ const approach = [
   "Suivi post-intervention et recommandations d'amélioration continue",
 ]
 
+import { useTranslations } from "next-intl";
 export function ServicesContent() {
+  const t = useTranslations("Services");
+
   return (
     <>
       {/* Hero */}
@@ -123,7 +126,7 @@ export function ServicesContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Nos domaines d&apos;intervention
+              {t("dom_title")}
             </span>
           </div>
           <div className="space-y-8">
@@ -163,7 +166,7 @@ export function ServicesContent() {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-                Notre approche
+                {t("app_title")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Une méthodologie éprouvée
@@ -216,7 +219,7 @@ export function ServicesContent() {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
-              Contacter SMART2D
+              {t("cta_btn")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
