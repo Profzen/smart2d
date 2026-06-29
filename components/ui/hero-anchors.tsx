@@ -9,9 +9,10 @@ export interface Anchor {
 
 interface HeroAnchorsProps {
   anchors: Anchor[]
+  containerClassName?: string
 }
 
-export function HeroAnchors({ anchors }: HeroAnchorsProps) {
+export function HeroAnchors({ anchors, containerClassName = "pt-8 pb-4" }: HeroAnchorsProps) {
   const [activeId, setActiveId] = useState<string>("")
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
@@ -81,7 +82,7 @@ export function HeroAnchors({ anchors }: HeroAnchorsProps) {
   if (!anchors || anchors.length === 0) return null
 
   return (
-    <div className="w-full pt-2 pb-4 relative z-20">
+    <div className={`w-full relative z-20 ${containerClassName}`}>
       <div 
         ref={scrollContainerRef}
         className="flex flex-nowrap sm:flex-wrap gap-4 items-center justify-start sm:justify-center overflow-x-auto sm:overflow-visible no-scrollbar pb-2"

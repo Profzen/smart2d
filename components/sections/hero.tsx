@@ -207,11 +207,14 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-16">
+        <div className="mb-4 lg:mb-8">
+          <HeroAnchors anchors={homeAnchors} containerClassName="pt-2 pb-4" />
+        </div>
+        
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[50vh]">
           {/* Text Content */}
           <div className="flex flex-col">
-            <HeroAnchors anchors={homeAnchors} />
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
