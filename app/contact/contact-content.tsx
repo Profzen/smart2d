@@ -107,11 +107,11 @@ export function ContactContent() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-1"
+              className="lg:col-span-1 lg:-mt-20 relative z-10"
             >
-              <h2 className="text-2xl font-bold text-[#221E1F] mb-8">Coordonnées</h2>
+              <h2 className="text-2xl font-bold text-[#221E1F] mb-6">Coordonnées</h2>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <a
                   href="mailto:contact@smart2dservices.com"
                   className="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E5E0DC] hover:border-[#EE3329]/30 hover:shadow-md transition-all group"
