@@ -87,6 +87,18 @@ const slides = [
     title: "NOS PARTENAIRES",
     subtitle: "Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières",
   },
+  {
+    id: 12,
+    image: "/images/oscar/oscar-dashboard.png",
+    title: "OSCAR",
+    subtitle: "Plateforme d'observabilité, supervision et automatisation IT augmentée par l'IA",
+  },
+  {
+    id: 13,
+    image: "/images/smart-transfert/smart-transfert-dashboard.png",
+    title: "Smart Transfert",
+    subtitle: "Plateforme de centralisation pour agences de transfert d'argent",
+  },
 ]
 
 const homeAnchors: Anchor[] = [
@@ -195,11 +207,14 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-16">
+        <div className="mb-4 lg:mb-8">
+          <HeroAnchors anchors={homeAnchors} containerClassName="pt-2 pb-4" />
+        </div>
+        
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[50vh]">
           {/* Text Content */}
           <div className="flex flex-col">
-            <HeroAnchors anchors={homeAnchors} />
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -225,25 +240,25 @@ export function HeroSection() {
                 <p className="mt-6 text-xl text-white/80 leading-relaxed max-w-xl">
                   {slides[currentSlide].subtitle}
                 </p>
-
-                {/* CTA Buttons */}
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/30 group text-sm sm:text-base text-center"
-                  >
-                    <span className="whitespace-normal">Demander un diagnostic gratuit</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
-                  </Link>
-                  <Link
-                    href="/oracle-infrastructure"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 text-sm sm:text-base text-center"
-                  >
-                    <span className="whitespace-normal">Découvrir nos expertises</span>
-                  </Link>
-                </div>
               </motion.div>
             </AnimatePresence>
+
+            {/* CTA Buttons - Fixes (en dehors du carrousel pour ne pas défiler) */}
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/30 group text-sm sm:text-base text-center"
+              >
+                <span className="whitespace-normal">Demander un diagnostic gratuit</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
+              </Link>
+              <Link
+                href="/oracle-infrastructure"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 text-sm sm:text-base text-center"
+              >
+                <span className="whitespace-normal">Découvrir nos expertises</span>
+              </Link>
+            </div>
 
             {/* Carousel Controls */}
             <div className="mt-12 flex flex-wrap items-center gap-4">
