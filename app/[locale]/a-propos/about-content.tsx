@@ -26,19 +26,19 @@ import { HeroDecoration } from "@/components/ui/hero-decoration"
 
 const oscarFeatures = [
   { icon: Activity, label: "Supervision centralisée" },
-  { icon: Bell, label: "Alertes proactives" },
+  { icon: Bell, label: "{t("oscar_f2")}" },
   { icon: Bot, label: "Détection d'anomalies IA" },
-  { icon: Zap, label: "Automatisation" },
-  { icon: BarChart3, label: "Rapports & tableaux" },
-  { icon: Cpu, label: "Inventaire IT" },
+  { icon: Zap, label: "{t("oscar_f4")}" },
+  { icon: BarChart3, label: "{t("oscar_f5")}" },
+  { icon: Cpu, label: "{t("oscar_f6")}" },
 ]
 
 const smartTransfertFeatures = [
   { icon: Send, label: "Parcours d'envoi" },
-  { icon: Receipt, label: "Parcours de retrait" },
-  { icon: FileText, label: "Rapports comptables" },
-  { icon: History, label: "Historique complet" },
-  { icon: Users, label: "Gestion utilisateurs" },
+  { icon: Receipt, label: "{t("st_f2")}" },
+  { icon: FileText, label: "{t("st_f3")}" },
+  { icon: History, label: "{t("st_f4")}" },
+  { icon: Users, label: "{t("st_f5")}" },
   { icon: BarChart3, label: "Traçabilité" },
 ]
 
@@ -75,8 +75,8 @@ const solutions = [
 
 const aboutAnchors: Anchor[] = [
   { id: "experience", title: "Notre Expérience" },
-  { id: "mission", title: "Mission & Vision" },
-  { id: "valeurs", title: "Nos Valeurs" },
+  { id: "mission", title: "{t("anc_mis")}" },
+  { id: "valeurs", title: "{t("anc_val")}" },
   { id: "equipe", title: "Notre Équipe" },
 ]
 
@@ -113,7 +113,10 @@ const values = [
   },
 ]
 
+import { useTranslations } from "next-intl";
 export function AboutContent() {
+  const t = useTranslations("About");
+
   return (
     <>
       {/* Hero */}
@@ -183,12 +186,12 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* {t("anc_mis")} */}
       <section id="mission" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Notre Mission & Vision
+              Notre {t("anc_mis")}
             </span>
           </div>
           <div className="grid md:grid-cols-2 gap-8">

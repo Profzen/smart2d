@@ -25,7 +25,10 @@ const requestTypes = [
   "Autre",
 ]
 
+import { useTranslations } from "next-intl";
 export function ContactContent() {
+  const t = useTranslations("Contact");
+
   const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [formData, setFormData] = useState({
     name: "",
@@ -86,7 +89,7 @@ export function ContactContent() {
               Contact
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
-              Parlons de vos infrastructures critiques
+              {t("title")}
             </h1>
             <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
               Vous souhaitez sécuriser une base de données, moderniser une infrastructure, 
@@ -156,7 +159,7 @@ export function ContactContent() {
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#221E1F]">Adresse</p>
+                    <p className="font-semibold text-[#221E1F]">{t("address")}</p>
                     <p className="text-[#221E1F]/60 text-sm">
                       Hedzranawoe, Boulevard du Haho<br />
                       Lomé - Togo
@@ -175,7 +178,7 @@ export function ContactContent() {
                   </div>
                   <div>
                     <p className="font-semibold text-[#221E1F] group-hover:text-[#25D366] transition-colors">WhatsApp</p>
-                    <p className="text-[#221E1F]/60 text-sm">Discutez avec nous</p>
+                    <p className="text-[#221E1F]/60 text-sm">{t("chat")}</p>
                   </div>
                 </a>
               </div>
@@ -190,7 +193,7 @@ export function ContactContent() {
               className="lg:col-span-2"
             >
               <div id="formulaire" className="bg-white rounded-2xl p-8 shadow-xl border border-[#E5E0DC]/50 lg:-mt-32 relative z-10 scroll-mt-20">
-                <h2 className="text-2xl font-bold text-[#221E1F] mb-6">Envoyez-nous un message</h2>
+                <h2 className="text-2xl font-bold text-[#221E1F] mb-6">{t("send_msg")}</h2>
                 
                 {formState === "success" ? (
                   <motion.div
@@ -232,7 +235,7 @@ export function ContactContent() {
                       </div>
                       <div>
                         <label htmlFor="company" className="block text-sm font-medium text-[#221E1F] mb-2">
-                          Entreprise
+                          {t("form_company")}
                         </label>
                         <input
                           type="text"
@@ -249,7 +252,7 @@ export function ContactContent() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-[#221E1F] mb-2">
-                          Email *
+                          {t("form_email")}
                         </label>
                         <input
                           type="email"
@@ -280,7 +283,7 @@ export function ContactContent() {
 
                     <div>
                       <label htmlFor="requestType" className="block text-sm font-medium text-[#221E1F] mb-2">
-                        Type de demande *
+                        {t("form_type")}
                       </label>
                       <select
                         id="requestType"
@@ -299,7 +302,7 @@ export function ContactContent() {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-[#221E1F] mb-2">
-                        Message *
+                        {t("form_message")}
                       </label>
                       <textarea
                         id="message"
@@ -334,7 +337,7 @@ export function ContactContent() {
                           </>
                         ) : (
                           <>
-                            Envoyer le message
+                            {t("form_submit")}
                             <Send className="w-4 h-4" />
                           </>
                         )}

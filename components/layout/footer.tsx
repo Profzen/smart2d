@@ -6,12 +6,12 @@ const footerLinks = {
   expertise: [
     { name: "Oracle & Infrastructure", href: "/oracle-infrastructure" },
     { name: "Services", href: "/services" },
-    { name: "Solutions", href: "/solutions" },
+    { name: "{t("solutions")}", href: "/solutions" },
     { name: "Support & Formation", href: "/support-formation" },
   ],
   entreprise: [
     { name: "À propos", href: "/a-propos" },
-    { name: "Contact", href: "/contact" },
+    { name: "{t("contact")}", href: "/contact" },
   ],
   solutions: [
     { name: "OSCAR", href: "/solutions#oscar" },
@@ -19,7 +19,10 @@ const footerLinks = {
   ],
 }
 
+import { useTranslations } from "next-intl";
 export function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer className="bg-[#221E1F] text-white">
       {/* Main Footer */}
@@ -35,16 +38,14 @@ export function Footer() {
               className="h-14 w-auto mb-6"
             />
             <p className="text-white/70 text-sm leading-relaxed">
-              SMART2D Services accompagne les organisations dans la sécurisation, 
-              l&apos;optimisation et la modernisation de leurs environnements Oracle, 
-              bases de données, Cloud OCI, Linux/Unix et infrastructures critiques.
+              {t("company_desc")}
             </p>
           </div>
 
-          {/* Expertise */}
+          {/* {t("expertise")} */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4">
-              Expertise
+              {t("expertise")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.expertise.map((link) => (
@@ -61,17 +62,17 @@ export function Footer() {
             </ul>
 
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4 mt-8">
-              Nos partenaires
+              {t("partners_title")}
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
-              Banques, Télécoms, Institutions publiques & privées, Entreprises technologiques et financières
+              {t("partners_desc")}
             </p>
           </div>
 
-          {/* Solutions */}
+          {/* {t("solutions")} */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4">
-              Solutions
+              {t("solutions")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.solutions.map((link) => (
@@ -88,7 +89,7 @@ export function Footer() {
             </ul>
             
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4 mt-8">
-              Entreprise
+              {t("company")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.entreprise.map((link) => (
@@ -105,10 +106,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* {t("contact")} */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EE3329] mb-4">
-              Contact
+              {t("contact")}
             </h3>
             <ul className="space-y-4">
               <li>
@@ -156,10 +157,10 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/50 text-sm">
-              © {new Date().getFullYear()} SMART2D Services. Tous droits réservés.
+              © {new Date().getFullYear()} SMART2D Services. {t("rights")}
             </p>
             <div className="flex items-center gap-6 text-sm text-white/50">
-              <span>Plus de 20 ans d&apos;expertise Oracle</span>
+              <span>{t("years")}</span>
             </div>
           </div>
         </div>
