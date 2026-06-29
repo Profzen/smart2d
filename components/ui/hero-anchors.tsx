@@ -16,9 +16,9 @@ export function HeroAnchors({ anchors }: HeroAnchorsProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Autoscroll for mobile
+    // Autoscroll for mobile ONLY
     const interval = setInterval(() => {
-      if (scrollContainerRef.current) {
+      if (window.innerWidth < 640 && scrollContainerRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
         // Si on est à la fin, on revient au début
         if (Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 10) {
@@ -84,7 +84,7 @@ export function HeroAnchors({ anchors }: HeroAnchorsProps) {
     <div className="w-full pt-2 pb-4 relative z-20">
       <div 
         ref={scrollContainerRef}
-        className="flex flex-nowrap gap-4 items-center justify-start overflow-x-auto no-scrollbar pb-2"
+        className="flex flex-nowrap sm:flex-wrap gap-4 items-center justify-start sm:justify-center overflow-x-auto sm:overflow-visible no-scrollbar pb-2"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {anchors.map((anchor) => (
