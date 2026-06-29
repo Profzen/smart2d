@@ -25,6 +25,12 @@ Le travail est divisé en 3 branches distinctes pour une meilleure organisation.
 *   **Oracle Forms et APEX** : Ajout d'une nouvelle case dans la section d'expertise de l'accueil avec la description : "Développement, migration et modernisation de vos applications métiers avec Oracle Forms et APEX pour des interfaces performantes et sécurisées."
 *   **WhatsApp (Page Contact)** : Intégration de l'icône WhatsApp et du lien direct `https://wa.me/22893375155` sous l'adresse physique dans le composant `contact-content.tsx`.
 
+### 4. Branche : `aziz/hero-images-optimisation` (Visuels du Hero)
+*   **Génération d'images** : Création de 4 nouvelles images hyper réalistes mettant en scène des experts IT et business noirs/métis.
+*   **Optimisation WebP** : Conversion des 4 images générées (.png vers .webp) avec `sharp` pour garantir des performances optimales.
+*   **Mapping contextuel** : Assignation de chaque image à la slide appropriée (ex: datacenter pour Oracle, cybersécurité pour Audit).
+*   **Logique d'alternance** : Garantie absolue qu'aucune image n'est utilisée de manière consécutive dans le carrousel des 13 slides.
+
 ## Plan de Vérification
 
 1.  **Tests Visuels (Desktop & Mobile)** : Vérification du responsive des nouvelles ancres, du bouton scroll-to-top, et de la lisibilité des cartes.
