@@ -23,99 +23,99 @@ import {
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
+import { useTranslations } from "next-intl"
 
-const oscarFeatures = [
-  { icon: Activity, label: "Supervision centralisée" },
-  { icon: Bell, label: "{t("oscar_f2")}" },
-  { icon: Bot, label: "Détection d'anomalies IA" },
-  { icon: Zap, label: "{t("oscar_f4")}" },
-  { icon: BarChart3, label: "{t("oscar_f5")}" },
-  { icon: Cpu, label: "{t("oscar_f6")}" },
-]
-
-const smartTransfertFeatures = [
-  { icon: Send, label: "Parcours d'envoi" },
-  { icon: Receipt, label: "{t("st_f2")}" },
-  { icon: FileText, label: "{t("st_f3")}" },
-  { icon: History, label: "{t("st_f4")}" },
-  { icon: Users, label: "{t("st_f5")}" },
-  { icon: BarChart3, label: "Traçabilité" },
-]
-
-const solutions = [
-  {
-    icon: Activity,
-    title: "OSCAR",
-    subtitle: "Supervision & AIOps",
-    description: "Plateforme d'observabilité, de supervision et d'automatisation IT augmentée par l'IA.",
-    longDescription: "OSCAR aide les équipes à surveiller leurs serveurs, applications, bases de données et équipements, à détecter plus tôt les anomalies et à automatiser certaines actions opérationnelles.",
-    features: oscarFeatures,
-    href: "/solutions#oscar",
-    accent: "bg-[#17233A]",
-    iconBg: "bg-[#EE3329]",
-    iconColor: "text-white",
-    linkText: "Découvrir OSCAR",
-    featureIconColor: "text-[#17233A]",
-  },
-  {
-    icon: Send,
-    title: "Smart Transfert",
-    subtitle: "Transfert d'argent",
-    description: "Plateforme de centralisation des opérations pour agences de transfert d'argent.",
-    longDescription: "Smart Transfert permet aux agents de travailler dans une interface unique, de réduire les erreurs, de fiabiliser les rapports et de renforcer la traçabilité des opérations.",
-    features: smartTransfertFeatures,
-    href: "/solutions#smart-transfert",
-    accent: "bg-[#2F6B4F]",
-    iconBg: "bg-white",
-    iconColor: "text-[#2F6B4F]",
-    linkText: "Découvrir Smart Transfert",
-    featureIconColor: "text-[#2F6B4F]",
-  },
-]
-
-const aboutAnchors: Anchor[] = [
-  { id: "experience", title: "Notre Expérience" },
-  { id: "mission", title: "{t("anc_mis")}" },
-  { id: "valeurs", title: "{t("anc_val")}" },
-  { id: "equipe", title: "Notre Équipe" },
-]
-
-const values = [
-  {
-    icon: Award,
-    title: "Expertise",
-    description: "Une maîtrise technique des environnements Oracle, bases de données, Linux/Unix, cloud et supervision.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    icon: Shield,
-    title: "Fiabilité",
-    description: "Des interventions orientées continuité de service, stabilité et maîtrise des risques.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Shield,
-    title: "Sécurité",
-    description: "Une attention constante aux accès, configurations, sauvegardes, durcissement et bonnes pratiques.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    icon: Users,
-    title: "Transmission",
-    description: "Un accompagnement qui renforce l'autonomie des équipes internes.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation utile",
-    description: "Des solutions modernes, mais toujours reliées à un besoin opérationnel réel.",
-    color: "bg-[#EE3329]",
-  },
-]
-
-import { useTranslations } from "next-intl";
 export function AboutContent() {
-  const t = useTranslations("About");
+  const t = useTranslations("About")
+
+  const oscarFeatures = [
+    { icon: Activity, label: t("oscar_f1") },
+    { icon: Bell, label: t("oscar_f2") },
+    { icon: Bot, label: t("oscar_f3") },
+    { icon: Zap, label: t("oscar_f4") },
+    { icon: BarChart3, label: t("oscar_f5") },
+    { icon: Cpu, label: t("oscar_f6") },
+  ]
+
+  const smartTransfertFeatures = [
+    { icon: Send, label: t("st_f1") },
+    { icon: Receipt, label: t("st_f2") },
+    { icon: FileText, label: t("st_f3") },
+    { icon: History, label: t("st_f4") },
+    { icon: Users, label: t("st_f5") },
+    { icon: BarChart3, label: t("st_f6") },
+  ]
+
+  const solutions = [
+    {
+      icon: Activity,
+      title: "OSCAR",
+      subtitle: "Supervision & AIOps",
+      description: "Plateforme d'observabilité, de supervision et d'automatisation IT augmentée par l'IA.",
+      longDescription: "OSCAR aide les équipes à surveiller leurs serveurs, applications, bases de données et équipements, à détecter plus tôt les anomalies et à automatiser certaines actions opérationnelles.",
+      features: oscarFeatures,
+      href: "/solutions#oscar",
+      accent: "bg-[#17233A]",
+      iconBg: "bg-[#EE3329]",
+      iconColor: "text-white",
+      linkText: "Découvrir OSCAR",
+      featureIconColor: "text-[#17233A]",
+    },
+    {
+      icon: Send,
+      title: "Smart Transfert",
+      subtitle: "Transfert d'argent",
+      description: "Plateforme de centralisation des opérations pour agences de transfert d'argent.",
+      longDescription: "Smart Transfert permet aux agents de travailler dans une interface unique, de réduire les erreurs, de fiabiliser les rapports et de renforcer la traçabilité des opérations.",
+      features: smartTransfertFeatures,
+      href: "/solutions#smart-transfert",
+      accent: "bg-[#2F6B4F]",
+      iconBg: "bg-white",
+      iconColor: "text-[#2F6B4F]",
+      linkText: "Découvrir Smart Transfert",
+      featureIconColor: "text-[#2F6B4F]",
+    },
+  ]
+
+  const aboutAnchors: Anchor[] = [
+    { id: "experience", title: t("anc_exp") },
+    { id: "mission", title: t("anc_mis") },
+    { id: "valeurs", title: t("anc_val") },
+    { id: "equipe", title: t("anc_team") },
+  ]
+
+  const values = [
+    {
+      icon: Award,
+      title: "Expertise",
+      description: "Une maîtrise technique des environnements Oracle, bases de données, Linux/Unix, cloud et supervision.",
+      color: "bg-[#EE3329]",
+    },
+    {
+      icon: Shield,
+      title: "Fiabilité",
+      description: "Des interventions orientées continuité de service, stabilité et maîtrise des risques.",
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Shield,
+      title: "Sécurité",
+      description: "Une attention constante aux accès, configurations, sauvegardes, durcissement et bonnes pratiques.",
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      icon: Users,
+      title: "Transmission",
+      description: "Un accompagnement qui renforce l'autonomie des équipes internes.",
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation utile",
+      description: "Des solutions modernes, mais toujours reliées à un besoin opérationnel réel.",
+      color: "bg-[#EE3329]",
+    },
+  ]
 
   return (
     <>
@@ -151,7 +151,7 @@ export function AboutContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Notre Expérience
+              {t("anc_exp")}
             </span>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -186,12 +186,12 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* {t("anc_mis")} */}
+      {/* Mission & Vision */}
       <section id="mission" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Notre {t("anc_mis")}
+              {t("anc_mis")}
             </span>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -326,7 +326,7 @@ export function AboutContent() {
             className="text-center mb-16"
           >
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Nos valeurs
+              {t("anc_val")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
               Ce qui guide notre action
@@ -367,7 +367,7 @@ export function AboutContent() {
               <Users className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Une équipe orientée terrain
+              {t("anc_team")}
             </h2>
             <p className="text-white/70 text-lg leading-relaxed">
               Capable d&apos;intervenir sur des environnements sensibles et d&apos;accompagner 
