@@ -1,8 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 
 export function PositioningSection() {
+  const t = useTranslations("Positioning")
+
   return (
     <section id="positionnement" className="py-20 lg:py-28 bg-[#F8F6F4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,22 +17,20 @@ export function PositioningSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Un partenaire IT pour environnements sensibles
+              {t("tagline")}
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#221E1F] leading-tight text-balance">
-              Les infrastructures critiques ne se gèrent pas seulement avec des outils
+              {t("title")}
             </h2>
             <p className="mt-6 text-lg text-[#221E1F]/70 leading-relaxed">
-              Elles exigent une méthode, une expertise éprouvée et une capacité à 
-              anticiper les incidents avant qu&apos;ils ne deviennent des interruptions majeures.
+              {t("p1")}
             </p>
             <p className="mt-4 text-lg text-[#221E1F]/70 leading-relaxed">
-              SMART2D intervient comme partenaire technique auprès des entreprises qui 
-              doivent maintenir leurs systèmes <strong className="text-[#221E1F]">disponibles</strong>, 
-              <strong className="text-[#221E1F]"> performants</strong> et 
-              <strong className="text-[#221E1F]"> sécurisés</strong>. Notre approche couvre 
-              l&apos;audit, le conseil, la mise en œuvre, la supervision, le support et le 
-              transfert de compétences.
+              {t("p2_start")}
+              <strong className="text-[#221E1F]">{t("available")}</strong>, 
+              <strong className="text-[#221E1F]"> {t("efficient")}</strong> et 
+              <strong className="text-[#221E1F]"> {t("secure")}</strong>
+              {t("p2_end")}
             </p>
           </motion.div>
         </div>

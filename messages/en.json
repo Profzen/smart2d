@@ -36,7 +36,12 @@
     "smart_title": "Smart Transfert",
     "smart_sub": "Centralization platform for money transfer agencies",
     "btn_diag": "Request a free diagnostic",
-    "btn_exp": "Discover our expertise"
+    "btn_exp": "Discover our expertise",
+    "anchor_approach": "Our Approach",
+    "anchor_expertises": "Expertise",
+    "anchor_oracle": "Oracle & Infra",
+    "anchor_solutions": "Solutions",
+    "anchor_why": "Why SMART2D"
   },
   "Expertise": {
     "section_subtitle": "Our areas of expertise",
@@ -110,5 +115,15 @@
     "form_message_placeholder": "Describe your project or your need...",
     "form_desc": "A first exchange allows us to frame the context and priorities.",
     "form_submit": "Send message"
+  },
+  "Positioning": {
+    "tagline": "An IT partner for sensitive environments",
+    "title": "Critical infrastructures are not just managed with tools",
+    "p1": "They require methodology, proven expertise and the ability to anticipate incidents before they become major outages.",
+    "p2_start": "SMART2D acts as a technical partner for companies that need to keep their systems ",
+    "available": "available",
+    "efficient": "efficient",
+    "secure": "secure",
+    "p2_end": ". Our approach covers audit, consulting, implementation, supervision, support and skill transfer."
   }
 }

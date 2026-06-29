@@ -36,7 +36,12 @@
     "smart_title": "Smart Transfert",
     "smart_sub": "Plateforme de centralisation pour agences de transfert d'argent",
     "btn_diag": "Demander un diagnostic gratuit",
-    "btn_exp": "D�couvrir nos expertises"
+    "btn_exp": "D�couvrir nos expertises",
+    "anchor_approach": "Notre Approche",
+    "anchor_expertises": "Expertises",
+    "anchor_oracle": "Oracle & Infra",
+    "anchor_solutions": "Solutions",
+    "anchor_why": "Pourquoi SMART2D"
   },
   "Expertise": {
     "section_subtitle": "Nos domaines d'expertise",
@@ -110,5 +115,15 @@
     "form_message_placeholder": "D�crivez votre projet ou votre besoin...",
     "form_desc": "Un premier �change permet de cadrer le contexte et les priorit�s.",
     "form_submit": "Envoyer le message"
+  },
+  "Positioning": {
+    "tagline": "Un partenaire IT pour environnements sensibles",
+    "title": "Les infrastructures critiques ne se g�rent pas seulement avec des outils",
+    "p1": "Elles exigent une m�thode, une expertise �prouv�e et une capacit� � anticiper les incidents avant qu'ils ne deviennent des interruptions majeures.",
+    "p2_start": "SMART2D intervient comme partenaire technique aupr�s des entreprises qui doivent maintenir leurs syst�mes ",
+    "available": "disponibles",
+    "efficient": "performants",
+    "secure": "s�curis�s",
+    "p2_end": ". Notre approche couvre l'audit, le conseil, la mise en �uvre, la supervision, le support et le transfert de comp�tences."
   }
 }

@@ -16,16 +16,16 @@ const CAROUSEL_CONFIG = {
   transitionDuration: 0.8, // Durée de transition en secondes
 }
 
-const homeAnchors: Anchor[] = [
-  { id: "positionnement", title: "Notre Approche" },
-  { id: "expertises", title: "Expertises" },
-  { id: "oracle", title: "Oracle & Infra" },
-  { id: "solutions", title: "Solutions" },
-  { id: "pourquoi-nous", title: "Pourquoi SMART2D" },
-]
-
 export function HeroSection() {
   const t = useTranslations("Hero");
+
+  const homeAnchors: Anchor[] = [
+    { id: "positionnement", title: t("anchor_approach") },
+    { id: "expertises", title: t("anchor_expertises") },
+    { id: "oracle", title: t("anchor_oracle") },
+    { id: "solutions", title: t("anchor_solutions") },
+    { id: "pourquoi-nous", title: t("anchor_why") },
+  ]
 
   const slides = [
     {
