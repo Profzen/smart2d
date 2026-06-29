@@ -28,7 +28,7 @@ export function PositioningSection() {
             <p className="mt-4 text-lg text-[#221E1F]/70 leading-relaxed">
               {t("p2_start")}
               <strong className="text-[#221E1F]">{t("available")}</strong>, 
-              <strong className="text-[#221E1F]"> {t("efficient")}</strong> et 
+              <strong className="text-[#221E1F]"> {t("efficient")}</strong> {t("and")} 
               <strong className="text-[#221E1F]"> {t("secure")}</strong>
               {t("p2_end")}
             </p>
