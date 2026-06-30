@@ -96,6 +96,11 @@ export function HeroSection() {
       image: "/images/smart-transfert/smart-transfert-dashboard.png",
       title: t("smart_title"), subtitle: t("smart_sub"),
     },
+    {
+      id: 14,
+      image: "/images/smart-access/smartaccess-dashboard.png",
+      title: t("access_title"), subtitle: t("access_sub"),
+    },
   ]
 
   const [currentSlide, setCurrentSlide] = useState(0)

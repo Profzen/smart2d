@@ -12,7 +12,7 @@ interface HeroAnchorsProps {
   containerClassName?: string
 }
 
-export function HeroAnchors({ anchors, containerClassName = "pt-8 pb-4" }: HeroAnchorsProps) {
+export function HeroAnchors({ anchors, containerClassName = "pt-2 pb-4" }: HeroAnchorsProps) {
   const [activeId, setActiveId] = useState<string>("")
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
