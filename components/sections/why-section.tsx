@@ -1,42 +1,46 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+
 import { motion } from "framer-motion"
 import { Clock, Database, Shield, Users, Globe, Cpu } from "lucide-react"
 
-const reasons = [
-  {
-    icon: Clock,
-    title: "20+ ans d'expertise Oracle",
-    description: "Une expertise construite sur plus de deux décennies d'expérience autour des environnements Oracle.",
-  },
-  {
-    icon: Database,
-    title: "Capacité multi-domaines",
-    description: "Bases de données, systèmes, cloud et supervision : une expertise complète pour vos infrastructures.",
-  },
-  {
-    icon: Shield,
-    title: "Continuité de service",
-    description: "Une approche orientée sécurité, performance et transfert de compétences pour vos équipes.",
-  },
-  {
-    icon: Users,
-    title: "Accompagnement terrain",
-    description: "Un accompagnement local avec une expérience internationale sur des projets sensibles.",
-  },
-  {
-    icon: Globe,
-    title: "Vision moderne",
-    description: "OCI, automatisation, supervision intelligente et solutions métiers pour une IT plus agile.",
-  },
-  {
-    icon: Cpu,
-    title: "Intelligence Artificielle",
-    description: "Transformez vos données brutes en opportunités stratégiques grâce à des algorithmes prédictifs et des solutions d'apprentissage automatique adaptés à vos exigences.",
-  },
-]
-
 export function WhySection() {
+  const t = useTranslations("WhySection")
+
+  const reasons = [
+    {
+      icon: Clock,
+      title: t("reasons.exp_title"),
+      description: t("reasons.exp_desc"),
+    },
+    {
+      icon: Database,
+      title: t("reasons.multi_title"),
+      description: t("reasons.multi_desc"),
+    },
+    {
+      icon: Shield,
+      title: t("reasons.cont_title"),
+      description: t("reasons.cont_desc"),
+    },
+    {
+      icon: Users,
+      title: t("reasons.acc_title"),
+      description: t("reasons.acc_desc"),
+    },
+    {
+      icon: Globe,
+      title: t("reasons.vis_title"),
+      description: t("reasons.vis_desc"),
+    },
+    {
+      icon: Cpu,
+      title: t("reasons.ia_title"),
+      description: t("reasons.ia_desc"),
+    },
+  ]
+
   return (
     <section id="pourquoi-nous" className="py-20 lg:py-28 bg-[#221E1F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,10 +53,10 @@ export function WhySection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-            Pourquoi SMART2D
+            {t("label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Un partenaire de confiance pour vos infrastructures
+            {t("title")}
           </h2>
         </motion.div>
 

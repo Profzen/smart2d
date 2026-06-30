@@ -1,37 +1,41 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+
 import { motion } from "framer-motion"
 import { Database, Cloud, Server, Shield, Headphones, Clock } from "lucide-react"
 
-const stats = [
-  {
-    icon: Clock,
-    value: "30+",
-    label: "ans d'expérience Oracle",
-  },
-  {
-    icon: Database,
-    value: "Oracle",
-    label: "Database & OCI",
-  },
-  {
-    icon: Server,
-    value: "Linux",
-    label: "Unix & systèmes",
-  },
-  {
-    icon: Shield,
-    value: "Infra",
-    label: "critiques & HA",
-  },
-  {
-    icon: Headphones,
-    value: "Support",
-    label: "& formation",
-  },
-]
-
 export function TrustBand() {
+  const t = useTranslations("TrustBand")
+
+  const stats = [
+    {
+      icon: Clock,
+      value: t("exp_value"),
+      label: t("exp_label"),
+    },
+    {
+      icon: Database,
+      value: t("db_value"),
+      label: t("db_label"),
+    },
+    {
+      icon: Server,
+      value: t("unix_value"),
+      label: t("unix_label"),
+    },
+    {
+      icon: Shield,
+      value: t("infra_value"),
+      label: t("infra_label"),
+    },
+    {
+      icon: Headphones,
+      value: t("sup_value"),
+      label: t("sup_label"),
+    },
+  ]
+
   return (
     <section className="bg-[#221E1F] py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

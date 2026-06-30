@@ -1,5 +1,7 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, Database, Cloud, Server, Shield, Zap, RefreshCw } from "lucide-react"
@@ -18,6 +20,7 @@ const technologies = [
 ]
 
 export function OracleSection() {
+  const t = useTranslations("OracleSection")
   return (
     <section id="oracle" className="py-20 lg:py-28 bg-[#17233A] relative overflow-hidden">
       {/* Background elements */}
@@ -36,27 +39,25 @@ export function OracleSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Oracle au cœur de notre expertise
+              {t("label")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-              L&apos;expertise Oracle constitue le socle principal de SMART2D
+              {t("title")}
             </h2>
             <p className="mt-6 text-lg text-white/70 leading-relaxed">
-              Nous accompagnons les équipes IT sur l&apos;administration quotidienne, 
-              les opérations sensibles, la continuité de service, les migrations, 
-              les montées de version et les projets de modernisation.
+              {t("description_1")}
             </p>
             <p className="mt-4 text-white/70 leading-relaxed">
-              Notre objectif est simple : rendre les environnements Oracle plus 
-              <strong className="text-white"> fiables</strong>, plus 
-              <strong className="text-white"> lisibles</strong>, plus 
-              <strong className="text-white"> sécurisés</strong> et mieux maîtrisés 
-              par les équipes qui les exploitent.
+              {t("description_2")}
+              <strong className="text-white">{t("desc_2_fiables")}</strong>, plus 
+              <strong className="text-white">{t("desc_2_lisibles")}</strong>, plus 
+              <strong className="text-white">{t("desc_2_securises")}</strong>
+              {t("desc_2_end")}
             </p>
 
             {/* Technologies */}
             <div className="mt-8">
-              <p className="text-white/50 text-sm uppercase tracking-wider mb-4">Technologies maîtrisées</p>
+              <p className="text-white/50 text-sm uppercase tracking-wider mb-4">{t("tech_label")}</p>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech) => (
                   <span
@@ -75,7 +76,7 @@ export function OracleSection() {
                 href="/oracle-infrastructure"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all group"
               >
-                Découvrir notre expertise Oracle
+                {t("button_discover")}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -91,12 +92,12 @@ export function OracleSection() {
           >
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Database, label: "Base de données", desc: "Administration & tuning" },
-                { icon: Shield, label: "Sécurité", desc: "Audit & durcissement" },
-                { icon: Cloud, label: "Cloud OCI", desc: "Migration & exploitation" },
-                { icon: Server, label: "Infrastructure", desc: "HA & continuité" },
-                { icon: Zap, label: "Performance", desc: "Optimisation" },
-                { icon: RefreshCw, label: "MCO", desc: "Supervision continue" },
+                { icon: Database, label: t("cards.db_label"), desc: t("cards.db_desc") },
+                { icon: Shield, label: t("cards.security_label"), desc: t("cards.security_desc") },
+                { icon: Cloud, label: t("cards.cloud_label"), desc: t("cards.cloud_desc") },
+                { icon: Server, label: t("cards.infra_label"), desc: t("cards.infra_desc") },
+                { icon: Zap, label: t("cards.perf_label"), desc: t("cards.perf_desc") },
+                { icon: RefreshCw, label: t("cards.mco_label"), desc: t("cards.mco_desc") },
               ].map((item, index) => (
                 <motion.div
                   key={item.label}

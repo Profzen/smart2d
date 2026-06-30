@@ -25,16 +25,26 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }>) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="fr" className="bg-[#F8F6F4] overflow-x-hidden">
+    <html lang={locale} className="bg-[#F8F6F4] overflow-x-hidden">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased overflow-x-hidden`}>
-        {children}
-        <ScrollToTop />
+        <NextIntlClientProvider messages={messages}>
+          {children}
+          <ScrollToTop />
+        </NextIntlClientProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

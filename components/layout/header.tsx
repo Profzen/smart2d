@@ -3,18 +3,19 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { usePathname, useRouter } from "next/navigation"
+import { Menu, X, Globe } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslations, useLocale } from "next-intl"
 import { cn } from "@/lib/utils"
 
 const navigation = [
-  { name: "Accueil", href: "/" },
-  { name: "À propos", href: "/a-propos" },
-  { name: "Oracle & Infrastructure", href: "/oracle-infrastructure" },
-  { name: "Services", href: "/services" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Support & Formation", href: "/support-formation" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/a-propos" },
+  { key: "oracle", href: "/oracle-infrastructure" },
+  { key: "services", href: "/services" },
+  { key: "solutions", href: "/solutions" },
+  { key: "support", href: "/support-formation" },
 ]
 
 // Logo URLs
@@ -22,12 +23,15 @@ const LOGO_LIGHT = "/images/logo/smart2d-logo-light.png" // Logo avec SERVICES (
 const LOGO_DARK = "/images/logo/smart2d-logo-dark.png" // Logo noir (pour fond clair)
 
 export function Header() {
+  const t = useTranslations("Navigation")
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
 
   // Pages where the hero background is dark (#17233A)
-  const isDarkHero = pathname === "/" || pathname === "/oracle-infrastructure"
+  const isDarkHero = pathname === `/${locale}` || pathname === `/${locale}/oracle-infrastructure`
 
   // Use dark text (and dark logo/red button) if we scrolled OR if the hero background is light
   const useDarkText = isScrolled || !isDarkHero
@@ -39,6 +43,20 @@ export function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleLanguageSwitch = () => {
+    const nextLocale = locale === "fr" ? "en" : "fr"
+    // The pathname already starts with /fr or /en because next-intl middleware prefixes it.
+    // Replace the current locale prefix with the next one.
+    const newPath = pathname.replace(`/${locale}`, `/${nextLocale}`)
+    router.push(newPath)
+  }
+
+  // Prepend current locale to navigation links so Next.js routing is correct
+  const getLocalizedHref = (href: string) => {
+    if (href === "/") return `/${locale}`
+    return `/${locale}${href}`
+  }
 
   return (
     <header
@@ -52,27 +70,27 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo - Change selon le scroll */}
-          <Link href="/" className="flex-shrink-0 relative">
+          <Link href={getLocalizedHref("/")} className="flex-shrink-0 relative">
             {/* Logo pour fond sombre (avant scroll) */}
             <Image
               src={LOGO_LIGHT}
               alt="SMART2D Services"
-              width={180}
-              height={54}
+              width={160}
+              height={48}
               className={cn(
-                "h-11 w-auto transition-opacity duration-300",
+                "h-12 w-auto transition-opacity duration-300",
                 useDarkText ? "opacity-0" : "opacity-100"
               )}
               priority
             />
-            {/* Logo pour fond clair (après scroll) - positionné au même endroit */}
+            {/* Logo pour fond clair (après scroll) */}
             <Image
               src={LOGO_DARK}
-              alt="SMART2D"
-              width={180}
-              height={54}
+              alt="SMART2D Services"
+              width={160}
+              height={48}
               className={cn(
-                "h-11 w-auto absolute top-0 left-0 transition-opacity duration-300",
+                "absolute top-0 left-0 h-12 w-auto transition-opacity duration-300",
                 useDarkText ? "opacity-100" : "opacity-0"
               )}
               priority
@@ -82,35 +100,50 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const localizedHref = getLocalizedHref(item.href)
+              const isActive = pathname === localizedHref
               return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "relative px-3 py-2 text-sm font-medium rounded-md transition-all group",
-                  isActive 
-                    ? (useDarkText ? "text-[#EE3329]" : "text-white")
-                    : (useDarkText
-                      ? "text-[#221E1F] hover:text-[#EE3329] hover:bg-[#221E1F]/5"
-                      : "text-white/90 hover:text-white hover:bg-white/10")
-                )}
-              >
-                {item.name}
-                {isActive && (
-                  <span className={cn(
-                    "absolute bottom-1 left-3 right-3 h-0.5 rounded-full",
-                    useDarkText ? "bg-[#EE3329]" : "bg-white"
-                  )} />
-                )}
-              </Link>
-            )})}
+                <Link
+                  key={item.key}
+                  href={localizedHref}
+                  className={cn(
+                    "relative px-3 py-2 text-sm font-medium rounded-md transition-all group",
+                    isActive 
+                      ? (useDarkText ? "text-[#EE3329]" : "text-white")
+                      : (useDarkText
+                        ? "text-[#221E1F] hover:text-[#EE3329] hover:bg-[#221E1F]/5"
+                        : "text-white/90 hover:text-white hover:bg-white/10")
+                  )}
+                >
+                  {t(item.key)}
+                  {isActive && (
+                    <span className={cn(
+                      "absolute bottom-1 left-3 right-3 h-0.5 rounded-full",
+                      useDarkText ? "bg-[#EE3329]" : "bg-white"
+                    )} />
+                  )}
+                </Link>
+              )
+            })}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Button & Language Switcher */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              onClick={handleLanguageSwitch}
+              className={cn(
+                "p-2 rounded-full transition-all flex items-center gap-1.5 cursor-pointer",
+                useDarkText
+                  ? "text-[#221E1F] hover:bg-[#221E1F]/5"
+                  : "text-white hover:bg-white/10"
+              )}
+              title="Switch language"
+            >
+              <Globe className="w-5 h-5" />
+              <span className="text-sm font-semibold uppercase">{locale === "fr" ? "en" : "fr"}</span>
+            </button>
             <Link
-              href="/contact"
+              href={getLocalizedHref("/contact")}
               className={cn(
                 "inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-all",
                 useDarkText
@@ -118,7 +151,7 @@ export function Header() {
                   : "bg-white text-[#221E1F] hover:bg-white/90 shadow-lg"
               )}
             >
-              Nous contacter
+              {t('contact')}
             </Link>
           </div>
 
@@ -154,29 +187,44 @@ export function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
               {navigation.map((item) => {
-                const isActive = pathname === item.href
+                const localizedHref = getLocalizedHref(item.href)
+                const isActive = pathname === localizedHref
                 return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    "block px-4 py-3 rounded-lg transition-colors",
-                    isActive
-                      ? "text-white bg-[#EE3329]"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              )})}
+                  <Link
+                    key={item.key}
+                    href={localizedHref}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      "block px-4 py-3 rounded-lg transition-colors",
+                      isActive
+                        ? "text-white bg-[#EE3329]"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    )}
+                  >
+                    {t(item.key)}
+                  </Link>
+                )
+              })}
+              
+              {/* Mobile Language Switcher */}
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  handleLanguageSwitch()
+                }}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              >
+                <Globe className="w-5 h-5" />
+                <span className="text-sm font-semibold uppercase">{locale === "fr" ? "English (EN)" : "Français (FR)"}</span>
+              </button>
+
               <div className="pt-4">
                 <Link
-                  href="/contact"
+                  href={getLocalizedHref("/contact")}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center px-4 py-3 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-colors"
                 >
-                  Nous contacter
+                  {t('contact')}
                 </Link>
               </div>
             </div>

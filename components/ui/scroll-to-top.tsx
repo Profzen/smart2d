@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUp } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const t = useTranslations("ScrollToTop")
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -36,7 +38,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 p-3 bg-[#EE3329] text-white rounded-full shadow-lg hover:bg-[#d62d24] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EE3329]"
-          aria-label="Retour en haut"
+          aria-label={t("label")}
         >
           <ArrowUp className="w-5 h-5" />
         </motion.button>

@@ -31,8 +31,15 @@ Le travail est divisé en 3 branches distinctes pour une meilleure organisation.
 *   **Mapping contextuel** : Assignation de chaque image à la slide appropriée (ex: datacenter pour Oracle, cybersécurité pour Audit).
 *   **Logique d'alternance** : Garantie absolue qu'aucune image n'est utilisée de manière consécutive dans le carrousel des 13 slides.
 
+### 5. Branche : `aziz/i18n-bilingue` (Traduction complète FR/EN)
+*   **Infrastructure i18n** : Mise en place de `next-intl` avec middleware et configuration de routage dynamique `[locale]`.
+*   **Sélecteur de langue** : Ajout d'une icône "Globe" dans la barre de navigation pour basculer dynamiquement entre FR et EN.
+*   **Dictionnaires** : Création des fichiers `messages/fr.json` et `messages/en.json` contenant la totalité des textes du site.
+*   **Refactorisation globale** : Remplacement de tous les textes en dur par le hook `useTranslations()` sur toutes les pages et composants.
+
 ## Plan de Vérification
 
 1.  **Tests Visuels (Desktop & Mobile)** : Vérification du responsive des nouvelles ancres, du bouton scroll-to-top, et de la lisibilité des cartes.
 2.  **Tests d'Interaction** : Vérification du lien WhatsApp, du clic sur les ancres, du carrousel mobile, et de la fixité des boutons du Hero.
-3.  **Build** : Build local (`npm run build`) validé sans erreur avant toute création de PR ou fusion vers `develop`.
+3.  **Tests i18n** : Vérification du changement de langue via le header et contrôle des URLs dynamiques (`/fr/`, `/en/`).
+4.  **Build** : Build local (`npm run build`) validé sans erreur avant toute création de PR ou fusion vers `develop`.

@@ -1,0 +1,388 @@
+
+ 
+Table des matières 
+ 
+1.	La gestion de la compensation aller	1
+1.1.	L’initialisation de la journée de compensation (INITR)	2
+1.2.	L’envoi de la remise Aller Compensation (ICOM1) à la BCEAO	5
+1.3.	L’accusé de réception de l’ICOM1 (ICOMA)	8
+1.4.	L’envoi des images de chèques vers la BCEAO (MAILI)	9
+1.5.	L’accusé réception des MAILI (MAILA)	11
+2.	La gestion de la compensation retour	13
+2.1.	Le traitement des MAILOs	13
+2.2.	Le traitement de l’OUTGO	14
+2.3.	La génération des fichiers CRO	17
+2.4.	Le rejet d’ordre	18
+2.5.	L’envoi de la remise Aller de rejet (ICOM2) à la BCEAO	19
+2.6.	L’accusé de réception de l’ICOM2 (ICOMA)	22
+
+ 	 
+
+
+
+ 
+1.	La gestion de la compensation aller
+ 
+
+
+1.1.	L’initialisation de la journée de compensation (INITR)
+
+Demande d’initialisation
+Avant l’envoi du 1er ICOM (ICOM1 ou ICOM2) de la journée, vous devez demander l’ouverture de la journée de compensation à la BCEAO. Cette demande d’ouverture se fait par l’envoi d’un INITR.
+
+Prérequis : L’initialisation de la journée requiert le démarrage préalable du Gestionnaire des Processus.
+
+Pour ce faire, accédez au menu correspondant selon le type de compense (National ou Sous-régional).
+
+National :
+ 
+
+Puis cliquez sur le bouton « Confirmer l’action » :
+ 
+
+Sous-régional :
+ 
+
+Puis cliquez sur le bouton « Confirmer l’action » :
+ 
+
+Tâches exécutées : sas.action.writers.sica.InitrNatWriter
+			   sas.action.writers.sica.InitrSrgWriter
+
+comme listés sur le Gestionnaire de Processus :
+ 
+
+Output : Un fichier est produit dans les répertoires marqué par les paramètres INITR_NAT_FOLDER et INITR_SRG_FOLDER (par défaut C:\COMCFT\INITR\NAT\ et C:\COMCFT\INITR\SRG\). 
+ 
+La production d’un fichier INITR déclenche automatiquement une tache CFTUtil pour l’envoi de ce fichier à la BCEAO, par le CFT. 
+
+Evolution : Pas d’évolution de code état.
+
+Réponse de la BCEAO
+La BCEAO transmet un fichier INITA NATIONAL et/ou un fichier INITA SOUS REGIONAL en réponse au fichier INITR précédemment reçu. Ces fichiers contenants les dates de compensation de la journée sont automatiquement traités par SMARTACCESS. L’interface est automatiquement mis à jour à partir desdites dates  :
+ 
+
+Tâches exécutées : sas.action.writers.sica.InitrNatReader
+			   sas.action.writers.sica.InitrSrgReader
+ Modification des dates de compensation et des autres paramètres de la compensation
+Il est possible de forcer la modification des dates de compensation et d’autres paramètres. Il suffit pour cela de se rendre dans le menu Compensation\Paramètres Compensation\Paramètres techniques :
+
+ 
+
+
+Cliquez sur l’icône de modification concernée, effectuez les modifications dans le calendrier pour les dates.
+
+
+
+
+1.2.	L’envoi de la remise Aller Compensation (ICOM1) à la BCEAO
+
+Les valeurs (Virements, Effets, Chèques) prêtes pour la compensation (à l’état 50) sont envoyées vers la BCEAO sous la forme d’un fichier ICOM1.
+Prérequis : La génération requiert le démarrage préalable du Gestionnaire des Processus.
+
+Pour générer un fichier ICOM1, accédez au menu correspondant selon le type de compense (National ou Sous-régional).
+
+National :
+ 
+
+Puis cliquez sur le bouton « Confirmer l’action » :
+ 
+
+Sous-régional :
+ 
+
+Puis cliquez sur le bouton « Confirmer l’action » :
+ 
+
+Tâches exécutées : sas.action.writers.sica.Icom1NatWriter
+			   sas.action.writers.sica.Icom1SrgWriter
+
+ 
+
+Inputs : L’ensemble des ordres (chèques, virements et effets) prêts pour ICOM1 (Etat 50) dont les banques débitrices existent dans la table des Banques.
+
+Outputs : Un fichier est produit dans le répertoire marqué par le paramètre ICOM1_NAT_FOLDER (par défaut C:\COMCFT\ICOM1\NAT\) pour les ICOM1s Nationaux et ICOM1_SRG_FOLDER (par défaut C:\COMCFT\ICOM1\SRG\) pour les ICOM1s sous régionaux. 
+La production d’un fichier ICOM1 déclenche automatiquement une tache CFTUtil pour l’envoi de ce fichier par CFT. 
+Evolution : Le code état des opérations évolue pour passer à ETAT = 100 -  Opérations allée en ICOM1 envoyé. 
+
+
+Consultation des valeurs envoyées en compense
+Les valeurs envoyées en compense sont consultables en cliquant sur la liste appropriée selon le type :
+-	« Cheques\Liste des Chèques » pour les chèques ;
+-	« Virements\Liste des Virements » pour les virements ;
+-	« Effets\Liste des Effets » pour les effets.
+
+Il suffit ensuite de choisir l’état 100 – Opérations allée en ICOM1 envoyé au niveau le formulaire qui s’affiche :
+ 
+
+
+1.3.	 L’accusé de réception de l’ICOM1 (ICOMA)
+
+Pour chaque ICOM1 envoyé à la BCEAO, vous recevez un ICOMA en retour, contenant le sort des opérations envoyées précédemment (Accepté ou Rejeté). 
+
+La prise en compte du fichier ICOMA est visible sur le Gestionnaire des Processus.
+
+Impact : Le code état des opérations passent soit à : 
+ETAT = 122 - Opérations Aller en ICOM1 rejetées par la compensation, avec un code motif rejet expliquant la raison de ce rejet. 
+ETAT = 130 - Opérations acceptées en ICOM1
+ 
+Consultation du retour compense
+Les valeurs envoyées en compense sont consultables en cliquant sur la liste appropriée selon le type :
+-	« Cheques\Liste des Chèques » pour les chèques ;
+-	« Virements\Liste des Virements » pour les virements ;
+-	« Effets\Liste des Effets » pour les effets.
+
+Il suffit ensuite de choisir l’état 122 – Opérations allée en ICOM1 rejeté ou 130 – Opérations allée en ICOM1 accepté au niveau le formulaire qui s’affiche :
+  
+
+Renvoi d’une opération rejetée
+Pour renvoyer une opération rejetée, il suffit de corriger l’erreur et remettre son code état à 50 - Opérations prêtes pour ICOM1 puis relancer l’envoi de l’ICOM1.
+
+
+1.4.	L’envoi des images de chèques vers la BCEAO (MAILI)
+
+Après l’envoi d’un ICOM1, vous devez envoyer l’ensemble des images-chèques vers la BCEAO. 
+N.B : La génération requiert que le démarrage préalable du Gestionnaire des Processus.
+
+Pour générer un fichier MAILI, accédez au menu correspondant selon le type de compense (National ou Sous-régional).
+
+National :
+ 
+
+
+
+Sous-régional :
+ 
+
+Tâches exécutées : sas.action.writers.sica.MailiNatWriter
+			   sas.action.writers.sica.MailiSrgWriter
+
+Inputs : Les images des chèques acceptés en ICOM1 :  Code Etat 130 – Opération Acceptée en ICOM1
+Avec le champ ETATIMAGE =10 (Image stockée) 
+Outputs : Les fichiers sont produits dans le répertoire marqué par le paramètre MAILI_NAT_FOLDER (par défaut C:\COMCFT\MAILI\NAT\) pour les MAILIs Nationaux et MAILI_SRG_FOLDER (par défaut C:\COMCFT\MAILI\SRG\) pour les MAILIs sous régionaux. 
+
+La production d’un fichier MAILI déclenche automatiquement une tache CFTUtil pour l’envoi de ce fichier par CFT. 
+
+Impact : Le code état des images évolue pour passer de ETATIMAGE = 10 à ETATIMAGE = 20 - Images envoyées. 
+
+Consultation de l’état des images
+Les valeurs envoyées en compense sont consultables en cliquant sur le menu « Cheques\Liste des Chèques ».
+
+Il suffit ensuite de choisir l’état 130 – Opérations allée en ICOM1 accepté au niveau le formulaire qui s’affiche pour ne garder que les chèques acceptés en compensation :
+ 
+
+###A compléter avec la recherche des chèques dont ETATIMAGE n’est pas 20###
+
+
+Renvoi d’une image non envoyée précédemment
+Pour renvoyer une image non envoyée vers la BCEAO, il suffit de remettre ETATIMAGE de l’ordre concerné à 10 et relancer l’envoi des Mailis. 
+
+
+1.5.	L’accusé réception des MAILI (MAILA)
+
+Pour chaque MAILI envoyé à la BCEAO, vous recevez un MAILA en retour, qui confirme la réception des images par le confrère. 
+
+La prise en compte du fichier MAILA est visible sur le Gestionnaire des Processus.
+
+###Image consommation MAILI ### 
+
+Impact : Le code état des images évolue pour passer de ETATIMAGE = 20 à ETATIMAGE = 30 - Images envoyées et reçues. 
+
+
+1.6.	Génération des fichiers EXA / CRA
+
+Les fichiers EXA et CRA sont générés automatiquement après acceptation totale des remises.
+Ces fichiers contiennent exclusivement les remises Chèques et Virements ayant été acceptées en ICOM1 (État = 130).
+Les fichiers générés sont ensuite mis à disposition du SIB dans le répertoire suivant :
+C:/smartaccess/interfaces/sortie/aller/
+
+
+Capture
+
+
+
+Remarque :
+En cas de rejet partiel d’une remise, les utilisateurs ont la possibilité de générer manuellement les fichiers EXA/CRA à partir de l’application.
+
+
+ 2.	La gestion de la compensation retour
+ 
+
+Le retour compensation met en scène plusieurs types de fichiers en provenance de la BCEAO : 
+-	Les fichiers MAILOs qui sont les images concaténées en provenance des banques consœurs et transitant par la BCEAO, et qui arrivent tout au long de la journée de compensation. 
+-	Le fichier OUTGO provenant de la BCEAO et qui contient l’ensemble des opérations retour mais aussi les rejets d’opérations des confrères.
+-	Les fichiers de synthèse (SYNTI, SYNTR, SYNTO, ECHEA …)
+
+NB : Aucune action manuelle n’est nécessaire pour le traitement de ces fichiers. Ils sont traités automatiquement au fur et à mesure qu’ils arrivent de la BCEAO, à condition cependant que le Gestionnaire de Processus soit démarré. Images et données sont automatiquement réconciliées.
+
+2.1.	Le traitement des MAILOs
+
+Les Mailos sont les images des chèques retour (Chèques présentés par les banques consœurs). Il y a les Mailos nationaux et les Mailos sous régionaux.
+A la réception, ils sont automatiquement traités et décryptés par WebClearing. Il ya exécution automatique de la tache sas.action.readers.sica.MailoReader. L’exécution est visible sur le WebMonitor. Cette tache extrait les images en provenance des banques, dans un répertoire sur le serveur de la forme (C:\image\retour\ « date de compensation » \ « banque » \ « agence»\ « type d’opération»\) 
+
+Les images recto et verso contiennent dans leurs noms de fichier, le montant, le numéro de compte et le numéro de chèque. 
+Cette façon de les présenter permet donc de les retrouver plus aisément dans le système de fichier. 
+
+Les images extraites des MAILO sont visibles dans SMARTACCESS via le log Gestionnaire de Processus
+###Voir menu traitement MAILO de SMARTACCESS###
+
+2.2.	Le traitement de l’OUTGO
+
+Le outgo contient l’ensemble des valeurs (Chèques, Effets, Virements, Prélèvements et Rejets ou impayés) reçues des autres banques. Il est reçu entre 10H00 et 11H00 pour marquer la clôture de la compense en cours. Il y a le Outgo national et le Outgo sous régional.
+A la réception, ils sont automatiquement traités par SMARTACCESS. Il y a exécution automatique de la tache sas.action.readers.sica.OutgoReader.  L’exécution est visible sur le log du Gestionnaire de Processus. 
+
+###Image log du Gestionnaire de Processus###
+
+Cette tâche effectue les opérations suivantes : 
+-	L’insertion dans la base, les chèques, les effets, les prélèvements et virements retour reçus des confrères.
+-	La réconciliation des données des chèques et les images (Mailos) préalablement extraits  
+-	Mise à jour des opérations Aller qui ont été rejeté par les confrères. 
+
+2.2.1	Les chèques reçus avec images
+
+Les chèques reçus avec images sont consultables en cliquant sur le menu « Cheques\Liste des Chèques ».
+
+Il suffit ensuite de choisir l’état 152 – Opérations retour réconciliées au niveau du formulaire et cliquer sur « Afficher » :
+ 
+
+
+2.2.2	Les chèques reçus sans images
+
+Les chèques reçus sans images sont consultables en cliquant sur le menu « Chèques\Liste des Chèques ».
+
+Il suffit ensuite de choisir l’état 52 – Opérations retour au niveau du formulaire et cliquer sur « Afficher » :
+
+ 
+
+
+2.2.3	Les chèques aller, rejetés par les confrères
+
+Les chèques aller, rejetés par les confrères sont consultables en cliquant sur le menu « Chèques\Liste des Chèques ».
+
+Il suffit ensuite de choisir l’état 452 – Opérations aller rejetée au niveau du formulaire et cliquer sur « Afficher » :
+
+ 
+
+2.2.4	Les effets retour
+
+Les effets reçus sans images sont consultables en cliquant sur le menu « Effets\Liste des Effets ».
+
+Il suffit ensuite de choisir l’état 52 – Opérations retour au niveau du formulaire et cliquer sur « Afficher » :
+
+ 
+
+	2.2.5	Les effets aller rejetés par les confrères
+
+Les effets aller, rejetés par les confrères sont consultables en cliquant sur le menu « Effets\Liste des Effets ».
+
+Il suffit ensuite de choisir l’état 452 – Opérations aller rejetée au niveau du formulaire et cliquer sur « Afficher » :
+
+ 
+ 	2.2.6	Les virements retour
+
+Les virements reçus sont consultables en cliquant sur le menu « Virements\Liste des Virements ».
+
+Il suffit ensuite de choisir l’état 52 – Opérations retour au niveau du formulaire et cliquer sur « Afficher » :
+
+ 
+
+	2.2.7	Les prélèvements retour
+
+Les prélèvements reçus sont consultables en cliquant sur le menu « Prélèvements\Liste des Prélèvements ».
+
+Il suffit ensuite de choisir l’état 52 – Opérations retour au niveau du formulaire et cliquer sur « Afficher » :
+
+ 
+
+2.3.	La génération des fichiers CRO
+
+Après la réception du retour compense, toutes les valeurs reçues (Cheques retour, Effets retour, Virements retour, Prélèvements retour, Rejet chèques Aller, Rejet Effet Aller) sont automatiquement générées dans des fichiers CRO. 
+
+Inputs : Les opérations retour :
+-	Code Etat 52 – Opération retour ;
+-	Code Etat 152 – Opération retour avec images.
+
+
+
+2.4.	Le rejet d’ordre
+
+Fonctionnement normal
+Les rejets sont effectués dans Amplitude et automatiquement intégré dans SMARTACCESS à travers des fichiers LOT.
+
+Cependant, au cas où intégration automatique ne marcherait pas, il est possible de rejeter les ordres manuellement dans SMARTACCESS.
+
+Fonctionnement alternatif
+Allez dans le menu « Recherche Pour Rejet » comme présenté ci-dessous :
+ 
+
+Dans l’écran ci-dessous, renseignez les critères de recherche des ordres à rejeter, puis cliquez sur « Afficher » :
+ 
+
+###Ajouter l’action de rejet proprement dit ###
+
+2.5.	L’envoi de la remise Aller de rejet (ICOM2) à la BCEAO
+
+Il s’agit ici de l’envoi, vers la BCEAO de l’ensemble des opérations confrères qui ont été rejetés : Chèques, Effets et Prélèvements. 
+
+Prérequis : La génération requiert le démarrage préalable du Gestionnaire des Processus.
+
+Pour générer un fichier ICOM2, accédez au menu correspondant selon le type de compense (National ou Sous-régional).
+
+National :
+ 
+
+Puis cliquez sur le bouton « Confirmer l’action » :
+ 
+
+Sous-régional :
+ 
+
+Puis cliquez sur le bouton « Confirmer l’action » :
+ 
+
+Tâches exécutées : sas.action.writers.sica.Icom2NatWriter
+			   sas.action.writers.sica.Icom2SrgWriter
+
+
+
+Inputs : L’ensemble des ordres (chèques, virements et effets) prêts pour ICOM2 (Etat 250 – Opération allées en ICOM2).
+
+Outputs : Un fichier est produit dans le répertoire marqué par le paramètre ICOM2_NAT_FOLDER (par défaut C:\COMCFT\ICOM2\NAT\) pour les ICOM2s Nationaux et ICOM2_SRG_FOLDER (par défaut C:\COMCFT\ICOM2\SRG\) pour les ICOM2s sous régionaux. 
+La production d’un fichier ICOM1 déclenche automatiquement une tache CFTUtil pour l’envoi de ce fichier par CFT. 
+
+Impact : Le code état des opérations évolue pour passer à ETAT = 3
+00 - Opérations allée en ICOM2 envoyé. 
+
+Consultation des valeurs envoyées pour rejet
+Les valeurs envoyées en pour rejet sont consultables en cliquant sur la liste appropriée selon le type :
+-	« Cheques\Liste des Chèques » pour les chèques ;
+-	« Virements\Liste des Virements » pour les virements ;
+-	« Effets\Liste des Effets » pour les effets.
+
+Il suffit ensuite de choisir l’état 300 – Opérations allée en ICOM2 envoyé au niveau le formulaire qui s’affiche :
+ 
+ 2.6.	L’accusé de réception de l’ICOM2 (ICOMA)
+
+Pour chaque ICOM2 envoyé à la BCEAO, vous recevez un ICOMA en retour, contenant le sort des opérations rejetées précédemment (rejet Accepté ou Rejeté). 
+
+La prise en compte du fichier ICOMA est visible sur le Gestionnaire des Processus.
+
+Impact : Le code état des opérations passent soit à : 
+ETAT = 322 - Opérations Aller en ICOM2 rejetées par la compensation, avec un code motif rejet expliquant la raison de ce rejet. 
+ETAT = 330 - Opérations acceptées en ICOM2
+Consultation du retour compense
+Les valeurs envoyées en compense sont consultables en cliquant sur la liste appropriée selon le type :
+-	« Cheques\Liste des Chèques » pour les chèques ;
+-	« Virements\Liste des Virements » pour les virements ;
+-	« Effets\Liste des Effets » pour les effets.
+
+Il suffit ensuite de choisir l’état 322 - Opérations Aller en ICOM2 rejetées par la compensation ou 330 - Opérations acceptées en ICOM2 au niveau le formulaire qui s’affiche :
+  
+
+Renvoi d’une opération rejetée
+Pour renvoyer une opération rejetée, il suffit de corriger l’erreur et remettre son code état à 250 - Opérations prêtes pour ICOM2 puis relancer l’envoi de l’ICOM1.
+
+
+
+
+

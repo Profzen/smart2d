@@ -18,7 +18,6 @@ import {
   Users,
   FileText,
   History,
-  Settings,
   Shield,
   CheckCircle,
   AlertTriangle,
@@ -26,63 +25,94 @@ import {
   TrendingUp
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
-
-const solutionsAnchors: Anchor[] = [
-  { id: "oscar", title: "OSCAR" },
-  { id: "smart-transfert", title: "Smart Transfert" },
-]
-
-const oscarProblems = [
-  "Trop de journaux, métriques et alertes dispersés dans plusieurs outils",
-  "Difficulté à identifier rapidement la cause d'un incident",
-  "Supervision souvent réactive plutôt que proactive",
-  "Tâches répétitives réalisées manuellement par les équipes",
-  "Coûts élevés de certains outils commerciaux de monitoring",
-]
-
-const oscarBenefits = [
-  "Supervision centralisée des environnements critiques",
-  "Détection proactive d'anomalies et meilleure priorisation",
-  "Automatisation de tâches récurrentes ou de scripts",
-  "Rapports opérationnels plus lisibles",
-  "Architecture conteneurisée et intégration open source",
-]
-
-const oscarFeatures = [
-  { icon: Cpu, label: "Inventaire IT complet" },
-  { icon: Activity, label: "Agents de supervision" },
-  { icon: Bell, label: "Règles d'alertes" },
-  { icon: Zap, label: "Automatisation" },
-  { icon: BarChart3, label: "Rapports & tendances" },
-  { icon: Bot, label: "IA / AIOps" },
-]
-
-const smartTransfertProblems = [
-  "Multiplication des applications selon les prestataires",
-  "Perte de temps lors du passage d'un outil à l'autre",
-  "Risque d'erreurs de saisie ou d'oublis",
-  "Rapports de fin de journée manuels et difficiles",
-  "Besoin de meilleure traçabilité des opérations",
-]
-
-const smartTransfertBenefits = [
-  "Une interface unique pour simplifier le travail",
-  "Parcours d'envoi et de retrait plus lisibles",
-  "Rapports comptables plus fiables et plus rapides",
-  "Historique des transactions consultable",
-  "Réduction des erreurs et meilleure maîtrise",
-]
-
-const smartTransfertFeatures = [
-  { icon: BarChart3, label: "Tableau de bord" },
-  { icon: Send, label: "Parcours d'envoi" },
-  { icon: Receipt, label: "Parcours de retrait" },
-  { icon: FileText, label: "Rapports comptables" },
-  { icon: History, label: "Historique" },
-  { icon: Users, label: "Gestion utilisateurs" },
-]
+import { useTranslations, useLocale } from "next-intl"
 
 export function SolutionsContent() {
+  const t = useTranslations("Solutions")
+  const locale = useLocale()
+
+  const getLocalizedHref = (href: string) => {
+    if (href.startsWith("#")) return href
+    return `/${locale}${href}`
+  }
+
+  const solutionsAnchors: Anchor[] = [
+    { id: "oscar", title: "OSCAR" },
+    { id: "smart-transfert", title: "Smart Transfert" },
+  ]
+
+  const oscarProblems = [
+    t("oscar_w1"),
+    t("oscar_w2"),
+    t("oscar_w3"),
+    t("oscar_w4"),
+  ]
+
+  const oscarFeatures = [
+    { icon: Cpu, label: t("st_f1") },
+    { icon: Activity, label: t("oscar_f1_title") },
+    { icon: Bell, label: t("oscar_f3_title") },
+    { icon: Zap, label: t("oscar_w4") },
+    { icon: BarChart3, label: t("oscar_f5") },
+    { icon: Bot, label: t("oscar_f4_title") },
+  ]
+
+  const smartTransfertProblems = [
+    t("st_p1"),
+    t("st_p2"),
+    t("st_p3"),
+    t("st_p4"),
+    t("st_p5"),
+  ]
+
+  const smartTransfertBenefits = [
+    t("st_b1"),
+    t("st_b2"),
+    t("st_b3"),
+    t("st_b4"),
+    t("st_b5"),
+  ]
+
+  const smartTransfertFeatures = [
+    { icon: BarChart3, label: t("st_f1") },
+    { icon: Send, label: t("st_f2") },
+    { icon: Receipt, label: t("st_f3") },
+    { icon: FileText, label: t("st_f4") },
+    { icon: History, label: t("st_f5") },
+    { icon: Users, label: t("st_f6") },
+  ]
+
+  const solutions = [
+    {
+      icon: Activity,
+      title: "OSCAR",
+      subtitle: "Supervision & AIOps",
+      description: t("oscar_desc"),
+      longDescription: t("oscar_desc"),
+      features: oscarFeatures,
+      href: "/solutions#oscar",
+      accent: "bg-[#17233A]",
+      iconBg: "bg-[#EE3329]",
+      iconColor: "text-white",
+      linkText: "Découvrir OSCAR",
+      featureIconColor: "text-[#17233A]",
+    },
+    {
+      icon: Send,
+      title: "Smart Transfert",
+      subtitle: t("st_tag"),
+      description: t("st_desc"),
+      longDescription: t("st_desc"),
+      features: smartTransfertFeatures,
+      href: "/solutions#smart-transfert",
+      accent: "bg-[#2F6B4F]",
+      iconBg: "bg-white",
+      iconColor: "text-[#2F6B4F]",
+      linkText: "Découvrir Smart Transfert",
+      featureIconColor: "text-[#2F6B4F]",
+    },
+  ]
+
   return (
     <>
       {/* Hero */}
@@ -98,16 +128,13 @@ export function SolutionsContent() {
             <HeroAnchors anchors={solutionsAnchors} />
 
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Nos solutions
+              {t("solutions_tag")}
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
-              Des solutions conçues pour simplifier les opérations
+              {t("solutions_title")}
             </h1>
             <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
-              En complément de ses services de conseil, SMART2D conçoit et intègre des 
-              solutions qui répondent à des problèmes opérationnels concrets : supervision 
-              intelligente, automatisation, centralisation des opérations, rapports fiables 
-              et réduction des erreurs.
+              {t("solutions_desc")}
             </p>
           </motion.div>
         </div>
@@ -126,12 +153,10 @@ export function SolutionsContent() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#EE3329] mb-3">OSCAR</h2>
             <p className="text-xl md:text-2xl font-semibold text-[#221E1F] mb-4">
-              Observabilité, supervision et automatisation IT
+              {t("oscar_subtitle")}
             </p>
             <p className="text-[#221E1F]/70 text-lg leading-relaxed max-w-4xl">
-              OSCAR centralise la supervision des serveurs, applications, bases de données 
-              et équipements. Il aide les équipes à observer, détecter, analyser et automatiser 
-              certaines opérations techniques pour améliorer la continuité des services.
+              {t("oscar_desc")}
             </p>
           </motion.div>
 
@@ -145,14 +170,9 @@ export function SolutionsContent() {
           >
             {/* Gauche — Ce que fait OSCAR (5 colonnes sur 12) */}
             <div className="lg:col-span-5 bg-white rounded-2xl p-8 border border-[#E5E0DC] shadow-sm flex flex-col justify-center">
-              <h3 className="text-xl font-bold text-[#221E1F] mb-6">Ce que fait OSCAR</h3>
+              <h3 className="text-xl font-bold text-[#221E1F] mb-6">{t("oscar_what_title")}</h3>
               <ul className="space-y-4">
-                {[
-                  "Observer les infrastructures critiques",
-                  "Détecter rapidement les incidents",
-                  "Analyser les événements techniques",
-                  "Automatiser certaines actions répétitives",
-                ].map((item, index) => (
+                {oscarProblems.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#EE3329] mt-1.5 flex-shrink-0" />
                     <span className="text-[#221E1F]/80 text-base">{item}</span>
@@ -183,7 +203,7 @@ export function SolutionsContent() {
           >
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px flex-1 bg-[#E5E0DC]" />
-              <h3 className="text-lg font-semibold text-[#221E1F] whitespace-nowrap">Fonctions clés</h3>
+              <h3 className="text-lg font-semibold text-[#221E1F] whitespace-nowrap">{t("oscar_features_title")}</h3>
               <div className="h-px flex-1 bg-[#E5E0DC]" />
             </div>
 
@@ -191,25 +211,25 @@ export function SolutionsContent() {
               {[
                 {
                   icon: Server,
-                  title: "Surveillance continue",
-                  description: "Surveillance continue des serveurs, équipements réseau, systèmes, applications et bases de données.",
+                  title: t("oscar_f1_title"),
+                  description: t("oscar_f1_desc"),
                 },
                 {
                   icon: Shield,
-                  title: "Audit des environnements critiques",
-                  description: "Audit des environnements critiques, notamment les bases de données Oracle, MySQL et autres systèmes sensibles.",
+                  title: t("oscar_f2_title"),
+                  description: t("oscar_f2_desc"),
                 },
                 {
                   icon: Bell,
-                  title: "Alertes en temps réel",
-                  description: "Avertissement en temps réel sur les actions sensibles et événements critiques.",
+                  title: t("oscar_f3_title"),
+                  description: t("oscar_f3_desc"),
                 },
                 {
                   icon: Bot,
-                  title: "Assistance intelligente",
-                  description: "Assistance intelligente en langage naturel pour identifier rapidement quoi, quand et sur quel système.",
+                  title: t("oscar_f4_title"),
+                  description: t("oscar_f4_desc"),
                 },
-              ].map((func, index) => (
+              ].map((func) => (
                 <div
                   key={func.title}
                   className="bg-white rounded-xl p-6 border border-[#E5E0DC] shadow-sm hover:shadow-md transition-shadow"
@@ -244,7 +264,7 @@ export function SolutionsContent() {
             />
             <p className="mt-4 text-sm text-[#221E1F]/50 flex items-center gap-2">
               <Activity className="w-4 h-4" />
-              Dashboard OSCAR : supervision des ressources, disponibilité et indicateurs techniques.
+              {t("oscar_db_desc")}
             </p>
           </motion.div>
         </div>
@@ -267,16 +287,13 @@ export function SolutionsContent() {
               </div>
               <div>
                 <span className="text-xs font-mono text-[#2F6B4F] bg-[#2F6B4F]/10 px-2 py-1 rounded">
-                  TRANSFERT D&apos;ARGENT
+                  {t("st_tag")}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F] mt-2">Smart Transfert</h2>
               </div>
             </div>
             <p className="text-xl text-[#221E1F]/70 max-w-3xl">
-              Plateforme de centralisation conçue pour les agences ou points de service 
-              qui gèrent plusieurs prestataires de transfert d&apos;argent. Elle permet aux 
-              agents de travailler dans une interface unique, de réduire les erreurs, 
-              de fiabiliser les rapports et de renforcer la traçabilité des opérations.
+              {t("st_desc")}
             </p>
           </motion.div>
 
@@ -290,7 +307,7 @@ export function SolutionsContent() {
             >
               <h3 className="text-lg font-semibold text-[#221E1F] mb-6 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-[#EE3329]" />
-                Problèmes traités
+                {t("st_prob_title")}
               </h3>
               <div className="space-y-3">
                 {smartTransfertProblems.map((problem, index) => (
@@ -314,7 +331,7 @@ export function SolutionsContent() {
             >
               <h3 className="text-lg font-semibold text-[#221E1F] mb-6 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-[#2F6B4F]" />
-                Bénéfices
+                {t("st_ben_title")}
               </h3>
               <div className="space-y-3">
                 {smartTransfertBenefits.map((benefit, index) => (
@@ -355,7 +372,7 @@ export function SolutionsContent() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12"
           >
-            <h3 className="text-lg font-semibold text-[#221E1F] mb-6">Fonctionnalités principales</h3>
+            <h3 className="text-lg font-semibold text-[#221E1F] mb-6">{t("st_features_title")}</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {smartTransfertFeatures.map((feature) => (
                 <div
@@ -383,16 +400,16 @@ export function SolutionsContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Vous souhaitez découvrir OSCAR ou Smart Transfert ?
+              {t("cta_title")}
             </h2>
             <p className="text-white/70 text-lg mb-8">
-              Contactez SMART2D pour organiser une présentation adaptée à votre contexte.
+              {t("cta_desc")}
             </p>
             <Link
-              href="/contact"
+              href={getLocalizedHref("/contact")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
-              Demander une présentation
+              {t("cta_btn")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

@@ -1,5 +1,7 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { 
@@ -12,46 +14,48 @@ import {
   ArrowRight
 } from "lucide-react"
 
-const services = [
-  {
-    icon: Database,
-    title: "Administration DBA",
-    description: "Installation, configuration, supervision, tuning, sauvegarde, restauration et support des bases Oracle, MySQL, PostgreSQL.",
-    href: "/services#dba",
-  },
-  {
-    icon: Search,
-    title: "Audit technique",
-    description: "Analyse des configurations, des pratiques d'exploitation, des sauvegardes, des accès et des performances.",
-    href: "/services#audit",
-  },
-  {
-    icon: Shield,
-    title: "Sécurité",
-    description: "Durcissement, gestion des accès, configuration sécurisée, journalisation et bonnes pratiques de protection.",
-    href: "/services#securite",
-  },
-  {
-    icon: RefreshCw,
-    title: "Migration & modernisation",
-    description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
-    href: "/services#migration",
-  },
-  {
-    icon: Activity,
-    title: "Supervision & MCO",
-    description: "Alertes, tableaux de bord, rapports, prévention des incidents et maintien en condition opérationnelle.",
-    href: "/services#mco",
-  },
-  {
-    icon: GraduationCap,
-    title: "Support & formation",
-    description: "Assistance technique, formation Oracle, bases de données, Linux/Unix et transfert de compétences.",
-    href: "/services#formation",
-  },
-]
-
 export function ServicesSection() {
+  const t = useTranslations("ServicesSection")
+
+  const services = [
+    {
+      icon: Database,
+      title: t("services.dba_title"),
+      description: t("services.dba_desc"),
+      href: "/services#dba",
+    },
+    {
+      icon: Search,
+      title: t("services.audit_title"),
+      description: t("services.audit_desc"),
+      href: "/services#audit",
+    },
+    {
+      icon: Shield,
+      title: t("services.sec_title"),
+      description: t("services.sec_desc"),
+      href: "/services#securite",
+    },
+    {
+      icon: RefreshCw,
+      title: t("services.mig_title"),
+      description: t("services.mig_desc"),
+      href: "/services#migration",
+    },
+    {
+      icon: Activity,
+      title: t("services.mco_title"),
+      description: t("services.mco_desc"),
+      href: "/services#mco",
+    },
+    {
+      icon: GraduationCap,
+      title: t("services.sup_title"),
+      description: t("services.sup_desc"),
+      href: "/services#formation",
+    },
+  ]
+
   return (
     <section id="services" className="py-20 lg:py-28 bg-[#F8F6F4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,15 +68,13 @@ export function ServicesSection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-            Nos services
+            {t("label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
-            Des services IT pour sécuriser et moderniser vos plateformes
+            {t("title")}
           </h2>
           <p className="mt-4 text-lg text-[#221E1F]/70 max-w-2xl mx-auto">
-            SMART2D intervient sur les environnements techniques sensibles avec une 
-            approche complète : comprendre l&apos;existant, identifier les risques, 
-            stabiliser et accompagner.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -105,7 +107,7 @@ export function ServicesSection() {
 
                 {/* Arrow */}
                 <div className="mt-4 flex items-center text-[#EE3329] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  En savoir plus
+                  {t("card_link")}
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -125,7 +127,7 @@ export function ServicesSection() {
             href="/services"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#221E1F] text-white font-semibold rounded-lg hover:bg-[#2d2829] transition-all group"
           >
-            Voir tous nos services
+            {t("button_all")}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

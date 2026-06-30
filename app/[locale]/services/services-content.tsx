@@ -15,80 +15,85 @@ import {
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
+import { useTranslations } from "next-intl"
 
-const servicesAnchors: Anchor[] = [
-  { id: "domaines", title: "Domaines d'intervention" },
-  { id: "demarche", title: "Notre Démarche" },
-]
 
-const services = [
-  {
-    id: "oracle-database-middleware",
-    icon: Database,
-    title: "Oracle Database & Middleware",
-    description: "Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    id: "cloud-oci-hybrides",
-    icon: Cloud,
-    title: "Cloud OCI & architectures hybrides",
-    description: "Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "bases-de-donnees-critiques",
-    icon: HardDrive,
-    title: "Bases de données critiques",
-    description: "Installation, tuning, monitoring, sauvegarde et restauration sur Oracle, MySQL, PostgreSQL, SQL Server et environnements associés.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    id: "linux-unix",
-    icon: Terminal,
-    title: "Linux / Unix",
-    description: "Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "audit-securite-performance",
-    icon: Shield,
-    title: "Audit, sécurité & performance",
-    description: "Analyse des risques, vérification des configurations, recommandations opérationnelles et plans de remédiation priorisés.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    id: "ia-automatisation",
-    icon: Cpu,
-    title: "Intelligence Artificielle & Automatisation",
-    description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
-    color: "bg-[#17233A]",
-  },
-  {
-    id: "migration-modernisation",
-    icon: RefreshCw,
-    title: "Migration & modernisation",
-    description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    id: "support-formation",
-    icon: GraduationCap,
-    title: "Support & formation",
-    description: "Assistance technique, accompagnement ponctuel ou continu, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
-    color: "bg-[#17233A]",
-  },
-]
-
-const approach = [
-  "Diagnostic de l'existant et compréhension du contexte métier",
-  "Identification des risques techniques et opérationnels",
-  "Plan d'action priorisé : urgence, stabilisation, optimisation, modernisation",
-  "Mise en œuvre, documentation et transfert de compétences",
-  "Suivi post-intervention et recommandations d'amélioration continue",
-]
 
 export function ServicesContent() {
+  const t = useTranslations("Services")
+
+  const servicesAnchors: Anchor[] = [
+    { id: "domaines", title: t("anc_domaines") },
+    { id: "demarche", title: t("anc_demarche") },
+  ]
+
+  const approach = [
+    t("step_1"),
+    t("step_2"),
+    t("step_3"),
+    t("step_4"),
+    t("step_5"),
+  ]
+
+  const services = [
+    {
+      id: "oracle-database-middleware",
+      icon: Database,
+      title: t("oracle_title"),
+      description: t("oracle_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      id: "cloud-oci-hybrides",
+      icon: Cloud,
+      title: t("cloud_title"),
+      description: t("cloud_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      id: "bases-de-donnees-critiques",
+      icon: HardDrive,
+      title: t("db_title"),
+      description: t("db_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      id: "linux-unix",
+      icon: Terminal,
+      title: t("linux_title"),
+      description: t("linux_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      id: "audit-securite-performance",
+      icon: Shield,
+      title: t("audit_title"),
+      description: t("audit_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      id: "ia-automatisation",
+      icon: Cpu,
+      title: t("ia_title"),
+      description: t("ia_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      id: "migration-modernisation",
+      icon: RefreshCw,
+      title: t("mig_title"),
+      description: t("mig_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      id: "support-formation",
+      icon: GraduationCap,
+      title: t("sup_title"),
+      description: t("sup_desc"),
+      color: "bg-[#17233A]",
+    },
+  ]
+
   return (
     <>
       {/* Hero */}
@@ -104,15 +109,13 @@ export function ServicesContent() {
             <HeroAnchors anchors={servicesAnchors} />
 
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Nos services
+              {t("hero_label")}
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
-              Des services IT pour sécuriser, maintenir et moderniser vos plateformes
+              {t("hero_title")}
             </h1>
             <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
-              SMART2D intervient sur les environnements techniques sensibles avec une 
-              approche complète : comprendre l&apos;existant, identifier les risques, stabiliser 
-              les plateformes, améliorer les performances et accompagner les équipes dans la durée.
+              {t("hero_desc")}
             </p>
           </motion.div>
         </div>
@@ -123,7 +126,7 @@ export function ServicesContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Nos domaines d&apos;intervention
+              {t("dom_title")}
             </span>
           </div>
           <div className="space-y-8">
@@ -163,14 +166,13 @@ export function ServicesContent() {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-                Notre approche
+                {t("app_title")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Une méthodologie éprouvée
+                {t("app_h2")}
               </h2>
               <p className="mt-4 text-white/70 leading-relaxed">
-                Chaque intervention suit une démarche structurée pour garantir 
-                des résultats concrets et durables.
+                {t("app_desc")}
               </p>
             </motion.div>
 
@@ -207,16 +209,16 @@ export function ServicesContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-[#221E1F] mb-4">
-              Prêt à sécuriser et optimiser vos infrastructures ?
+              {t("cta_title")}
             </h2>
             <p className="text-[#221E1F]/70 text-lg mb-8">
-              Contactez SMART2D dès aujourd'hui pour concevoir votre solution sur mesure.
+              {t("cta_desc")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
-              Contacter SMART2D
+              {t("cta_btn")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

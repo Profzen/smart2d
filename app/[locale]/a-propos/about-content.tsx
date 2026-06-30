@@ -23,97 +23,100 @@ import {
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
-
-const oscarFeatures = [
-  { icon: Activity, label: "Supervision centralisée" },
-  { icon: Bell, label: "Alertes proactives" },
-  { icon: Bot, label: "Détection d'anomalies IA" },
-  { icon: Zap, label: "Automatisation" },
-  { icon: BarChart3, label: "Rapports & tableaux" },
-  { icon: Cpu, label: "Inventaire IT" },
-]
-
-const smartTransfertFeatures = [
-  { icon: Send, label: "Parcours d'envoi" },
-  { icon: Receipt, label: "Parcours de retrait" },
-  { icon: FileText, label: "Rapports comptables" },
-  { icon: History, label: "Historique complet" },
-  { icon: Users, label: "Gestion utilisateurs" },
-  { icon: BarChart3, label: "Traçabilité" },
-]
-
-const solutions = [
-  {
-    icon: Activity,
-    title: "OSCAR",
-    subtitle: "Supervision & AIOps",
-    description: "Plateforme d'observabilité, de supervision et d'automatisation IT augmentée par l'IA.",
-    longDescription: "OSCAR aide les équipes à surveiller leurs serveurs, applications, bases de données et équipements, à détecter plus tôt les anomalies et à automatiser certaines actions opérationnelles.",
-    features: oscarFeatures,
-    href: "/solutions#oscar",
-    accent: "bg-[#17233A]",
-    iconBg: "bg-[#EE3329]",
-    iconColor: "text-white",
-    linkText: "Découvrir OSCAR",
-    featureIconColor: "text-[#17233A]",
-  },
-  {
-    icon: Send,
-    title: "Smart Transfert",
-    subtitle: "Transfert d'argent",
-    description: "Plateforme de centralisation des opérations pour agences de transfert d'argent.",
-    longDescription: "Smart Transfert permet aux agents de travailler dans une interface unique, de réduire les erreurs, de fiabiliser les rapports et de renforcer la traçabilité des opérations.",
-    features: smartTransfertFeatures,
-    href: "/solutions#smart-transfert",
-    accent: "bg-[#2F6B4F]",
-    iconBg: "bg-white",
-    iconColor: "text-[#2F6B4F]",
-    linkText: "Découvrir Smart Transfert",
-    featureIconColor: "text-[#2F6B4F]",
-  },
-]
-
-const aboutAnchors: Anchor[] = [
-  { id: "experience", title: "Notre Expérience" },
-  { id: "mission", title: "Mission & Vision" },
-  { id: "valeurs", title: "Nos Valeurs" },
-  { id: "equipe", title: "Notre Équipe" },
-]
-
-const values = [
-  {
-    icon: Award,
-    title: "Expertise",
-    description: "Une maîtrise technique des environnements Oracle, bases de données, Linux/Unix, cloud et supervision.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    icon: Shield,
-    title: "Fiabilité",
-    description: "Des interventions orientées continuité de service, stabilité et maîtrise des risques.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Shield,
-    title: "Sécurité",
-    description: "Une attention constante aux accès, configurations, sauvegardes, durcissement et bonnes pratiques.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    icon: Users,
-    title: "Transmission",
-    description: "Un accompagnement qui renforce l'autonomie des équipes internes.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation utile",
-    description: "Des solutions modernes, mais toujours reliées à un besoin opérationnel réel.",
-    color: "bg-[#EE3329]",
-  },
-]
+import { useTranslations } from "next-intl"
 
 export function AboutContent() {
+  const t = useTranslations("About")
+
+  const oscarFeatures = [
+    { icon: Activity, label: t("oscar_f1") },
+    { icon: Bell, label: t("oscar_f2") },
+    { icon: Bot, label: t("oscar_f3") },
+    { icon: Zap, label: t("oscar_f4") },
+    { icon: BarChart3, label: t("oscar_f5") },
+    { icon: Cpu, label: t("oscar_f6") },
+  ]
+
+  const smartTransfertFeatures = [
+    { icon: Send, label: t("st_f1") },
+    { icon: Receipt, label: t("st_f2") },
+    { icon: FileText, label: t("st_f3") },
+    { icon: History, label: t("st_f4") },
+    { icon: Users, label: t("st_f5") },
+    { icon: BarChart3, label: t("st_f6") },
+  ]
+
+  const solutions = [
+    {
+      icon: Activity,
+      title: "OSCAR",
+      subtitle: t("oscar_subtitle"),
+      description: t("oscar_desc"),
+      longDescription: t("oscar_long"),
+      features: oscarFeatures,
+      href: "/solutions#oscar",
+      accent: "bg-[#17233A]",
+      iconBg: "bg-[#EE3329]",
+      iconColor: "text-white",
+      linkText: t("oscar_link"),
+      featureIconColor: "text-[#17233A]",
+    },
+    {
+      icon: Send,
+      title: "Smart Transfert",
+      subtitle: t("st_subtitle"),
+      description: t("st_desc"),
+      longDescription: t("st_long"),
+      features: smartTransfertFeatures,
+      href: "/solutions#smart-transfert",
+      accent: "bg-[#2F6B4F]",
+      iconBg: "bg-white",
+      iconColor: "text-[#2F6B4F]",
+      linkText: t("st_link"),
+      featureIconColor: "text-[#2F6B4F]",
+    },
+  ]
+
+  const aboutAnchors: Anchor[] = [
+    { id: "experience", title: t("anc_exp") },
+    { id: "mission", title: t("anc_mis") },
+    { id: "valeurs", title: t("anc_val") },
+    { id: "equipe", title: t("anc_team") },
+  ]
+
+  const values = [
+    {
+      icon: Award,
+      title: t("val_expertise"),
+      description: t("val_expertise_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      icon: Shield,
+      title: t("val_fiabilite"),
+      description: t("val_fiabilite_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Shield,
+      title: t("val_securite"),
+      description: t("val_securite_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      icon: Users,
+      title: t("val_transmission"),
+      description: t("val_transmission_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Lightbulb,
+      title: t("val_innovation"),
+      description: t("val_innovation_desc"),
+      color: "bg-[#EE3329]",
+    },
+  ]
+
   return (
     <>
       {/* Hero */}
@@ -129,15 +132,13 @@ export function AboutContent() {
             <HeroAnchors anchors={aboutAnchors} />
 
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              À propos
+              {t("hero_label")}
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
-              Un partenaire IT pour les infrastructures critiques
+              {t("hero_title")}
             </h1>
             <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
-              SMART2D Services est un cabinet de conseil technologique 
-              spécialisé dans l&apos;administration, l&apos;audit, la sécurisation, l&apos;optimisation 
-              et le maintien en condition opérationnelle des plateformes informatiques critiques.
+              {t("hero_desc")}
             </p>
           </motion.div>
         </div>
@@ -148,7 +149,7 @@ export function AboutContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Notre Expérience
+              {t("anc_exp")}
             </span>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -158,8 +159,8 @@ export function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-[#EE3329] text-7xl md:text-9xl font-bold">20+</div>
-              <p className="text-white text-2xl font-semibold mt-2">années d&apos;expérience Oracle</p>
+              <div className="text-[#EE3329] text-7xl md:text-9xl font-bold">{t("exp_years")}</div>
+              <p className="text-white text-2xl font-semibold mt-2">{t("exp_years_label")}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -168,15 +169,10 @@ export function AboutContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-white/70 text-lg leading-relaxed">
-                Fort de plus de 20 ans d&apos;expérience autour des environnements Oracle, 
-                SMART2D accompagne les organisations qui souhaitent renforcer la stabilité, 
-                la performance et la sécurité de leurs systèmes d&apos;information.
+                {t("exp_p1")}
               </p>
               <p className="text-white/70 text-lg leading-relaxed mt-4">
-                Notre valeur repose sur une combinaison de conseil, d&apos;expertise terrain 
-                et de transfert de compétences. Nous ne nous limitons pas à intervenir 
-                après les incidents : nous aidons les équipes à mieux comprendre leurs 
-                environnements, à réduire les risques et à améliorer durablement leur exploitation.
+                {t("exp_p2")}
               </p>
             </motion.div>
           </div>
@@ -188,7 +184,7 @@ export function AboutContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Notre Mission & Vision
+              {t("anc_mis")}
             </span>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -203,11 +199,9 @@ export function AboutContent() {
               <div className="w-14 h-14 rounded-xl bg-[#EE3329] flex items-center justify-center mb-6">
                 <Target className="w-7 h-7 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#221E1F] mb-4">Notre Mission</h2>
+              <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{t("mission_title")}</h2>
               <p className="text-[#221E1F]/70 leading-relaxed">
-                Aider les organisations à sécuriser, optimiser et moderniser leurs 
-                infrastructures critiques afin de garantir la continuité de service, 
-                la performance et la maîtrise des opérations.
+                {t("mission_desc")}
               </p>
             </motion.div>
 
@@ -222,11 +216,9 @@ export function AboutContent() {
               <div className="w-14 h-14 rounded-xl bg-[#17233A] flex items-center justify-center mb-6">
                 <Eye className="w-7 h-7 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#221E1F] mb-4">Notre Vision</h2>
+              <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{t("vision_title")}</h2>
               <p className="text-[#221E1F]/70 leading-relaxed">
-                Accompagner les entreprises vers une exploitation plus proactive, plus 
-                supervisée et plus intelligente de leurs environnements IT, en combinant 
-                expertise Oracle, bonnes pratiques d&apos;infrastructure, cloud, automatisation et support.
+                {t("vision_desc")}
               </p>
             </motion.div>
           </div>
@@ -244,14 +236,13 @@ export function AboutContent() {
             className="text-center mb-12"
           >
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Solutions SMART2D
+              {t("sol_label")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
-              Des solutions qui accélèrent vos opérations
+              {t("sol_title")}
             </h2>
             <p className="mt-4 text-lg text-[#221E1F]/70 max-w-2xl mx-auto">
-              En complément de notre conseil, nous proposons des plateformes prêtes à l&apos;emploi
-              pour la supervision IT et les transferts d&apos;argent.
+              {t("sol_desc")}
             </p>
           </motion.div>
 
@@ -323,10 +314,10 @@ export function AboutContent() {
             className="text-center mb-16"
           >
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-              Nos valeurs
+              {t("anc_val")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
-              Ce qui guide notre action
+              {t("val_title")}
             </h2>
           </motion.div>
 
@@ -364,13 +355,10 @@ export function AboutContent() {
               <Users className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Une équipe orientée terrain
+              {t("anc_team")}
             </h2>
             <p className="text-white/70 text-lg leading-relaxed">
-              Capable d&apos;intervenir sur des environnements sensibles et d&apos;accompagner 
-              les équipes techniques dans la durée. Notre force réside dans notre 
-              capacité à comprendre les enjeux métiers et à proposer des solutions 
-              adaptées à chaque contexte.
+              {t("team_desc")}
             </p>
           </motion.div>
         </div>
@@ -386,16 +374,16 @@ export function AboutContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-[#221E1F] mb-4">
-              Vous souhaitez mieux comprendre notre approche ?
+              {t("cta_title")}
             </h2>
             <p className="text-[#221E1F]/70 text-lg mb-8">
-              Contactez SMART2D pour échanger sur vos enjeux Oracle, infrastructure ou supervision.
+              {t("cta_desc")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
-              Nous contacter
+              {t("cta_btn")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

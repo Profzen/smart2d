@@ -1,66 +1,69 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 import { Database, Cloud, HardDrive, Terminal, Shield, Cpu, RefreshCw, GraduationCap, Code } from "lucide-react"
 
-const expertises = [
-  {
-    icon: Database,
-    title: "Oracle Database & Middleware",
-    description: "Administration, optimisation, sauvegarde, haute disponibilité, sécurité et maintien en condition opérationnelle des environnements Oracle.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud OCI & architectures hybrides",
-    description: "Architecture, migration, exploitation, sauvegarde, PRA/PCA, supervision et optimisation des coûts sur Oracle Cloud Infrastructure.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: HardDrive,
-    title: "Bases de données critiques",
-    description: "Installation, tuning, monitoring, sauvegarde et restauration sur Oracle, MySQL, PostgreSQL, SQL Server et environnements associés.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    icon: Terminal,
-    title: "Linux / Unix",
-    description: "Administration, durcissement, patching, logs, accès, automatisation et supervision sur Oracle Linux, Red Hat, AIX, Solaris.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Shield,
-    title: "Audit, sécurité & performance",
-    description: "Analyse des risques, vérification des configurations, recommandations opérationnelles et plans de remédiation priorisés.",
-    color: "bg-[#EE3329]",
-  },
-  {
-    icon: Cpu,
-    title: "Intelligence Artificielle & Automatisation",
-    description: "Intégrer des technologies intelligentes et des scripts automatisés pour éliminer les tâches répétitives et booster la productivité de vos équipes.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: RefreshCw,
-    title: "Migration & modernisation",
-    description: "Migration vers OCI, montées de version Oracle, transformation des architectures et modernisation des plateformes.",
-    color: "bg-[#2F6B4F]",
-  },
-  {
-    icon: GraduationCap,
-    title: "Support & formation",
-    description: "Assistance technique, formation Oracle, bases de données, Linux/Unix et transfert de compétences pour vos équipes.",
-    color: "bg-[#17233A]",
-  },
-  {
-    icon: Code,
-    title: "Oracle Forms et APEX",
-    description: "Modernisation, migration et développement d'applications avec Oracle Forms et APEX pour des processus métiers agiles.",
-    color: "bg-[#EE3329]",
-  },
-]
-
 export function ExpertiseSection() {
+  const t = useTranslations("Expertise");
+
+  const expertises = [
+    {
+      icon: Database,
+      title: t("oracle_title"),
+      description: t("oracle_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      icon: Cloud,
+      title: t("cloud_title"),
+      description: t("cloud_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: HardDrive,
+      title: t("db_title"),
+      description: t("db_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      icon: Terminal,
+      title: t("linux_title"),
+      description: t("linux_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Shield,
+      title: t("audit_title"),
+      description: t("audit_desc"),
+      color: "bg-[#EE3329]",
+    },
+    {
+      icon: Cpu,
+      title: t("ia_title"),
+      description: t("ia_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: RefreshCw,
+      title: t("mig_title"),
+      description: t("mig_desc"),
+      color: "bg-[#2F6B4F]",
+    },
+    {
+      icon: GraduationCap,
+      title: t("sup_title"),
+      description: t("sup_desc"),
+      color: "bg-[#17233A]",
+    },
+    {
+      icon: Code,
+      title: t("apex_title"),
+      description: t("apex_desc"),
+      color: "bg-[#EE3329]",
+    },
+  ]
+
   return (
     <section id="expertises" className="py-20 lg:py-28 bg-[#F0ECE8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,10 +76,10 @@ export function ExpertiseSection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-            Nos domaines d&apos;expertise
+            {t("section_subtitle")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
-            Une expertise complète pour vos environnements IT
+            {t("section_title")}
           </h2>
         </motion.div>
 
