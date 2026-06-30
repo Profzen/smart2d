@@ -1,9 +1,9 @@
 # 🧠 MÉMOIRE DU PROJET — SMART2D Services Website
 
-> **Dernière mise à jour** : 24 juin 2026 (Fix Responsive Mobile, Logos Locaux, Favicon SVG)  
-> **Statut global** : Les correctifs de responsive (suppression du scroll horizontal) et le rapatriement local des logos/favicons ont été fusionnés sur `develop`. La refonte des sections OSCAR et Smart Transfert est également terminée et pushée.
-> **Prochaines étapes immédiates** : Générer le rapport d'avancement pour le client et vérifier l'historique du fichier `footer.txt.back`.
-> **Branche d'intégration** : `develop` | **Dernière branche de travail** : `aziz/local-logos-favicon` (fusionnée)
+> **Dernière mise à jour** : 30 juin 2026 (i18n About/Services/Contact finalisé, SmartACCESS slide, fix ancres global)  
+> **Statut global** : Traduction bilingue FR/EN complète sur toutes les pages. Nouvelles branches `aziz/i18n-bilingue` et `aziz/hero-smartaccess-anchors-fix` pushées sur Gitea — PRs prêtes pour merge vers `develop`.
+> **Prochaines étapes immédiates** : Merger les PRs dans `develop`, valider le build de production, recette finale avant livraison.
+> **Branche d'intégration** : `develop` | **Dernières branches de travail** : `aziz/i18n-bilingue` + `aziz/hero-smartaccess-anchors-fix` (toutes deux pushées, PR ouvertes)
 
 ---
 
@@ -49,6 +49,7 @@ Ce projet est la **refonte du site vitrine de SMART2D Services**, un cabinet de 
 |---|---|
 | **OSCAR** | Plateforme d'observabilité, supervision et automatisation IT augmentée par l'IA |
 | **Smart Transfert** | Plateforme de centralisation pour agences de transfert d'argent |
+| **SmartACCESS** | Plateforme de compensation interbancaire — gestion numérique des chèques, virements et effets, automatisation des échanges avec la Banque Centrale (BCEAO), pilotage complet des opérations de compensation interbancaire. Docs : `cp_front.txt` (Front Office) et `cp_back.txt` (Back Office) |
 
 ---
 
@@ -155,7 +156,7 @@ smart-2-d-website-build/
 │   │   ├── header.tsx            # Header fixe + scroll detection + menu mobile
 │   │   └── footer.tsx            # Footer complet (liens, contact, brand)
 │   ├── sections/                 # Sections de la page d'accueil
-│   │   ├── hero.tsx              # Carrousel 7 slides avec autoplay
+│   │   ├── hero.tsx              # Carrousel 14 slides avec autoplay (dont OSCAR, Smart Transfert, SmartACCESS)
 │   │   ├── positioning.tsx       # Positionnement SMART2D
 │   │   ├── expertise.tsx         # 6 domaines d'expertise
 │   │   ├── oracle-section.tsx    # Focus Oracle
@@ -172,9 +173,12 @@ smart-2-d-website-build/
 ├── lib/
 │   └── utils.ts                  # Utilitaire `cn()` (clsx + tailwind-merge)
 ├── public/
-│   ├── images/hero/              # 9 images héro (1-1.5 Mo chacune)
-│   ├── icon-*.png, icon.svg      # Favicons
-│   └── placeholder-*             # Placeholders
+│   ├── images/hero/              # Images hero (WebP optimisées)
+│   ├── images/logo/              # Logos SMART2D light/dark + favicon.svg
+│   ├── images/oscar/             # oscar-dashboard.png
+│   ├── images/smart-transfert/   # smart-transfert-dashboard.png
+│   ├── images/smart-access/      # smartaccess-dashboard.png ← NOUVEAU
+│   └── icon-*.png, icon.svg      # Favicons
 ├── styles/
 │   └── globals.css               # ⚠️ Ancien fichier CSS (NON importé, ignoré)
 ├── cdc.txt                       # Cahier des charges v1.0
@@ -306,11 +310,11 @@ fix(content): update years of experience
 | **`trust-band.tsx`** | ⚠️ Non utilisé | Composant existant mais pas inclus dans aucune page |
 | **`theme-provider.tsx`** | ⚠️ Non utilisé | Provider next-themes existe mais pas intégré dans le layout |
 | **Logos hébergés externement** | ✅ Résolu | Les logos et la favicon ont été rapatriés en local dans `public/images/logo/` |
-| **Images hero** | ℹ️ Lourdes | 1-1.5 Mo chacune, non optimisées (Next.js images unoptimized) |
-| **Formulaire contact** | ℹ️ Simulé | `handleSubmit` fait un `setTimeout` — pas de vrai envoi backend |
-| **Footer "30 ans"** | ✅ Correct | Conforme au CDC |
-| **Bilingue FR/EN** | 🔲 Non implémenté | Prévu dans le CDC mais pas encore développé |
-| **SEO par page** | 🔲 Partiel | Seul le layout racine a des meta, pas les pages internes |
+| **Images hero** | ✅ Optimisées | Converties en WebP, poids total réduit de ~11 Mo à ~1.5 Mo |
+| **Formulaire contact** | ℹ️ Fonctionnel | Route API `/api/contact` avec envoi email via Nodemailer |
+| **Bilingue FR/EN** | ✅ Implémenté | `next-intl` avec routage `[locale]`, dictionnaires FR+EN complets sur toutes les pages |
+| **SEO par page** | ✅ Fait | Meta title/description sur toutes les routes |
+| **SmartACCESS slide** | ✅ Ajouté | Slide 14 dans le carrousel Hero avec image dashboard et clés i18n |
 
 ---
 
@@ -320,17 +324,19 @@ fix(content): update years of experience
 - [x] Refonte du site vitrine en FR
 - [x] Accueil complet avec toutes les sections
 - [x] Pages internes détaillées (Oracle, Services, Solutions, Support, Contact, À propos)
-- [x] Formulaire de contact (structure)
+- [x] Formulaire de contact fonctionnel (route API + Nodemailer)
 - [x] Navigation responsive (header desktop + mobile)
 - [x] Design system SMART2D
-- [ ] Version anglaise (EN)
-- [x] SEO complet par page (Tâche A1)
-- [x] Formulaire fonctionnel (envoi réel) (Tâche D1)
-- [x] Responsive finalisé (tous breakpoints) (Tâche E2)
+- [x] Version anglaise (EN) — `next-intl` complet sur toutes les pages
+- [x] SEO complet par page
+- [x] Responsive finalisé (tous breakpoints)
+- [x] Ancres de navigation dans les Hero (style Oracle)
+- [x] Slides OSCAR + Smart Transfert + SmartACCESS dans le carrousel Hero
+- [x] Images Hero optimisées WebP
+- [x] Logos locaux + favicon SVG
 - [ ] Harmonisation des espacements et typographies
 - [ ] Tests d'affichage mobile/tablette/desktop
-- [x] Ancres de navigation dans les Hero (style Oracle) (Tâche E1)
-- [x] Build sans erreur + déploiement cPanel (Tâches F1/F2)
+- [ ] Build sans erreur + déploiement cPanel
 
 ### Phase 2 — Ultérieur
 - [ ] Démo OSCAR (vidéo/captures/parcours interactif)
@@ -438,6 +444,44 @@ Fichiers `.png` à la racine : `content.png`, `desktop-final.png`, `hero-new.png
 ---
 
 ## 12. 📝 Journal des modifications
+
+### 30 juin 2026
+- **Traduction About, Services, Contact (`aziz/i18n-bilingue`)** :
+  - **Page À propos** : Migration complète de `about-content.tsx` vers `useTranslations()`. Ajout du namespace `About` complet dans `fr.json` et `en.json` (hero, expérience, mission/vision, solutions, valeurs, équipe, CTA).
+  - **Page Services** : Création du namespace `Services` (35 clés) dans les deux dictionnaires. Migration intégrale de `services-content.tsx` : hero, 8 domaines d'intervention avec descriptions, section méthodologie 5 étapes, CTA.
+  - **Page Contact** : Finalisation de `contact-content.tsx` — labels/placeholders formulaire, 11 types de demande localisés, états `success`/`error`/`submitting`, ancres et coordonnées.
+  - **Correction d'encodage** : Script Node.js `fix-encoding.js` pour corriger les caractères corrompus (`�` → accents) dans `fr.json`.
+  - **Push Gitea** : Commit `b7be602` pushé sur `aziz/i18n-bilingue` → `http://192.168.132.128:3000/Aziz/Smart2d-site` — PR prête.
+- **Slide SmartACCESS + Fix ancres global (`aziz/hero-smartaccess-anchors-fix`)** :
+  - **Nouvelle branche** créée depuis `gitea/develop` (à jour).
+  - **Slide 14 SmartACCESS** ajouté dans le carrousel `hero.tsx` avec image `public/images/smart-access/smartaccess-dashboard.png` (dashboard bancaire généré).
+  - **Clés i18n** : `Hero.access_title` et `Hero.access_sub` ajoutées en FR (`fr.json`) et EN (`en.json`).
+  - **Description FR** : "SmartACCESS est une plateforme de compensation interbancaire permettant la gestion numérique des chèques, virements et effets, l'automatisation des échanges avec la Banque Centrale ainsi que le pilotage complet des opérations de compensation interbancaire."
+  - **Fix ancres** : `containerClassName` par défaut du composant `HeroAnchors` réduit (`pt-8` → `pt-2`) pour rapprocher les boutons d'ancre de la nav sur toutes les pages secondaires (About, Services, Contact, Oracle, Solutions, Support).
+  - **Push Gitea** : Commit `dc43c8c` pushé sur `aziz/hero-smartaccess-anchors-fix` — PR prête vers `develop`.
+
+### 29 juin 2026
+- **Améliorations UI globales (`aziz/ui-global-improvements`)** :
+  - Ajout d'un bouton de retour en haut (Scroll-to-top) après le Hero.
+  - Indicateur de page active dans le menu de navigation.
+  - Amélioration de la lisibilité des descriptions dans les cartes (expertises, services).
+- **Refonte des Ancres et du Hero (`aziz/hero-anchors-refonte`)** :
+  - Disposition des ancres sur une seule ligne avec carrousel défilant pour mobile.
+  - Boutons d'actions principaux ("Demander un diagnostic", "Découvrir") rendus fixes dans le Hero.
+  - Ajout de slides spécifiques pour OSCAR et Smart Transfert dans le carrousel principal.
+- **Ajout de contenus (`marius/contenu-ajouts`)** :
+  - Ajout d'une expertise "Oracle Forms et APEX" en page d'accueil.
+  - Intégration de WhatsApp dans le composant de contact.
+- **Optimisation des Images du Hero (`aziz/hero-images-optimisation`)** :
+  - Génération de 4 visuels hyper-réalistes d'experts IT diversifiés.
+  - Conversion au format WebP pour des performances maximales.
+  - Logique stricte de mapping par thématique et d'alternance dynamique.
+- **Intégration Bilingue i18n (`aziz/i18n-bilingue`)** :
+  - Mise en place complète du module `next-intl` avec routage conditionnel `[locale]`.
+  - Sélecteur dynamique de langues dans le Header.
+  - Extraction de tous les textes en dur vers `messages/fr.json` et `messages/en.json`.
+  - Fix des erreurs serveur React en déplaçant les structures statiques (`arrays`) dans le scope des composants pour la traduction.
+  - Navigation de bout en bout et toutes les pages traduites avec succès.
 
 ### 24 juin 2026
 - **Fusion et mise à jour de `develop`** : `develop` est désormais synchronisée à 100% avec les deux dernières PRs.
