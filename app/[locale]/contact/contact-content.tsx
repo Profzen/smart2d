@@ -6,28 +6,30 @@ import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle, AlertCircle,
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
 
-const contactAnchors: Anchor[] = [
-  { id: "coordonnees", title: "Nos Coordonnées" },
-  { id: "formulaire", title: "Nous Écrire" },
-]
 
-const requestTypes = [
-  "Oracle / DBA",
-  "Cloud OCI",
-  "Audit & sécurité",
-  "Linux / Unix",
-  "Supervision / MCO",
-  "Intelligence Artificielle & Automatisation",
-  "Support / formation",
-  "OSCAR",
-  "OSCAR Academy",
-  "Smart Transfert",
-  "Autre",
-]
 
 import { useTranslations } from "next-intl";
 export function ContactContent() {
   const t = useTranslations("Contact");
+
+  const contactAnchors: Anchor[] = [
+    { id: "coordonnees", title: t("anc_coord") },
+    { id: "formulaire", title: t("anc_write") },
+  ]
+
+  const requestTypes = [
+    { key: "req_oracle", label: t("req_oracle") },
+    { key: "req_cloud", label: t("req_cloud") },
+    { key: "req_audit", label: t("req_audit") },
+    { key: "req_linux", label: t("req_linux") },
+    { key: "req_supervision", label: t("req_supervision") },
+    { key: "req_ia", label: t("req_ia") },
+    { key: "req_support", label: t("req_support") },
+    { key: "req_oscar", label: t("req_oscar") },
+    { key: "req_oscar_academy", label: t("req_oscar_academy") },
+    { key: "req_smart", label: t("req_smart") },
+    { key: "req_other", label: t("req_other") },
+  ]
 
   const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [formData, setFormData] = useState({
@@ -42,18 +44,18 @@ export function ContactContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState("submitting")
-    
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
-      
+
       if (!response.ok) {
         throw new Error("Erreur lors de l'envoi")
       }
-      
+
       setFormState("success")
       setFormData({ name: "", company: "", email: "", phone: "", requestType: "", message: "" })
     } catch (error) {
@@ -92,9 +94,7 @@ export function ContactContent() {
               {t("title")}
             </h1>
             <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
-              Vous souhaitez sécuriser une base de données, moderniser une infrastructure, 
-              préparer une migration OCI, mettre en place une supervision ou organiser un 
-              support technique durable ? Contactez SMART2D Services pour une première analyse.
+              {t("subtitle")}
             </p>
           </motion.div>
         </div>
@@ -112,8 +112,8 @@ export function ContactContent() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-1 lg:-mt-20 relative z-10"
             >
-              <h2 className="text-2xl font-bold text-[#221E1F] mb-6">Coordonnées</h2>
-              
+              <h2 className="text-2xl font-bold text-[#221E1F] mb-6">{t("coord")}</h2>
+
               <div className="space-y-4">
                 <a
                   href="mailto:contact@smart2dservices.com"
@@ -136,7 +136,7 @@ export function ContactContent() {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#221E1F] group-hover:text-[#EE3329] transition-colors">Téléphone Togo</p>
+                    <p className="font-semibold text-[#221E1F] group-hover:text-[#EE3329] transition-colors">{t("tel_tg")}</p>
                     <p className="text-[#221E1F]/60 text-sm">+228 72 14 09 23</p>
                   </div>
                 </a>
@@ -149,7 +149,7 @@ export function ContactContent() {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#221E1F] group-hover:text-[#EE3329] transition-colors">Téléphone USA</p>
+                    <p className="font-semibold text-[#221E1F] group-hover:text-[#EE3329] transition-colors">{t("tel_usa")}</p>
                     <p className="text-[#221E1F]/60 text-sm">+1 732 439 2272</p>
                   </div>
                 </a>
@@ -168,7 +168,7 @@ export function ContactContent() {
                 </div>
 
                 <a
-                  href="https://wa.me/2289337515"
+                  href="https://wa.me/22893375155"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E5E0DC] hover:border-[#25D366]/50 hover:shadow-md transition-all group"
@@ -194,7 +194,7 @@ export function ContactContent() {
             >
               <div id="formulaire" className="bg-white rounded-2xl p-8 shadow-xl border border-[#E5E0DC]/50 lg:-mt-32 relative z-10 scroll-mt-20">
                 <h2 className="text-2xl font-bold text-[#221E1F] mb-6">{t("send_msg")}</h2>
-                
+
                 {formState === "success" ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -204,15 +204,15 @@ export function ContactContent() {
                     <div className="w-16 h-16 rounded-full bg-[#2F6B4F] flex items-center justify-center mx-auto mb-4">
                       <CheckCircle className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#221E1F] mb-2">Message envoyé !</h3>
+                    <h3 className="text-xl font-bold text-[#221E1F] mb-2">{t("success_title")}</h3>
                     <p className="text-[#221E1F]/60">
-                      Nous reviendrons vers vous rapidement pour échanger sur votre projet.
+                      {t("success_desc")}
                     </p>
                     <button
                       onClick={() => setFormState("idle")}
                       className="mt-8 px-6 py-2 border border-[#E5E0DC] rounded-lg text-sm font-medium hover:bg-[#F8F6F4] transition-colors"
                     >
-                      Envoyer un autre message
+                      {t("success_btn")}
                     </button>
                   </motion.div>
                 ) : (
@@ -220,7 +220,7 @@ export function ContactContent() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-[#221E1F] mb-2">
-                          Nom et prénom *
+                          {t("form_name")}
                         </label>
                         <input
                           type="text"
@@ -230,7 +230,7 @@ export function ContactContent() {
                           value={formData.name}
                           onChange={handleChange}
                           className="w-full px-4 py-3 rounded-lg border border-[#E5E0DC] bg-[#F8F6F4] focus:border-[#EE3329] focus:ring-2 focus:ring-[#EE3329]/20 transition-all outline-none text-[#221E1F]"
-                          placeholder="Jean Dupont"
+                          placeholder={t("form_name_placeholder")}
                         />
                       </div>
                       <div>
@@ -244,7 +244,7 @@ export function ContactContent() {
                           value={formData.company}
                           onChange={handleChange}
                           className="w-full px-4 py-3 rounded-lg border border-[#E5E0DC] bg-[#F8F6F4] focus:border-[#EE3329] focus:ring-2 focus:ring-[#EE3329]/20 transition-all outline-none text-[#221E1F]"
-                          placeholder="Nom de l'entreprise"
+                          placeholder={t("form_company_placeholder")}
                         />
                       </div>
                     </div>
@@ -267,7 +267,7 @@ export function ContactContent() {
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-[#221E1F] mb-2">
-                          Téléphone
+                          {t("form_phone")}
                         </label>
                         <input
                           type="tel"
@@ -293,9 +293,9 @@ export function ContactContent() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg border border-[#E5E0DC] bg-[#F8F6F4] focus:border-[#EE3329] focus:ring-2 focus:ring-[#EE3329]/20 transition-all outline-none text-[#221E1F]"
                       >
-                        <option value="">Sélectionnez un type de demande</option>
+                        <option value="">{t("form_type_placeholder")}</option>
                         {requestTypes.map((type) => (
-                          <option key={type} value={type}>{type}</option>
+                          <option key={type.key} value={type.key}>{type.label}</option>
                         ))}
                       </select>
                     </div>
@@ -312,13 +312,13 @@ export function ContactContent() {
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg border border-[#E5E0DC] bg-[#F8F6F4] focus:border-[#EE3329] focus:ring-2 focus:ring-[#EE3329]/20 transition-all outline-none text-[#221E1F] resize-none"
-                        placeholder="Décrivez votre projet ou votre besoin..."
+                        placeholder={t("form_message_placeholder")}
                       />
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <p className="text-sm text-[#221E1F]/50">
-                        Un premier échange permet de cadrer le contexte et les priorités.
+                        {t("form_desc")}
                       </p>
                       <button
                         type="submit"
@@ -328,12 +328,12 @@ export function ContactContent() {
                         {formState === "error" ? (
                           <>
                             <AlertCircle className="w-4 h-4" />
-                            Erreur. Réessayez.
+                            {t("error_btn")}
                           </>
                         ) : formState === "submitting" ? (
                           <>
                             <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                            Envoi en cours...
+                            {t("submitting")}
                           </>
                         ) : (
                           <>

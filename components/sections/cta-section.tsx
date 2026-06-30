@@ -1,10 +1,13 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, MessageSquare } from "lucide-react"
 
 export function CTASection() {
+  const t = useTranslations("CTASection")
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-[#F8F6F4] to-[#F0ECE8] relative overflow-hidden">
       {/* Background */}
@@ -24,12 +27,11 @@ export function CTASection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F] text-balance">
-            Vous exploitez un environnement Oracle ou une infrastructure sensible ?
+            {t("title")}
           </h2>
           
           <p className="mt-6 text-lg text-[#221E1F]/70 max-w-2xl mx-auto">
-            Parlons de vos priorités techniques et identifions les actions à mener 
-            pour fiabiliser votre plateforme.
+            {t("description")}
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -37,14 +39,14 @@ export function CTASection() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
-              Demander un diagnostic
+              {t("button_diagnostic")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/oracle-infrastructure"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#17233A] text-white font-semibold rounded-lg hover:bg-[#1e2d4a] transition-all"
             >
-              Voir notre expertise Oracle
+              {t("button_expertise")}
             </Link>
           </div>
         </motion.div>

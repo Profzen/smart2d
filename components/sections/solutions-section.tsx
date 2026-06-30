@@ -1,5 +1,7 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { 
@@ -17,25 +19,27 @@ import {
   History
 } from "lucide-react"
 
-const oscarFeatures = [
-  { icon: Activity, label: "Supervision centralisée" },
-  { icon: Bell, label: "Alertes proactives" },
-  { icon: Bot, label: "Détection d'anomalies IA" },
-  { icon: Zap, label: "Automatisation" },
-  { icon: BarChart3, label: "Rapports & tableaux" },
-  { icon: Cpu, label: "Inventaire IT" },
-]
-
-const smartTransfertFeatures = [
-  { icon: Send, label: "Parcours d'envoi" },
-  { icon: Receipt, label: "Parcours de retrait" },
-  { icon: FileText, label: "Rapports comptables" },
-  { icon: History, label: "Historique complet" },
-  { icon: Users, label: "Gestion utilisateurs" },
-  { icon: BarChart3, label: "Traçabilité" },
-]
-
 export function SolutionsSection() {
+  const t = useTranslations("SolutionsSection")
+
+  const oscarFeatures = [
+    { icon: Activity, label: t("oscar.features.sup") },
+    { icon: Bell, label: t("oscar.features.alert") },
+    { icon: Bot, label: t("oscar.features.ia") },
+    { icon: Zap, label: t("oscar.features.auto") },
+    { icon: BarChart3, label: t("oscar.features.rep") },
+    { icon: Cpu, label: t("oscar.features.inv") },
+  ]
+
+  const smartTransfertFeatures = [
+    { icon: Send, label: t("smart.features.send") },
+    { icon: Receipt, label: t("smart.features.receive") },
+    { icon: FileText, label: t("smart.features.rep") },
+    { icon: History, label: t("smart.features.hist") },
+    { icon: Users, label: t("smart.features.users") },
+    { icon: BarChart3, label: t("smart.features.trace") },
+  ]
+
   return (
     <section id="solutions" className="py-20 lg:py-28 bg-[#F0ECE8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,14 +52,13 @@ export function SolutionsSection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
-            Solutions SMART2D
+            {t("label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F]">
-            Des solutions pour simplifier vos opérations
+            {t("title")}
           </h2>
           <p className="mt-4 text-lg text-[#221E1F]/70 max-w-2xl mx-auto">
-            En complément de ses services de conseil, SMART2D conçoit et intègre 
-            des solutions qui répondent à des problèmes opérationnels concrets.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -77,22 +80,19 @@ export function SolutionsSection() {
                   <Activity className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xs font-mono text-white/50 bg-white/10 px-2 py-1 rounded">
-                  SUPERVISION & AIOPS
+                  {t("oscar.tag")}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold text-white">OSCAR</h3>
+              <h3 className="text-2xl font-bold text-white">{t("oscar.title")}</h3>
               <p className="mt-2 text-white/70">
-                Plateforme d&apos;observabilité, de supervision et d&apos;automatisation IT 
-                augmentée par l&apos;IA.
+                {t("oscar.subtitle")}
               </p>
             </div>
 
             {/* Content */}
             <div className="p-6">
               <p className="text-[#221E1F]/70 mb-6">
-                OSCAR aide les équipes à surveiller leurs serveurs, applications, 
-                bases de données et équipements, à détecter plus tôt les anomalies 
-                et à automatiser certaines actions opérationnelles.
+                {t("oscar.description")}
               </p>
 
               {/* Features */}
@@ -112,7 +112,7 @@ export function SolutionsSection() {
                 href="/solutions#oscar"
                 className="inline-flex items-center gap-2 text-[#EE3329] font-semibold hover:gap-3 transition-all"
               >
-                Découvrir OSCAR
+                {t("oscar.button")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -134,22 +134,19 @@ export function SolutionsSection() {
                   <Send className="w-5 h-5 text-[#2F6B4F]" />
                 </div>
                 <span className="text-xs font-mono text-white/50 bg-white/10 px-2 py-1 rounded">
-                  TRANSFERT D&apos;ARGENT
+                  {t("smart.tag")}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold text-white">Smart Transfert</h3>
+              <h3 className="text-2xl font-bold text-white">{t("smart.title")}</h3>
               <p className="mt-2 text-white/70">
-                Plateforme de centralisation des opérations pour agences de 
-                transfert d&apos;argent.
+                {t("smart.subtitle")}
               </p>
             </div>
 
             {/* Content */}
             <div className="p-6">
               <p className="text-[#221E1F]/70 mb-6">
-                Smart Transfert permet aux agents de travailler dans une interface 
-                unique, de réduire les erreurs, de fiabiliser les rapports et de 
-                renforcer la traçabilité des opérations.
+                {t("smart.description")}
               </p>
 
               {/* Features */}
@@ -169,7 +166,7 @@ export function SolutionsSection() {
                 href="/solutions#smart-transfert"
                 className="inline-flex items-center gap-2 text-[#2F6B4F] font-semibold hover:gap-3 transition-all"
               >
-                Découvrir Smart Transfert
+                {t("smart.button")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -188,7 +185,7 @@ export function SolutionsSection() {
             href="/solutions"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#221E1F] text-white font-semibold rounded-lg hover:bg-[#2d2829] transition-all group"
           >
-            Voir toutes nos solutions
+            {t("button_all")}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
