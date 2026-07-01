@@ -96,6 +96,11 @@ export function HeroSection() {
       image: "/images/smart-transfert/smart-transfert-dashboard.png",
       title: t("smart_title"), subtitle: t("smart_sub"),
     },
+    {
+      id: 14,
+      image: "/images/smart-access/smartaccess-dashboard.png",
+      title: t("access_title"), subtitle: t("access_sub"),
+    },
   ]
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -195,7 +200,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="mb-4 lg:mb-8">
           <HeroAnchors anchors={homeAnchors} containerClassName="pt-2 pb-4" />
         </div>
