@@ -248,6 +248,7 @@
     "oscar_f3_desc": "Real-time warning of sensitive actions and critical events.",
     "oscar_f4_title": "Intelligent assistance",
     "oscar_f4_desc": "Intelligent natural language assistance to quickly identify what, when and on which system.",
+    "oscar_f5": "Reports & dashboards",
     "oscar_db_desc": "OSCAR Dashboard: resource monitoring, availability and technical indicators.",
     "st_tag": "MONEY TRANSFER",
     "st_desc": "Centralization platform designed for agencies or service points managing multiple money transfer providers. It allows agents to work in a single interface, reduce errors, reliable reports and strengthen transaction traceability.",
