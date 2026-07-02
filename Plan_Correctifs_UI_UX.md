@@ -78,6 +78,8 @@ Le travail est divisé en branches distinctes pour une meilleure organisation.
 *   **Incitation a l'action** : Ajout d'une animation de pulse/clignotement toutes les 10 secondes sur la bulle principale.
 *   **Lisibilite accueil** : Harmonisation du texte de la section "Un partenaire IT pour environnements sensibles" avec la taille et la couleur des descriptions de cards.
 *   **Switch langue fluide** : Conservation de la position exacte de scroll lors du passage FR/EN sans modifier le design du bouton.
+*   **Stabilite du Header** : Recalcul immediat de l'etat scrolle de la barre de navigation apres switch FR/EN afin d'eviter le retour visuel au header transparent.
+*   **Icone WhatsApp** : Remplacement de l'icone generique par une icone WhatsApp dediee dans la bulle flottante et sur la page Contact.
 
 ## Plan de Vérification
 

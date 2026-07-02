@@ -41,9 +41,11 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
+
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [pathname])
 
   useEffect(() => {
     const rawPosition = sessionStorage.getItem("smart2d-language-scroll-y")
@@ -61,11 +63,16 @@ export function Header() {
 
     const previousScrollBehavior = document.documentElement.style.scrollBehavior
     document.documentElement.style.scrollBehavior = "auto"
+    setIsScrolled(scrollY > 20)
 
     requestAnimationFrame(() => {
       window.scrollTo(0, scrollY)
+      setIsScrolled(scrollY > 20)
+      window.dispatchEvent(new Event("scroll"))
       requestAnimationFrame(() => {
         window.scrollTo(0, scrollY)
+        setIsScrolled(scrollY > 20)
+        window.dispatchEvent(new Event("scroll"))
         document.documentElement.style.scrollBehavior = previousScrollBehavior
       })
     })
@@ -79,6 +86,7 @@ export function Header() {
     const nextUrl = `${newPath}${window.location.search}${window.location.hash}`
 
     sessionStorage.setItem("smart2d-language-scroll-y", String(window.scrollY))
+    setIsScrolled(window.scrollY > 20)
     router.replace(nextUrl, { scroll: false })
   }
 

@@ -8,6 +8,7 @@ import type { LucideIcon } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import { getLocalizedHref } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
 
 const WHATSAPP_URL = "https://wa.me/22893375155"
 const PHONE_TOGO = "+228 72 14 09 23"
@@ -16,7 +17,7 @@ const PHONE_USA = "+1 732 439 2272"
 type FloatingContactAction = {
   key: string
   label: string
-  icon: LucideIcon
+  icon: LucideIcon | typeof WhatsappIcon
   className: string
   href?: string
   external?: boolean
@@ -52,7 +53,7 @@ export function FloatingContact() {
     {
       key: "whatsapp",
       label: "WhatsApp",
-      icon: MessageCircle,
+      icon: WhatsappIcon,
       className: "bg-[#25D366] hover:bg-[#1fb85a]",
       href: WHATSAPP_URL,
       external: true,
