@@ -79,7 +79,7 @@ export function WhySection() {
                   <h3 className="text-lg font-bold text-white mb-2">
                     {reason.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-base font-medium leading-7 text-white/78">
                     {reason.description}
                   </p>
                 </div>

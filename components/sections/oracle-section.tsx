@@ -114,7 +114,7 @@ export function OracleSection() {
                     <item.icon className="w-5 h-5 text-[#EE3329]" />
                   </div>
                   <h4 className="font-semibold text-white">{item.label}</h4>
-                  <p className="text-sm text-white/50">{item.desc}</p>
+                  <p className="text-base font-medium leading-6 text-white/75">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

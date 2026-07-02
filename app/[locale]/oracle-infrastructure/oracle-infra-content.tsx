@@ -144,14 +144,14 @@ export function OracleInfraContent() {
                   </div>
                   <div className="flex-1">
                     <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{section.title}</h2>
-                    <p className="text-[#221E1F]/80 font-medium leading-relaxed">{section.description}</p>
+                    <p className="smart-card-description">{section.description}</p>
                     
                     {section.items && (
                       <div className="mt-4 flex flex-wrap gap-2">
                         {section.items.map((item) => (
                           <span
                             key={item}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0ECE8] text-[#221E1F]/70 text-sm rounded-full"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0ECE8] text-[#221E1F]/85 text-sm font-medium rounded-full"
                           >
                             <CheckCircle className="w-3.5 h-3.5 text-[#2F6B4F]" />
                             {item}

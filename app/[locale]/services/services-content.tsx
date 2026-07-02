@@ -149,7 +149,7 @@ export function ServicesContent() {
                   </div>
                   <div>
                     <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{service.title}</h2>
-                    <p className="text-[#221E1F]/70 leading-relaxed">{service.description}</p>
+                    <p className="smart-card-description">{service.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -174,7 +174,7 @@ export function ServicesContent() {
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 {t("app_h2")}
               </h2>
-              <p className="mt-4 text-white/70 leading-relaxed">
+              <p className="mt-4 smart-card-description-dark">
                 {t("app_desc")}
               </p>
             </motion.div>
@@ -194,7 +194,7 @@ export function ServicesContent() {
                   <div className="w-8 h-8 rounded-full bg-[#EE3329] flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">
                     {index + 1}
                   </div>
-                  <p className="text-white/80">{step}</p>
+                  <p className="text-base md:text-[17px] leading-7 font-medium text-white/85">{step}</p>
                 </div>
               ))}
             </motion.div>

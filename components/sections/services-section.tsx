@@ -93,7 +93,7 @@ export function ServicesSection() {
             >
               <Link
                 href={localizedHref(service.href)}
-                className="group block h-full bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E0DC] hover:border-[#EE3329]/30"
+                className="group relative block h-full overflow-hidden bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E0DC] hover:border-[#EE3329]/30"
               >
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-lg bg-[#221E1F] flex items-center justify-center mb-4 group-hover:bg-[#EE3329] transition-colors">
@@ -104,9 +104,11 @@ export function ServicesSection() {
                 <h3 className="text-lg font-bold text-[#221E1F] mb-2 group-hover:text-[#EE3329] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-[#221E1F]/80 text-sm font-medium leading-relaxed">
+                <p className="smart-card-description">
                   {service.description}
                 </p>
+
+                <div className="smart-card-accent-bottom transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
 
                 {/* Arrow */}
                 <div className="mt-4 flex items-center text-[#EE3329] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">

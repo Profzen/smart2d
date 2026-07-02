@@ -92,7 +92,7 @@ export function ExpertiseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E5E0DC] hover:border-[#EE3329]/20"
+              className="group relative overflow-hidden bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E5E0DC] hover:border-[#EE3329]/20"
             >
               {/* Icon */}
               <div className={`w-12 h-12 rounded-lg ${expertise.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
@@ -103,12 +103,12 @@ export function ExpertiseSection() {
               <h3 className="text-lg font-bold text-[#221E1F] mb-2">
                 {expertise.title}
               </h3>
-              <p className="text-[#221E1F]/80 text-sm font-medium leading-relaxed">
+              <p className="smart-card-description">
                 {expertise.description}
               </p>
 
               {/* Hover accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#EE3329] rounded-b-xl transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <div className="smart-card-accent-bottom transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </motion.div>
           ))}
         </div>
