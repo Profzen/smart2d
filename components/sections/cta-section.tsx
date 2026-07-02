@@ -39,7 +39,7 @@ export function CTASection() {
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={localizedHref("/contact")}
+              href={localizedHref("/contact#coordonnees")}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
               {t("button_diagnostic")}

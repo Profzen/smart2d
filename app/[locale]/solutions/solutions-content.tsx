@@ -406,7 +406,7 @@ export function SolutionsContent() {
               {t("cta_desc")}
             </p>
             <Link
-              href={getLocalizedHref("/contact")}
+              href={getLocalizedHref("/contact#coordonnees")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
               {t("cta_btn")}

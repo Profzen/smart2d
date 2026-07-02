@@ -101,7 +101,7 @@ export function ContactContent() {
       </section>
 
       {/* Contact Section */}
-      <section id="coordonnees" className="py-20 bg-[#F8F6F4]">
+      <section id="coordonnees" className="scroll-mt-24 py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Info */}
