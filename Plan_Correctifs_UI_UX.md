@@ -67,6 +67,11 @@ Le travail est divisé en branches distinctes pour une meilleure organisation.
 *   **Surlignements rouges** : Correction des liseres/surlignements rouges des boutons d'ancres, liens de section et cards concernees sur toutes les pages afin de supprimer le leger espace blanc visible au bord.
 *   **Verification responsive** : Controle visuel desktop/mobile des cards et des surlignements apres correction.
 
+### 10. Branche : `aziz/fix-anchor-top-accent` (Finition liseres rouges)
+*   **Ancres de navigation de sections** : Reprise du liseré rouge superieur des boutons d'ancre pour qu'il colle exactement au bord arrondi, sans ligne blanche visible au-dessus.
+*   **Cards avec liseré de base** : Durcissement des styles globaux `smart-card-accent-top` et `smart-card-accent-bottom` afin que les liserés recouvrent proprement la bordure des cards concernees sur toutes les pages.
+*   **Verification globale** : Controle des pages Accueil, A propos, Oracle & Infrastructure, Services, Solutions, Support & Formation et Contact pour confirmer la coherence du rendu.
+
 ## Plan de Vérification
 
 1.  **Tests Visuels (Desktop & Mobile)** : Vérification du responsive des nouvelles ancres, du bouton scroll-to-top, et de la lisibilité des cartes.

@@ -93,11 +93,11 @@
   }
 
   .smart-card-accent-bottom {
-    @apply absolute -bottom-px -left-px -right-px h-[5px] bg-[#EE3329] rounded-b-xl;
+    @apply pointer-events-none absolute -bottom-px -left-px -right-px z-20 h-2 bg-[#EE3329] rounded-b-[inherit];
   }
 
   .smart-card-accent-top {
-    @apply absolute -top-px -left-px -right-px h-[5px] bg-[#EE3329] rounded-t-xl;
+    @apply pointer-events-none absolute -top-px -left-px -right-px z-20 h-2 bg-[#EE3329] rounded-t-[inherit];
   }
 }
 

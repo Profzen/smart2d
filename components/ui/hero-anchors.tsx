@@ -94,7 +94,7 @@ export function HeroAnchors({ anchors, containerClassName = "pt-2 pb-4" }: HeroA
             href={`#${anchor.id}`}
             onClick={(e) => scrollTo(anchor.id, e)}
             className={`
-              relative overflow-hidden px-4 py-3 sm:px-6 sm:py-4 bg-white shadow-lg border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-w-[140px] flex-none text-center
+              relative isolate overflow-hidden px-4 py-3 sm:px-6 sm:py-4 bg-white shadow-lg border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-w-[140px] flex-none text-center
               ${activeId === anchor.id 
                 ? "border-[#EE3329]/30 ring-1 ring-[#EE3329] shadow-md shadow-[#EE3329]/10" 
                 : "border-white/10"}
@@ -103,7 +103,7 @@ export function HeroAnchors({ anchors, containerClassName = "pt-2 pb-4" }: HeroA
             {/* Top red accent on hover */}
             <div className={`smart-card-accent-top transition-transform origin-left ${activeId === anchor.id ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
             
-            <span className={`text-sm md:text-base font-semibold transition-colors ${activeId === anchor.id ? "text-[#EE3329]" : "text-[#221E1F] group-hover:text-[#EE3329]"}`}>
+            <span className={`relative z-30 text-sm md:text-base font-semibold transition-colors ${activeId === anchor.id ? "text-[#EE3329]" : "text-[#221E1F] group-hover:text-[#EE3329]"}`}>
               {anchor.title}
             </span>
           </a>
