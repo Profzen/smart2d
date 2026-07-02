@@ -32,7 +32,16 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Pages where the hero background is dark (#17233A)
-  const isDarkHero = pathname === `/${locale}` || pathname === `/${locale}/oracle-infrastructure`
+  const darkHeroPages = [
+    `/${locale}`,
+    `/${locale}/oracle-infrastructure`,
+    `/${locale}/a-propos`,
+    `/${locale}/services`,
+    `/${locale}/solutions`,
+    `/${locale}/support-formation`,
+    `/${locale}/contact`,
+  ]
+  const isDarkHero = darkHeroPages.includes(pathname)
 
   // Use dark text (and dark logo/red button) if we scrolled OR if the hero background is light
   const useDarkText = isScrolled || !isDarkHero

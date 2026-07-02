@@ -116,8 +116,8 @@ export function SolutionsContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-20 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4] overflow-hidden">
-        <HeroDecoration pageType="solutions" />
+      <section className="relative pt-20 pb-20 bg-[#17233A] overflow-hidden">
+        <HeroDecoration pageType="oracle" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -130,10 +130,10 @@ export function SolutionsContent() {
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               {t("solutions_tag")}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               {t("solutions_title")}
             </h1>
-            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
+            <p className="mt-6 text-xl text-white/70 leading-relaxed">
               {t("solutions_desc")}
             </p>
           </motion.div>
