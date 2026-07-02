@@ -72,6 +72,13 @@ Le travail est divisé en branches distinctes pour une meilleure organisation.
 *   **Cards avec liseré de base** : Durcissement des styles globaux `smart-card-accent-top` et `smart-card-accent-bottom` afin que les liserés recouvrent proprement la bordure des cards concernees sur toutes les pages.
 *   **Verification globale** : Controle des pages Accueil, A propos, Oracle & Infrastructure, Services, Solutions, Support & Formation et Contact pour confirmer la coherence du rendu.
 
+### 11. Branche : `aziz/floating-contact-language-scroll` (Contact flottant + switch langue fluide)
+*   **Bulle de contact globale** : Ajout d'un bouton flottant disponible sur toutes les pages, avec deploiement vertical des actions WhatsApp, message et telephone.
+*   **Actions rapides** : Redirection WhatsApp vers le numero existant, lien message vers `contact#formulaire`, et affichage visible des numeros Togo/USA au clic sur telephone.
+*   **Incitation a l'action** : Ajout d'une animation de pulse/clignotement toutes les 10 secondes sur la bulle principale.
+*   **Lisibilite accueil** : Harmonisation du texte de la section "Un partenaire IT pour environnements sensibles" avec la taille et la couleur des descriptions de cards.
+*   **Switch langue fluide** : Conservation de la position exacte de scroll lors du passage FR/EN sans modifier le design du bouton.
+
 ## Plan de Vérification
 
 1.  **Tests Visuels (Desktop & Mobile)** : Vérification du responsive des nouvelles ancres, du bouton scroll-to-top, et de la lisibilité des cartes.

@@ -101,6 +101,30 @@
   }
 }
 
+@keyframes floating-contact-attention {
+  0%,
+  88%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 18px 40px rgb(238 51 41 / 0.28);
+  }
+  91% {
+    transform: scale(1.08);
+    box-shadow: 0 18px 42px rgb(238 51 41 / 0.42), 0 0 0 10px rgb(238 51 41 / 0.12);
+  }
+  94% {
+    transform: scale(0.98);
+  }
+  97% {
+    transform: scale(1.05);
+    box-shadow: 0 18px 42px rgb(238 51 41 / 0.38), 0 0 0 7px rgb(238 51 41 / 0.1);
+  }
+}
+
+.floating-contact-pulse {
+  animation: floating-contact-attention 10s ease-in-out infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

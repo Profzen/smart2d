@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollToTop } from '@/components/ui/scroll-to-top'
+import { FloatingContact } from '@/components/ui/floating-contact'
 import './globals.css'
 
 const inter = Inter({ 
@@ -43,6 +44,7 @@ export default async function RootLayout({
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <FloatingContact />
           <ScrollToTop />
         </NextIntlClientProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
