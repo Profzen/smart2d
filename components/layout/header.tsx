@@ -41,16 +41,53 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
+
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [pathname])
+
+  useEffect(() => {
+    const rawPosition = sessionStorage.getItem("smart2d-language-scroll-y")
+
+    if (!rawPosition) {
+      return
+    }
+
+    sessionStorage.removeItem("smart2d-language-scroll-y")
+    const scrollY = Number(rawPosition)
+
+    if (Number.isNaN(scrollY)) {
+      return
+    }
+
+    const previousScrollBehavior = document.documentElement.style.scrollBehavior
+    document.documentElement.style.scrollBehavior = "auto"
+    setIsScrolled(scrollY > 20)
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY)
+      setIsScrolled(scrollY > 20)
+      window.dispatchEvent(new Event("scroll"))
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY)
+        setIsScrolled(scrollY > 20)
+        window.dispatchEvent(new Event("scroll"))
+        document.documentElement.style.scrollBehavior = previousScrollBehavior
+      })
+    })
+  }, [pathname])
 
   const handleLanguageSwitch = () => {
     const nextLocale = locale === "fr" ? "en" : "fr"
     // The pathname already starts with /fr or /en because next-intl middleware prefixes it.
     // Replace the current locale prefix with the next one.
     const newPath = pathname.replace(`/${locale}`, `/${nextLocale}`)
-    router.push(newPath)
+    const nextUrl = `${newPath}${window.location.search}${window.location.hash}`
+
+    sessionStorage.setItem("smart2d-language-scroll-y", String(window.scrollY))
+    setIsScrolled(window.scrollY > 20)
+    router.replace(nextUrl, { scroll: false })
   }
 
   const localizedHref = (href: string) => getLocalizedHref(locale, href)

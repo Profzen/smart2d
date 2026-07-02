@@ -344,6 +344,15 @@
   "ScrollToTop": {
     "label": "Retour en haut"
   },
+  "FloatingContact": {
+    "open": "Ouvrir les options de contact",
+    "close": "Fermer les options de contact",
+    "message": "Envoyer un message",
+    "phone": "Voir les téléphones",
+    "phone_title": "Appelez SMART2D",
+    "togo": "Togo",
+    "usa": "USA"
+  },
   "CTASection": {
     "title": "Vous exploitez un environnement Oracle ou une infrastructure sensible ?",
     "description": "Parlons de vos priorités techniques et identifions les actions à mener pour fiabiliser votre plateforme.",

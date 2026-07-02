@@ -22,10 +22,10 @@ export function PositioningSection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#221E1F] leading-tight text-balance">
               {t("title")}
             </h2>
-            <p className="mt-6 text-lg text-[#221E1F]/70 leading-relaxed">
+            <p className="smart-card-description mt-6">
               {t("p1")}
             </p>
-            <p className="mt-4 text-lg text-[#221E1F]/70 leading-relaxed">
+            <p className="smart-card-description mt-4">
               {t("p2_start")}
               <strong className="text-[#221E1F]">{t("available")}</strong>, 
               <strong className="text-[#221E1F]"> {t("efficient")}</strong> {t("and")} 

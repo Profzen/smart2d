@@ -344,6 +344,15 @@
   "ScrollToTop": {
     "label": "Scroll to top"
   },
+  "FloatingContact": {
+    "open": "Open contact options",
+    "close": "Close contact options",
+    "message": "Send a message",
+    "phone": "View phone numbers",
+    "phone_title": "Call SMART2D",
+    "togo": "Togo",
+    "usa": "USA"
+  },
   "CTASection": {
     "title": "Are you operating an Oracle environment or sensitive infrastructure?",
     "description": "Let's discuss your technical priorities and identify actions to secure your platform.",
