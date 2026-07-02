@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react"
 import { useTranslations, useLocale } from "next-intl"
+import { getLocalizedHref } from "@/lib/navigation"
 
 const footerLinks = {
   expertise: [
@@ -27,10 +28,7 @@ export function Footer() {
   const tNav = useTranslations("Navigation")
   const locale = useLocale()
 
-  const getLocalizedHref = (href: string) => {
-    if (href.startsWith("#")) return href
-    return `/${locale}${href}`
-  }
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
 
   return (
     <footer className="bg-[#221E1F] text-white">
@@ -60,7 +58,7 @@ export function Footer() {
               {footerLinks.expertise.map((link) => (
                 <li key={link.key}>
                   <Link
-                    href={getLocalizedHref(link.href)}
+                    href={localizedHref(link.href)}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     {tNav(link.key)}
@@ -87,7 +85,7 @@ export function Footer() {
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={getLocalizedHref(link.href)}
+                    href={localizedHref(link.href)}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     {link.name}
@@ -104,7 +102,7 @@ export function Footer() {
               {footerLinks.entreprise.map((link) => (
                 <li key={link.key}>
                   <Link
-                    href={getLocalizedHref(link.href)}
+                    href={localizedHref(link.href)}
                     className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     {tNav(link.key)}

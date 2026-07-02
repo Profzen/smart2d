@@ -1,9 +1,10 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { getLocalizedHref } from "@/lib/navigation"
 import { 
   Activity, 
   Cpu,
@@ -21,6 +22,8 @@ import {
 
 export function SolutionsSection() {
   const t = useTranslations("SolutionsSection")
+  const locale = useLocale()
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
 
   const oscarFeatures = [
     { icon: Activity, label: t("oscar.features.sup") },
@@ -109,7 +112,7 @@ export function SolutionsSection() {
               </div>
 
               <Link
-                href="/solutions#oscar"
+                href={localizedHref("/solutions#oscar")}
                 className="inline-flex items-center gap-2 text-[#EE3329] font-semibold hover:gap-3 transition-all"
               >
                 {t("oscar.button")}
@@ -163,7 +166,7 @@ export function SolutionsSection() {
               </div>
 
               <Link
-                href="/solutions#smart-transfert"
+                href={localizedHref("/solutions#smart-transfert")}
                 className="inline-flex items-center gap-2 text-[#2F6B4F] font-semibold hover:gap-3 transition-all"
               >
                 {t("smart.button")}
@@ -182,7 +185,7 @@ export function SolutionsSection() {
           className="mt-12 text-center"
         >
           <Link
-            href="/solutions"
+            href={localizedHref("/solutions")}
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#221E1F] text-white font-semibold rounded-lg hover:bg-[#2d2829] transition-all group"
           >
             {t("button_all")}

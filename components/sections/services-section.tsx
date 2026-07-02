@@ -1,9 +1,10 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { getLocalizedHref } from "@/lib/navigation"
 import { 
   Database, 
   Search, 
@@ -16,6 +17,8 @@ import {
 
 export function ServicesSection() {
   const t = useTranslations("ServicesSection")
+  const locale = useLocale()
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
 
   const services = [
     {
@@ -89,7 +92,7 @@ export function ServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                href={service.href}
+                href={localizedHref(service.href)}
                 className="group block h-full bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E0DC] hover:border-[#EE3329]/30"
               >
                 {/* Icon */}
@@ -124,7 +127,7 @@ export function ServicesSection() {
           className="mt-12 text-center"
         >
           <Link
-            href="/services"
+            href={localizedHref("/services")}
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#221E1F] text-white font-semibold rounded-lg hover:bg-[#2d2829] transition-all group"
           >
             {t("button_all")}

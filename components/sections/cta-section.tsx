@@ -1,13 +1,16 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, MessageSquare } from "lucide-react"
+import { getLocalizedHref } from "@/lib/navigation"
 
 export function CTASection() {
   const t = useTranslations("CTASection")
+  const locale = useLocale()
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-[#F8F6F4] to-[#F0ECE8] relative overflow-hidden">
       {/* Background */}
@@ -36,14 +39,14 @@ export function CTASection() {
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href={localizedHref("/contact")}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
               {t("button_diagnostic")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/oracle-infrastructure"
+              href={localizedHref("/oracle-infrastructure")}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#17233A] text-white font-semibold rounded-lg hover:bg-[#1e2d4a] transition-all"
             >
               {t("button_expertise")}

@@ -6,7 +6,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
+import { getLocalizedHref } from "@/lib/navigation"
 
 // ==========================================
 // CONFIGURATION DU CARROUSEL - MODIFIABLE
@@ -18,6 +19,8 @@ const CAROUSEL_CONFIG = {
 
 export function HeroSection() {
   const t = useTranslations("Hero");
+  const locale = useLocale()
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
 
   const homeAnchors: Anchor[] = [
     { id: "positionnement", title: t("anchor_approach") },
@@ -239,14 +242,14 @@ export function HeroSection() {
             {/* CTA Buttons - Fixes (en dehors du carrousel pour ne pas défiler) */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href={localizedHref("/contact")}
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/30 group text-sm sm:text-base text-center"
               >
                 <span className="whitespace-normal">{t("button_diagnostic")}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
               </Link>
               <Link
-                href="/oracle-infrastructure"
+                href={localizedHref("/oracle-infrastructure")}
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 text-sm sm:text-base text-center"
               >
                 <span className="whitespace-normal">{t("button_expertise")}</span>

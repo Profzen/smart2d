@@ -45,11 +45,29 @@ Le travail est divisé en branches distinctes pour une meilleure organisation.
 *   **Fix Ancres global** : Réduction du `containerClassName` par défaut du composant `HeroAnchors` (`pt-8` → `pt-2`) pour rapprocher les boutons d'ancre de la barre de navigation sur **toutes** les pages secondaires (About, Services, Contact, Oracle, Solutions, Support & Formation).
 *   **Commit livré** : `dc43c8c` — PR prête vers `develop`.
 
+### 7. Branche : `aziz/fix-routes-cta-navigation` (Redirections CTA + Navigation active)
+*   **Boutons Hero Accueil** : Correction des liens "Demander un diagnostic gratuit" et "DÃ©couvrir nos expertises" pour rediriger reellement vers les pages localisees attendues : `/{locale}/contact` et `/{locale}/oracle-infrastructure`.
+*   **Boutons CTA globaux** : Audit et correction de tous les boutons d'action du site afin que chaque lien pointe vers la bonne page, section ou ancre cible, notamment :
+    *   Accueil : Hero, section Oracle, section Solutions, CTA final.
+    *   Services : bouton "Nous contacter".
+    *   About, Oracle, Solutions, Support & Formation : CTA de bas de page et liens internes.
+*   **Routes localisees** : Harmonisation des liens internes avec le prefixe de langue courant (`/fr` ou `/en`) pour eviter les fausses redirections vers `/contact`, `/solutions` ou `/oracle-infrastructure` sans locale.
+*   **Indicateur de page active** : Renforcement de la logique du `Header` pour conserver le surlignement de la page courante apres clic sur un bouton CTA ou une navigation directe.
+*   **Coherence visuelle du Header** : Correction de l'etat couleur de la barre de navigation apres navigation par bouton, afin que les liens restent lisibles et coherents avec le fond de la page courante.
+
+### 8. Branche : `aziz/fix-i18n-runtime-errors` (Erreurs pages + messages manquants)
+*   **Erreur page Solutions / Formation** : Correction de l'erreur runtime `MISSING_MESSAGE: Solutions.oscar_f5` observee dans les logs `npm run dev`.
+*   **Audit des cles i18n** : Comparaison des cles appelees dans les composants avec les fichiers `messages/fr.json` et `messages/en.json` pour supprimer les cles manquantes ou incoherentes.
+*   **Validation FR/EN** : Verification que les pages Accueil, About, Oracle, Services, Solutions, Support & Formation et Contact se chargent correctement en francais et en anglais.
+*   **Warnings utiles** : Traitement ou documentation des warnings non bloquants vus en dev, notamment les dimensions des logos `next/image` et l'avertissement Next.js sur `middleware` deprecie.
+
 ## Plan de Vérification
 
 1.  **Tests Visuels (Desktop & Mobile)** : Vérification du responsive des nouvelles ancres, du bouton scroll-to-top, et de la lisibilité des cartes.
 2.  **Tests d'Interaction** : Vérification du lien WhatsApp, du clic sur les ancres, du carrousel mobile, et de la fixité des boutons du Hero.
 3.  **Tests i18n** : Vérification du changement de langue via le header et contrôle des URLs dynamiques (`/fr/`, `/en/`). Aucun texte français résiduel sur la version EN.
 4.  **Tests SmartACCESS** : Vérification que le slide 14 défile bien dans le carrousel et que le titre/description basculent correctement en FR/EN.
-5.  **Build** : Build local (`npm run build`) validé sans erreur avant toute création de PR ou fusion vers `develop`.
+5.  **Tests de redirection CTA** : Verification manuelle de chaque bouton CTA sur toutes les pages, avec controle de l'URL finale, de la page affichee et du surlignement actif dans la barre de navigation.
+6.  **Tests d'erreurs runtime** : Navigation sur toutes les pages en mode dev pour confirmer l'absence d'erreurs `MISSING_MESSAGE` et d'erreurs console bloquantes.
+7.  **Build** : Build local (`npm run build`) validé sans erreur avant toute création de PR ou fusion vers `develop`.
 
