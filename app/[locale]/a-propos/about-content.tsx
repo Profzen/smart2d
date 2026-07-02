@@ -123,8 +123,8 @@ export function AboutContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-20 pb-20 bg-gradient-to-br from-[#F8F6F4] via-[#F0ECE8] to-[#F8F6F4] overflow-hidden">
-        <HeroDecoration pageType="about" />
+      <section className="relative pt-20 pb-20 bg-[#17233A] overflow-hidden">
+        <HeroDecoration pageType="oracle" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,18 +137,20 @@ export function AboutContent() {
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
               {t("hero_label")}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#221E1F] leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               {t("hero_title")}
             </h1>
-            <p className="mt-6 text-xl text-[#221E1F]/70 leading-relaxed">
+            <p className="mt-6 text-xl text-white/70 leading-relaxed">
               {t("hero_desc")}
             </p>
           </motion.div>
         </div>
       </section>
 
+      <div className="w-full border-t-4 border-[#E5E0DC] opacity-80" />
+
       {/* Experience */}
-      <section id="experience" className="py-20 bg-[#221E1F]">
+      <section id="experience" className="py-20 bg-[#F8F6F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-[#EE3329] font-semibold text-sm uppercase tracking-wider mb-4">
@@ -163,7 +165,7 @@ export function AboutContent() {
               transition={{ duration: 0.6 }}
             >
               <div className="text-[#EE3329] text-7xl md:text-9xl font-bold">{t("exp_years")}</div>
-              <p className="text-white text-2xl font-semibold mt-2">{t("exp_years_label")}</p>
+              <p className="text-[#221E1F] text-2xl font-semibold mt-2">{t("exp_years_label")}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -171,16 +173,18 @@ export function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <p className="text-white/70 text-lg leading-relaxed">
+              <p className="text-[#221E1F]/80 text-lg leading-relaxed">
                 {t("exp_p1")}
               </p>
-              <p className="text-white/70 text-lg leading-relaxed mt-4">
+              <p className="text-[#221E1F]/80 text-lg leading-relaxed mt-4">
                 {t("exp_p2")}
               </p>
             </motion.div>
           </div>
         </div>
       </section>
+
+      <div className="w-full border-t-4 border-[#E5E0DC] opacity-80" />
 
       {/* Mission & Vision */}
       <section id="mission" className="py-20 bg-[#F8F6F4]">
@@ -227,6 +231,8 @@ export function AboutContent() {
           </div>
         </div>
       </section>
+
+      <div className="w-full border-t-4 border-[#E5E0DC] opacity-80" />
 
       {/* Solutions */}
       <section className="py-20 bg-[#F8F6F4]">
