@@ -1,10 +1,11 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, Database, Cloud, Server, Shield, Zap, RefreshCw } from "lucide-react"
+import { getLocalizedHref } from "@/lib/navigation"
 
 const technologies = [
   "Oracle Database",
@@ -21,6 +22,8 @@ const technologies = [
 
 export function OracleSection() {
   const t = useTranslations("OracleSection")
+  const locale = useLocale()
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
   return (
     <section id="oracle" className="py-20 lg:py-28 bg-[#17233A] relative overflow-hidden">
       {/* Background elements */}
@@ -73,7 +76,7 @@ export function OracleSection() {
             {/* CTA */}
             <div className="mt-10">
               <Link
-                href="/oracle-infrastructure"
+                href={localizedHref("/oracle-infrastructure")}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all group"
               >
                 {t("button_discover")}

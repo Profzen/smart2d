@@ -15,12 +15,15 @@ import {
 } from "lucide-react"
 import { HeroAnchors, Anchor } from "@/components/ui/hero-anchors"
 import { HeroDecoration } from "@/components/ui/hero-decoration"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
+import { getLocalizedHref } from "@/lib/navigation"
 
 
 
 export function ServicesContent() {
   const t = useTranslations("Services")
+  const locale = useLocale()
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
 
   const servicesAnchors: Anchor[] = [
     { id: "domaines", title: t("anc_domaines") },
@@ -215,7 +218,7 @@ export function ServicesContent() {
               {t("cta_desc")}
             </p>
             <Link
-              href="/contact"
+              href={localizedHref("/contact")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/25 group"
             >
               {t("cta_btn")}

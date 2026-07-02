@@ -8,6 +8,7 @@ import { Menu, X, Globe } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTranslations, useLocale } from "next-intl"
 import { cn } from "@/lib/utils"
+import { getLocalizedHref } from "@/lib/navigation"
 
 const navigation = [
   { key: "home", href: "/" },
@@ -52,11 +53,9 @@ export function Header() {
     router.push(newPath)
   }
 
-  // Prepend current locale to navigation links so Next.js routing is correct
-  const getLocalizedHref = (href: string) => {
-    if (href === "/") return `/${locale}`
-    return `/${locale}${href}`
-  }
+  const localizedHref = (href: string) => getLocalizedHref(locale, href)
+  const contactHref = localizedHref("/contact")
+  const isContactActive = pathname === contactHref
 
   return (
     <header
@@ -70,7 +69,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo - Change selon le scroll */}
-          <Link href={getLocalizedHref("/")} className="flex-shrink-0 relative">
+          <Link href={localizedHref("/")} className="flex-shrink-0 relative">
             {/* Logo pour fond sombre (avant scroll) */}
             <Image
               src={LOGO_LIGHT}
@@ -100,12 +99,12 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => {
-              const localizedHref = getLocalizedHref(item.href)
-              const isActive = pathname === localizedHref
+              const itemHref = localizedHref(item.href)
+              const isActive = pathname === itemHref
               return (
                 <Link
                   key={item.key}
-                  href={localizedHref}
+                  href={itemHref}
                   className={cn(
                     "relative px-3 py-2 text-sm font-medium rounded-md transition-all group",
                     isActive 
@@ -143,10 +142,12 @@ export function Header() {
               <span className="text-sm font-semibold uppercase">{locale === "fr" ? "en" : "fr"}</span>
             </button>
             <Link
-              href={getLocalizedHref("/contact")}
+              href={contactHref}
               className={cn(
                 "inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-all",
-                useDarkText
+                isContactActive
+                  ? "bg-[#EE3329] text-white shadow-lg shadow-[#EE3329]/25"
+                  : useDarkText
                   ? "bg-[#EE3329] text-white hover:bg-[#d62d24] shadow-lg shadow-[#EE3329]/25"
                   : "bg-white text-[#221E1F] hover:bg-white/90 shadow-lg"
               )}
@@ -187,12 +188,12 @@ export function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
               {navigation.map((item) => {
-                const localizedHref = getLocalizedHref(item.href)
-                const isActive = pathname === localizedHref
+                const itemHref = localizedHref(item.href)
+                const isActive = pathname === itemHref
                 return (
                   <Link
                     key={item.key}
-                    href={localizedHref}
+                    href={itemHref}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
                       "block px-4 py-3 rounded-lg transition-colors",
@@ -220,7 +221,7 @@ export function Header() {
 
               <div className="pt-4">
                 <Link
-                  href={getLocalizedHref("/contact")}
+                  href={contactHref}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center px-4 py-3 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-colors"
                 >
