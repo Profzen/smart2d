@@ -248,6 +248,7 @@
     "oscar_f3_desc": "Avertissement en temps réel sur les actions sensibles et événements critiques.",
     "oscar_f4_title": "Assistance intelligente",
     "oscar_f4_desc": "Assistance intelligente en langage naturel pour identifier rapidement quoi, quand et sur quel systéme.",
+    "oscar_f5": "Rapports & tableaux",
     "oscar_db_desc": "Dashboard OSCAR : supervision des ressources, disponibilité et indicateurs techniques.",
     "st_tag": "TRANSFERT D'ARGENT",
     "st_desc": "Plateforme de centralisation conçue pour les agences ou points de service qui gèrent plusieurs prestataires de transfert d'argent. Elle permet aux agents de travailler dans une interface unique, de réduire les erreurs, de fiabiliser les rapports et de renforcer la traçabilité des opérations.",
