@@ -242,7 +242,7 @@ export function HeroSection() {
             {/* CTA Buttons - Fixes (en dehors du carrousel pour ne pas défiler) */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
-                href={localizedHref("/contact")}
+                href={localizedHref("/contact#coordonnees")}
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-8 sm:py-4 bg-[#EE3329] text-white font-semibold rounded-lg hover:bg-[#d62d24] transition-all shadow-lg shadow-[#EE3329]/30 group text-sm sm:text-base text-center"
               >
                 <span className="whitespace-normal">{t("button_diagnostic")}</span>
