@@ -87,14 +87,14 @@ export function SolutionsSection() {
                 </span>
               </div>
               <h3 className="text-2xl font-bold text-white">{t("oscar.title")}</h3>
-              <p className="mt-2 text-white/70">
+              <p className="mt-2 smart-card-description-dark">
                 {t("oscar.subtitle")}
               </p>
             </div>
 
             {/* Content */}
             <div className="p-6">
-              <p className="text-[#221E1F]/70 mb-6">
+              <p className="smart-card-description mb-6">
                 {t("oscar.description")}
               </p>
 
@@ -106,7 +106,7 @@ export function SolutionsSection() {
                     className="flex items-center gap-2 p-3 bg-[#F8F6F4] rounded-lg"
                   >
                     <feature.icon className="w-4 h-4 text-[#17233A]" />
-                    <span className="text-sm text-[#221E1F]">{feature.label}</span>
+                    <span className="text-base font-medium text-[#221E1F]">{feature.label}</span>
                   </div>
                 ))}
               </div>
@@ -141,14 +141,14 @@ export function SolutionsSection() {
                 </span>
               </div>
               <h3 className="text-2xl font-bold text-white">{t("smart.title")}</h3>
-              <p className="mt-2 text-white/70">
+              <p className="mt-2 smart-card-description-dark">
                 {t("smart.subtitle")}
               </p>
             </div>
 
             {/* Content */}
             <div className="p-6">
-              <p className="text-[#221E1F]/70 mb-6">
+              <p className="smart-card-description mb-6">
                 {t("smart.description")}
               </p>
 
@@ -160,7 +160,7 @@ export function SolutionsSection() {
                     className="flex items-center gap-2 p-3 bg-[#F8F6F4] rounded-lg"
                   >
                     <feature.icon className="w-4 h-4 text-[#2F6B4F]" />
-                    <span className="text-sm text-[#221E1F]">{feature.label}</span>
+                    <span className="text-base font-medium text-[#221E1F]">{feature.label}</span>
                   </div>
                 ))}
               </div>

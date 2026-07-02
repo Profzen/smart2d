@@ -61,6 +61,12 @@ Le travail est divisé en branches distinctes pour une meilleure organisation.
 *   **Validation FR/EN** : Verification que les pages Accueil, About, Oracle, Services, Solutions, Support & Formation et Contact se chargent correctement en francais et en anglais.
 *   **Warnings utiles** : Traitement ou documentation des warnings non bloquants vus en dev, notamment les dimensions des logos `next/image` et l'avertissement Next.js sur `middleware` deprecie.
 
+### 9. Branche : `aziz/card-readability-accent-fix` (Lisibilite cards + Surlignements)
+*   **Lisibilite des descriptions** : Agrandissement et assombrissement des textes descriptifs dans les cards des pages Accueil, A propos, Oracle & Infrastructure, Services, Solutions et Support & Formation.
+*   **Occupation de l'espace** : Ajustement des line-heights, tailles et espacements pour que les descriptions remplissent mieux leurs cards sans desequilibrer les titres.
+*   **Surlignements rouges** : Correction des liseres/surlignements rouges des boutons d'ancres, liens de section et cards concernees sur toutes les pages afin de supprimer le leger espace blanc visible au bord.
+*   **Verification responsive** : Controle visuel desktop/mobile des cards et des surlignements apres correction.
+
 ## Plan de Vérification
 
 1.  **Tests Visuels (Desktop & Mobile)** : Vérification du responsive des nouvelles ancres, du bouton scroll-to-top, et de la lisibilité des cartes.

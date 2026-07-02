@@ -203,7 +203,7 @@ export function AboutContent() {
                 <Target className="w-7 h-7 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{t("mission_title")}</h2>
-              <p className="text-[#221E1F]/70 leading-relaxed">
+              <p className="smart-card-description">
                 {t("mission_desc")}
               </p>
             </motion.div>
@@ -220,7 +220,7 @@ export function AboutContent() {
                 <Eye className="w-7 h-7 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-[#221E1F] mb-4">{t("vision_title")}</h2>
-              <p className="text-[#221E1F]/70 leading-relaxed">
+              <p className="smart-card-description">
                 {t("vision_desc")}
               </p>
             </motion.div>
@@ -270,12 +270,12 @@ export function AboutContent() {
                     </span>
                   </div>
                   <h3 className="text-2xl font-bold text-white">{solution.title}</h3>
-                  <p className="mt-2 text-white/70">{solution.description}</p>
+                  <p className="mt-2 smart-card-description-dark">{solution.description}</p>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <p className="text-[#221E1F]/70 mb-6">{solution.longDescription}</p>
+                  <p className="smart-card-description mb-6">{solution.longDescription}</p>
 
                   {/* Features */}
                   <div className="grid grid-cols-2 gap-3 mb-6">
@@ -285,7 +285,7 @@ export function AboutContent() {
                         className="flex items-center gap-2 p-3 bg-[#F8F6F4] rounded-lg"
                       >
                         <feature.icon className={`w-4 h-4 ${solution.featureIconColor}`} />
-                        <span className="text-sm text-[#221E1F]">{feature.label}</span>
+                        <span className="text-base font-medium text-[#221E1F]">{feature.label}</span>
                       </div>
                     ))}
                   </div>
@@ -338,7 +338,7 @@ export function AboutContent() {
                   <value.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-[#221E1F] mb-2">{value.title}</h3>
-                <p className="text-[#221E1F]/60 text-sm leading-relaxed">{value.description}</p>
+                <p className="smart-card-description">{value.description}</p>
               </motion.div>
             ))}
           </div>

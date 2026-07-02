@@ -151,7 +151,7 @@ export function SupportFormationContent() {
                   <prestation.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-[#221E1F] mb-2">{prestation.title}</h3>
-                <p className="text-[#221E1F]/80 text-sm font-medium leading-relaxed">{prestation.description}</p>
+                <p className="smart-card-description">{prestation.description}</p>
               </motion.div>
             ))}
           </div>
@@ -190,7 +190,7 @@ export function SupportFormationContent() {
                   <mode.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{mode.title}</h3>
-                <p className="text-white/60">{mode.description}</p>
+                <p className="smart-card-description-dark">{mode.description}</p>
               </motion.div>
             ))}
           </div>

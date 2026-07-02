@@ -155,7 +155,7 @@ export function SolutionsContent() {
             <p className="text-xl md:text-2xl font-semibold text-[#221E1F] mb-4">
               {t("oscar_subtitle")}
             </p>
-            <p className="text-[#221E1F]/70 text-lg leading-relaxed max-w-4xl">
+            <p className="text-lg md:text-xl text-[#221E1F]/85 font-medium leading-relaxed max-w-4xl">
               {t("oscar_desc")}
             </p>
           </motion.div>
@@ -175,7 +175,7 @@ export function SolutionsContent() {
                 {oscarProblems.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#EE3329] mt-1.5 flex-shrink-0" />
-                    <span className="text-[#221E1F]/80 text-base">{item}</span>
+                    <span className="text-base md:text-[17px] text-[#221E1F]/90 font-medium leading-7">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -240,7 +240,7 @@ export function SolutionsContent() {
                     </div>
                     <div>
                       <h4 className="text-base font-bold text-[#221E1F] mb-1">{func.title}</h4>
-                      <p className="text-sm text-[#221E1F]/60 leading-relaxed">{func.description}</p>
+                      <p className="smart-card-description">{func.description}</p>
                     </div>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export function SolutionsContent() {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#221E1F] mt-2">Smart Transfert</h2>
               </div>
             </div>
-            <p className="text-xl text-[#221E1F]/70 max-w-3xl">
+            <p className="text-xl text-[#221E1F]/85 font-medium leading-relaxed max-w-3xl">
               {t("st_desc")}
             </p>
           </motion.div>
@@ -316,7 +316,7 @@ export function SolutionsContent() {
                     className="flex items-start gap-3 p-4 bg-white rounded-lg border border-[#E5E0DC] shadow-sm"
                   >
                     <span className="text-[#EE3329]">•</span>
-                    <span className="text-[#221E1F]/70">{problem}</span>
+                    <span className="text-base md:text-[17px] text-[#221E1F]/90 font-medium leading-7">{problem}</span>
                   </div>
                 ))}
               </div>
@@ -340,7 +340,7 @@ export function SolutionsContent() {
                     className="flex items-start gap-3 p-4 bg-[#2F6B4F]/10 rounded-lg border border-[#2F6B4F]/20"
                   >
                     <CheckCircle className="w-5 h-5 text-[#2F6B4F] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#221E1F]/80">{benefit}</span>
+                    <span className="text-base md:text-[17px] text-[#221E1F]/90 font-medium leading-7">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -382,7 +382,7 @@ export function SolutionsContent() {
                   <div className="w-10 h-10 rounded-lg bg-[#2F6B4F]/10 flex items-center justify-center">
                     <feature.icon className="w-5 h-5 text-[#2F6B4F]" />
                   </div>
-                  <span className="text-sm text-[#221E1F]/70 text-center">{feature.label}</span>
+                  <span className="text-base text-[#221E1F]/90 font-medium text-center">{feature.label}</span>
                 </div>
               ))}
             </div>

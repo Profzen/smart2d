@@ -83,6 +83,24 @@
   }
 }
 
+@layer components {
+  .smart-card-description {
+    @apply text-base md:text-[17px] leading-7 font-medium text-[#221E1F]/90;
+  }
+
+  .smart-card-description-dark {
+    @apply text-base md:text-[17px] leading-7 font-medium text-white/80;
+  }
+
+  .smart-card-accent-bottom {
+    @apply absolute -bottom-px -left-px -right-px h-[5px] bg-[#EE3329] rounded-b-xl;
+  }
+
+  .smart-card-accent-top {
+    @apply absolute -top-px -left-px -right-px h-[5px] bg-[#EE3329] rounded-t-xl;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
