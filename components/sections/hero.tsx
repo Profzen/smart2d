@@ -211,6 +211,14 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[50vh]">
           {/* Text Content */}
           <div className="flex flex-col">
+            {/* Tagline */}
+            <div className="inline-flex max-w-max items-center justify-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-full mb-6 border border-white/20">
+              <span className="w-2 h-2 bg-[#EE3329] rounded-full animate-pulse shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-white/90 text-center">
+                {t("tagline")}
+              </span>
+            </div>
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -219,14 +227,6 @@ export function HeroSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Tagline */}
-                <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-full mb-6 border border-white/20">
-                  <span className="w-2 h-2 bg-[#EE3329] rounded-full animate-pulse shrink-0" />
-                  <span className="text-xs sm:text-sm font-medium text-white/90 text-center">
-                    {t("tagline")}
-                  </span>
-                </div>
-
                 {/* Main Title */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   <span className="text-balance">{slides[currentSlide].title}</span>
